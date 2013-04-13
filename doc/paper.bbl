@@ -1,0 +1,55 @@
+\begin{thebibliography}{12}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Arun} {et~al.}(2005){Arun}, {Iyer}, {Sathyaprakash}, \&
+  {Sundararajan}}]{ArunPE}
+{Arun}, K.~G., {Iyer}, B.~R., {Sathyaprakash}, B.~S., \& {Sundararajan}, P.~A.
+  2005, \prd, 71, 084008, 084008
+
+\bibitem[{{Buonanno} {et~al.}(2009){Buonanno}, {Iyer}, {Ochsner}, {Pan}, \&
+  {Sathyaprakash}}]{BuonannoWaveform}
+{Buonanno}, A., {Iyer}, B.~R., {Ochsner}, E., {Pan}, Y., \& {Sathyaprakash},
+  B.~S. 2009, \prd, 80, 084043, 084043
+
+\bibitem[{{Cutler} \& {Flanagan}(1994)}]{CutlerFlanagan}
+{Cutler}, C., \& {Flanagan}, {\'E}.~E. 1994, \prd, 49, 2658, 2658
+
+\bibitem[{{Damour} {et~al.}(2001){Damour}, {Iyer}, \&
+  {Sathyaprakash}}]{DarmourNoiseCurve}
+{Damour}, T., {Iyer}, B.~R., \& {Sathyaprakash}, B.~S. 2001, \prd, 63, 044023,
+  044023
+
+\bibitem[{{Finn}(1992)}]{FinnDetection}
+{Finn}, L.~S. 1992, \prd, 46, 5236, 5236
+
+\bibitem[{Gilks(1999)}]{Gilks99}
+Gilks, W.~R. 1999, Markov Chain Monte Carlo In Practice
+
+\bibitem[{{Poisson} \& {Will}(1995)}]{PoissonWill}
+{Poisson}, E., \& {Will}, C.~M. 1995, \prd, 52, 848, 848
+
+\bibitem[{{Raymond} {et~al.}(2010){Raymond}, {van der Sluys}, {Mandel},
+  {Kalogera}, {R{\"o}ver}, \& {Christensen}}]{spinspiral2010}
+{Raymond}, V., {van der Sluys}, M.~V., {Mandel}, I., {et~al.} 2010, Classical
+  and Quantum Gravity, 27, 114009, 114009
+
+\bibitem[{{Rodriguez} {et~al.}(2013){Rodriguez}, {Farr}, {Farr}, \&
+  {Mandel}}]{Inadequacies}
+{Rodriguez}, C.~L., {Farr}, B., {Farr}, W., \& {Mandel}, I. 2013, arXiv:Working
+  on it...
+
+\bibitem[{{Vallisneri}(2008)}]{Vallisneri}
+{Vallisneri}, M. 2008, \prd, 77, 042001, 042001
+
+\bibitem[{{van der Sluys} {et~al.}(2009){van der Sluys}, {Mandel}, {Raymond},
+  {Kalogera}, {R{\"o}ver}, \& {Christensen}}]{spinspiral2009}
+{van der Sluys}, M., {Mandel}, I., {Raymond}, V., {et~al.} 2009, Classical and
+  Quantum Gravity, 26, 204010, 204010
+
+\bibitem[{{van der Sluys} {et~al.}(2008){van der Sluys}, {R{\"o}ver},
+  {Stroeer}, {Raymond}, {Mandel}, {Christensen}, {Kalogera}, {Meyer}, \&
+  {Vecchio}}]{Sluys08}
+{van der Sluys}, M.~V., {R{\"o}ver}, C., {Stroeer}, A., {et~al.} 2008, \apjl,
+  688, L61, L61
+
+\end{thebibliography}
