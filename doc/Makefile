@@ -20,7 +20,7 @@ CUSTOM = << /AutoFilterGrayImages false /GrayImageFilter /FlateEncode >> setdist
 
 .PHONY: clean 
 
-$(NAME).pdf: $(NAME).tex refs.bib $(FIGURES)
+$(NAME).pdf: $(NAME).tex paper.bib $(FIGURES)
 	$(LATEX) $(NAME) || true
 	bibtex $(NAME)
 	$(LATEX) $(NAME) || true 

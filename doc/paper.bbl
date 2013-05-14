@@ -1,4 +1,4 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{13}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Arun} {et~al.}(2005){Arun}, {Iyer}, {Sathyaprakash}, \&
@@ -13,11 +13,6 @@
 
 \bibitem[{{Cutler} \& {Flanagan}(1994)}]{CutlerFlanagan}
 {Cutler}, C., \& {Flanagan}, {\'E}.~E. 1994, \prd, 49, 2658, 2658
-
-\bibitem[{{Damour} {et~al.}(2001){Damour}, {Iyer}, \&
-  {Sathyaprakash}}]{DarmourNoiseCurve}
-{Damour}, T., {Iyer}, B.~R., \& {Sathyaprakash}, B.~S. 2001, \prd, 63, 044023,
-  044023
 
 \bibitem[{{Finn}(1992)}]{FinnDetection}
 {Finn}, L.~S. 1992, \prd, 46, 5236, 5236
@@ -37,6 +32,16 @@ Gilks, W.~R. 1999, Markov Chain Monte Carlo In Practice
   {Mandel}}]{Inadequacies}
 {Rodriguez}, C.~L., {Farr}, B., {Farr}, W., \& {Mandel}, I. 2013, arXiv:Working
   on it...
+
+\bibitem[{Shoemaker(2009)}]{ADVLIGONoise}
+Shoemaker, D. 2009, Advanced LIGO anticipated sensitivity curves
+
+\bibitem[{{the LIGO Scientific Collaboration} {et~al.}(2013){the LIGO
+  Scientific Collaboration}, {the Virgo Collaboration}, {Aasi}, {Abadie},
+  {Abbott}, {Abbott}, {Abbott}, {Abernathy}, {Accadia}, {Acernese}, \&
+  et~al.}]{S6PE}
+{the LIGO Scientific Collaboration}, {the Virgo Collaboration}, {Aasi}, J.,
+  {et~al.} 2013, ArXiv e-prints, arXiv:1304.1775
 
 \bibitem[{{Vallisneri}(2008)}]{Vallisneri}
 {Vallisneri}, M. 2008, \prd, 77, 042001, 042001
