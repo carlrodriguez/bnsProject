@@ -16,11 +16,11 @@ file.close()
 
 postSamp = [[] for i in range(9)]
 num = [11, 10, 8, 6,5,7,3,4,9]
-names = ["$\mathcal{M}_c$","$\eta$","$\phi_c$","$\\alpha$","$\delta$","$D$","$\iota$","$\psi$","$Time$"]
+names = ["$\mathcal{M}_c$","$q$","$\phi_c$","$\\alpha$","$\delta$","$D$","$\iota$","$\psi$","$Time$"]
 xaxis = ["Chirp Mass $(M_{\odot})$","Mass Ratio","Chirp Phase $(rad.)$","Right Ascension $(rad.)$","Declination $(rad.)$","Distance $(MPC)$","Inclination $(rad.)$","Polarization $(rad.)$","Time $(msec.)$"]
-inject = [1.21877,0.24995,2.68833,4.662361,-0.4254096,99.15952,2.353028,2.153679,0.]
+inject = [1.21877,1.,2.68833,4.662361,-0.4254096,99.15952,2.353028,2.153679,0.]
 ticks = [[1.2183,1.2185,1.2187,1.2189],
-         [0.24,0.2425,0.245,0.2475,0.25],
+         [0.7,0.75,0.8,0.85,0.9,0.95,1],
 		 [0,1,2,3,4,5,6],
 		 [4.65,4.66,4.67,4.68,4.69],
 		 [-0.6,-0.55,-0.5,-0.45,-0.4,-0.35],
@@ -33,9 +33,9 @@ ticks = [[1.2183,1.2185,1.2187,1.2189],
 for i in range(1,len(filedata)):
 	for j in range(9):
 			postSamp[j].append(float(filedata[i].split()[num[j]]))
-			if j==1:
-				m1, m2 = m1m2fromMcq(postSamp[0][i-1],postSamp[1][i-1])
-				postSamp[1][i-1] = m1*m2 / (m1+m2)**2 
+	#		if j==1:
+	#			m1, m2 = m1m2fromMcq(postSamp[0][i-1],postSamp[1][i-1])
+	#			postSamp[1][i-1] = m1*m2 / (m1+m2)**2 
 			if j == 8:
 				postSamp[j][i-1] = (postSamp[j][i-1] - 894429279.)*1000
 
