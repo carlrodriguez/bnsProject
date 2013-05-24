@@ -9,7 +9,7 @@ injected = [(100.8422,1.5548),(124.73,1.782),(170.41,2.135),(145.78,1.671)]
 #injected = [(100.8422,1.5548),(124.73,1.782),(145.78,1.671)]
 
 for j in range(4):
-		file = open('1.4_1.4/' + filenumbers[j] + '/post/posterior_samples.dat')
+		file = open('HLVI/1.4_1.4/' + filenumbers[j] + '/post/posterior_samples.dat')
 		filedata = file.readlines()
 		file.close()
 

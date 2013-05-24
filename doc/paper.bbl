@@ -1,4 +1,4 @@
-\begin{thebibliography}{13}
+\begin{thebibliography}{14}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Arun} {et~al.}(2005){Arun}, {Iyer}, {Sathyaprakash}, \&
@@ -56,5 +56,11 @@ Shoemaker, D. 2009, Advanced LIGO anticipated sensitivity curves
   {Vecchio}}]{Sluys08}
 {van der Sluys}, M.~V., {R{\"o}ver}, C., {Stroeer}, A., {et~al.} 2008, \apjl,
   688, L61, L61
+
+\bibitem[{{Veitch} {et~al.}(2012){Veitch}, {Mandel}, {Aylott}, {Farr},
+  {Raymond}, {Rodriguez}, {van der Sluys}, {Kalogera}, \&
+  {Vecchio}}]{Veitch2012}
+{Veitch}, J., {Mandel}, I., {Aylott}, B., {et~al.} 2012, \prd, 85, 104045,
+  104045
 
 \end{thebibliography}
