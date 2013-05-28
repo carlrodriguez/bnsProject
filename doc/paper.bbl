@@ -1,5 +1,10 @@
-\begin{thebibliography}{14}
+\begin{thebibliography}{18}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Abadie {et~al.}(2010)Abadie, Abbott, Abbott, Accadia, Acernese,
+  Adhikari, Ajith, Allen, Allen, Ceron, \& et~al.}]{LSCGRB2010}
+Abadie, J., Abbott, B.~P., Abbott, R., {et~al.} 2010, The Astrophysical
+  Journal, 715, 1453Ð1461, 1453Ð1461
 
 \bibitem[{{Arun} {et~al.}(2005){Arun}, {Iyer}, {Sathyaprakash}, \&
   {Sundararajan}}]{ArunPE}
@@ -11,14 +16,24 @@
 {Buonanno}, A., {Iyer}, B.~R., {Ochsner}, E., {Pan}, Y., \& {Sathyaprakash},
   B.~S. 2009, \prd, 80, 084043, 084043
 
+\bibitem[{Corsi {et~al.}(2012)Corsi, Collaboration, \&
+  Collaboration}]{Corsi2012}
+Corsi, A., Collaboration, f. t. L.~S., \& Collaboration, f. t.~V. 2012, 8, 8
+
 \bibitem[{{Cutler} \& {Flanagan}(1994)}]{CutlerFlanagan}
 {Cutler}, C., \& {Flanagan}, {\'E}.~E. 1994, \prd, 49, 2658, 2658
+
+\bibitem[{Fairhurst(2011)}]{Fairhurst2011}
+Fairhurst, S. 2011, Classical and Quantum Gravity, 28, 105021, 105021
 
 \bibitem[{{Finn}(1992)}]{FinnDetection}
 {Finn}, L.~S. 1992, \prd, 46, 5236, 5236
 
 \bibitem[{Gilks(1999)}]{Gilks99}
 Gilks, W.~R. 1999, Markov Chain Monte Carlo In Practice
+
+\bibitem[{Nakar(2007)}]{Nakar2007}
+Nakar, E. 2007, Physics Reports, 442, 166Ð236, 166Ð236
 
 \bibitem[{{Poisson} \& {Will}(1995)}]{PoissonWill}
 {Poisson}, E., \& {Will}, C.~M. 1995, \prd, 52, 848, 848

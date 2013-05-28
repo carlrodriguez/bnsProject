@@ -92,7 +92,7 @@ Within the next five years, the Advanced LIGO/Virgo network will have reached a 
    detections of binary neutron star systems.  We find the recovery of the individual masses to be within fractionally within 
    10\% at the 65\% confidence level for equal-mass systems, and within 2\% for unequal-mass systems.
      We also report the average uncertainties on the sky-locations, luminosity distance, and orbital inclinations of randomly 
-     distributed sources that can be achieved by different network configurations. \carl{[PUT IN SA VALUES FOR SKY LOCATION]}
+     distributed sources that can be achieved by different network configurations.
 \end{abstract}
 
 \maketitle
@@ -418,7 +418,7 @@ the time-averaged sensitivity of a given detector to a specific frequency.  Igno
       noise \emph{is} the mean defined by the power-spectral density.  This ``zero-noise'' parameter estimation
        provides a statistical statement on the measurable uncertainties, and is what is reported here.  In Section
         \ref{noiseSection} we provide an example of parameter estimation in several non-zero noise realizations
-compared to the zero-noise equivelant. 
+compared to the zero-noise equivalent \carl{[TYSON WILL WRITE]}. 
 
 
 \begin{comment}
@@ -516,7 +516,7 @@ implicitly calculating a Monte-Carlo integral over all other parameters.
 
 \begin{figure}[h!]
   \centering
- \includegraphics[trim=0cm 0cm 2cm 0cm, clip=false,scale=0.56]{1414masses2D.pdf}
+ \includegraphics[trim=1cm 0cm 2cm 0cm, clip=false,scale=0.63]{1414masses2D.pdf}
  \caption{2D marginalized posterior probability density functions for the mass parameters recovered in typical a $1.4M_{\odot}/1.4M_{\odot}$ system.  The posteriors are plotted in terms of parameters used in the waveform, chirp mass ($\mathcal{M}_C$) and the mass ratio ($q$), and in the individual component masses of the binary ($M_1$ and $M_2$).  In the $\chmass$-$q$ space, the posterior would resemble a Gaussian if not for the limitation of $q \leq 1$.  The presence of the $q$ cutoff and the convention that $M_1 \geq M_2$ inform the non-Gaussian features present.  When projected as 1D marginalized posteriors, the component masses resemble the posterior PDFs shown in figure \ref{metaMassPDFs}.}
   \label{1414masses}
 \end{figure}
@@ -524,7 +524,7 @@ implicitly calculating a Monte-Carlo integral over all other parameters.
 
 \begin{figure}[h!]
   \centering
- \includegraphics[trim=0cm 0cm 2cm 0cm, clip=false,scale=0.56]{125masses2D.pdf}
+ \includegraphics[trim=1cm 0cm 2cm 0cm, clip=false,scale=0.63]{125masses2D.pdf}
  \caption{Similar to Figure~\ref{1414masses}, for a typical $1M_{\odot}/2.5M_{\odot}$ system.  The unequal mass ratio displaces the posterior PDFs from the $q \leq 1$ present in the equal mass case, yielding a Gaussian PDF in both the $\chmass$-$q$ and $M_1$-$M_2$ spaces.}
   \label{125masses}
 \end{figure}
@@ -532,7 +532,7 @@ implicitly calculating a Monte-Carlo integral over all other parameters.
 \begin{figure*}[ht!]
   \centering
  \includegraphics[trim=2cm 0cm 2cm 0cm, clip=false,scale=0.7]{newMasses.pdf}
- \caption{Mass PDFs for the four BNS systems, averaged over each of the 40 injections.  The average is reported since, in practice, there was quantitatively no difference between the recovered PDFs for different systems with identical masses and SNRs.  Notice how the PDFs for systems with identical mass ratios but different total masses are identical when normalized to the true total mass.}
+ \caption{Mass PDFs for the four BNS systems, averaged over each of the 40 injections.  The average is reported since, in practice, there was quantitatively no difference between the recovered PDFs for different systems with identical masses and SNRs.  Systems with identical mass ratios but different total masses have quantitatively identical PDFs when normalized to the true total mass.}
   \label{metaMassPDFs}
 \end{figure*}
 
@@ -567,7 +567,7 @@ posterior probability for system.  See Figure~\ref{metaMassPDFs}.  Notice how wh
  normalized to the injected values, the recovery of the component masses depends only on the mass ratio.  
  Furthermore, for systems of equal masses, the posterior barely extends beyond 15\% of the injected values.  
  If one assumes that the threshold between black
-   holes and neutron stars lies at approximately $3M_{\odot}$ \carl{[CITE WILL]}, then it might be assumed that
+   holes and neutron stars lies at approximately $3M_{\odot}$, then it might be assumed that
    the mass recovery would allow one to discriminate between black holes and neutron stars.
    
 Unfortunately, this will not be feasible in practice.  We have neglected the spin of the binaries, which will be highly
@@ -589,24 +589,27 @@ neglects the effects of spin which can substantially increase these values.
    
 \begin{figure}[h!]
   \centering
- \includegraphics[trim=0cm 0cm 0cm 0cm, clip=true,scale=0.8]{distIota2D.pdf}
- \caption{Typical marginalized 2D mass PDFs for luminosity distance $D$ and orbital inclination $\iota$. }
+ \includegraphics[trim=0cm 0cm 0cm 0cm, clip=true,scale=0.75]{distIota2D.pdf}
+ \caption{Typical marginalized 2D mass PDFs for luminosity distance $D$ and orbital inclination $\iota$. Notice the bimodal 
+ distribution on the first PDF, that can occur when a system is detected nearly ``edge-on'' ($\iota \approx \pi/2$).  In general,
+ the degeneracy between distance and inclination forces the PDF into one of these two paths when the system is not edge-on,
+  as seen in the second and third PDFs.}
  \label{distIotaPDF}
 \end{figure}
 
-Binary neutron star systems (along with neutron star/black hole systems) are one of the best candidates for progenitors of short gamma-ray bursts \carl{CITE}.  After merger, the remnant is believed to emit the burst along the axis of orbital angular momentum, making the inclination of the binary system of particular interest to gamma-ray astronomy \carl{[CITE]}.  The inclination is detected as a relative amplitude difference between the two gravitational-wave polarization, such that to lowest order
+Binary neutron star systems (along with neutron star/black hole systems) are one of the best candidates for progenitors of short-hard gamma-ray bursts \citep[and references therein]{Nakar2007}.  After merger, the remnant is believed to emit the burst along the axis of orbital angular momentum, making the inclination of the binary system of particular interest to gamma-ray astronomy \citep{LSCGRB2010,Corsi2012}.  The inclination is detected as a relative amplitude difference between the two gravitational-wave polarization, such that to lowest order
 
 \begin{align}
 h_+(f) &= \frac{1+\cos^2(\iota)}{2 D} \tilde{h}(f) \nonumber \\
 h_\times(f) &= i \frac{\cos(\iota)}{D}\tilde{h}(f)
 \end{align}
 
-\noindent It should be apparent that the luminosity distance $D$ and the inclination $\iota$ can be highly correlated in any parameter estimation study, given that both terms modulate the amplitude of a gravitational wave \carl{[QUANTIFY THIS]}, 
+\noindent It should be apparent that the luminosity distance $D$ and the inclination $\iota$ can be highly correlated in any parameter estimation study.
 
 Given this degeneracy, it should come as no surprise that the 2D marginalized posteriors of distance
  and inclination are the worst of the six physically interesting parameters.  Four typical 2D PDFs are
-  presented in Figure~\ref{distIotaPDF}.  Notice the large, bimodal uncertainties 
-present in some of the 2D PDFs along the $\iota$ axis, due to the similarity between the evaluated
+  presented in Figure~\ref{distIotaPDF}.  Notice the bimodal uncertainty 
+present in the top 2D PDF along the $\iota$ axis, due to the similarity between the evaluated
  likelihoods at $\iota$ and $\iota + \pi/2$.  As the majority of the information extracted via parameter 
  estimation is from the phase of the signal, the recovery of a posterior in $D$-$\iota$ space will be 
  limited, even during the Advanced LIGO/Virgo era; however, there will be cases (such as the first 
@@ -632,7 +635,7 @@ on the location of the source with respect to the detector network in question.
 For the HLV configuration, the three-detector network can only localize signals to one of
 two points in the sky.  That is, when using only time-of-arrival information, there is 
 equal support in the probability density functions near true location and near the 
-point reflected through the plane formed by the three detectors.  See  \carl{[CITE FAIRHURST]} for
+point reflected through the plane formed by the three detectors.  See  \cite{Fairhurst2011} for
  a global analysis of time-of-arrival accuracy for various network configurations, including those considered
  here.  
   
@@ -679,14 +682,14 @@ The sky location uncertainties for HLV and HLVI are shown in Figures \ref{2525Sk
 
 \begin{figure}[ht!]
   \centering
- \includegraphics[trim=0cm 0cm 0cm 0cm, clip=true,scale=0.59]{noisePDF.pdf}
+ \includegraphics[trim=0cm 0cm 0cm 0cm, clip=true,scale=0.52]{noisePDF.pdf}
  \caption{The effects of a non-zero noise realization on the recovered PDF for five different Gaussian realizations of the Advanced LIGO noise curve.  Each PDF represents the recovery of the same $1M_{\odot}/2.5M_{\odot}$ signal in a different noise curve, picked at random from the Gaussian colored noise defined by the Advanced LIGO power spectral density.  Notice how the curve is relatively unchanged, but usually assumes a Gaussian PDF displaced from the true value.  This only holds true for glitch-free data, which is an unrealistic idealization when compared to real data.}
  \label{noisePDFs}
 \end{figure}
   
   
 
-We have performed the current analysis on zero-noise injections for two reason.  First, the results of a zero-noise realization
+We have performed the current analysis on zero-noise injections for two reason.  First, the results of a zero-noise 
 analysis are identical to those that would be achieved by averaging the results of multiple identical injections 
 in different Gaussian noise realizations, as was argued in Section \ref{waveformSection}.  The second reason is simply
 that no good model exists for the true (decidedly non-Gaussian) noise that will arrive with a single detection candidate,
@@ -697,7 +700,7 @@ distribution to be translated away from the true value; however, these displacem
 according to the zero-noise distribution \citep{Inadequacies}.  Once averaged, the mean
 uncertainties should be equal to the uncertainty drawn from the zero-noise runs.  
 
-As a demonstration of this, we injected a single $1.4M_{\odot}/1.4M_{\odot}$ system, 
+As a demonstration of this, we injected a single $1M_{\odot}/2.5M_{\odot}$ system, 
 detected in HLVI,  into 5 separate realizations of Gaussian noise colored by the Advanced LIGO PSD, 
 and compared the results to the same MCMC recovery in the zero-noise case.  This example
 can be seen for one-dimensional marginalization of $\chmass$ and $q$ in Fig. \ref{noisePDFs}.  In effect, the ``real answer'' that will be recovered is a single PDF with similar 
@@ -708,7 +711,7 @@ realization of Gaussian noise, but the effects of glitches in the data.  These t
 glitches have a variety of well-known and not-so-well-known physical causes in the instrument,
 and can cause substantially greater errors in parameter recovery than any specific realization noise realizations.  This has already been addressed for the case of space-based gravitational-wave
 detectors (LISA), and is currently being implemented in \texttt{lalinference\_mcmc} 
-\carl{[CITE TYSON, PROTO-TYSON]}.
+\carl{[TYSON WILL WRITE]}.
 
 
 \begin{comment}
@@ -759,7 +762,8 @@ network configurations. This essentially quantifies the widths of the posteriors
 
 \begin{table*}[t!]
 \centering
-\caption{\carl{65\% confidence intervals}}
+\caption{Mean 65\% confidence intervals for intrinsic parameters for each of the four systems considered.  We report the confidence intervals of quantities measured, as well as the component masses and total mass.  Although the results for the 
+HLV and HLVI configurations are quantitatively identical, we report them separately for consistancy.}
 \begin{tabular}{lcccccccccc}
 
 \\HLVI\\
@@ -797,34 +801,38 @@ $2.5M_{\odot}-2.5M_{\odot}$ & \vline & $2.30\times 10^{-4}$ & \vline & $8.53\tim
  
 \begin{table*}[t!]
 \centering
-\caption{\carl{65\% confidence intervals ADD SKY LOCATION SOLID ANGLE UNCERTAINTIES}}
-\begin{tabular}{lcccccccc}
+\caption{Mean 65\% confidence intervals of extrinsic parameters for each of the four systems considered.  As expected,
+there exists a substantial improvement in the sky localization capabilities of the four-detector HLVI configuration over
+the three-detector HLV configuration.  Note that the solid-angle sky-location confidence intervals, $\Delta\Omega$, are 
+calculated directly on the 2D sphere, not by combining the $\alpha$ and $\delta$ uncertainties.}
+\begin{tabular}{lcccccccccc}
 
 \\HLVI\\
 \hline\hline
- System & \vline & $\Delta D$ $(mpc)$ & \vline & $\Delta |\cos(\iota)|$ & \vline & $\Delta \alpha$ $(rad)$& \vline &  $\Delta \delta$   $(rad)$\\
+ System & \vline & $\Delta D$ $(mpc)$ & \vline & $\Delta |\cos(\iota)|$ & \vline & $\Delta \alpha$ $(deg)$& \vline &  $\Delta \delta$   $(deg)$ & \vline & $\Delta\Omega$ $(deg^2)$\\
 \hline\hline
- $1M_{\odot}-1M_{\odot}$ & \vline & $3.56\times 10^{1}$ & \vline & $2.20\times 10^{-1}$ & \vline & $1.02\times 10^{-1}$ & \vline & $6.22\times 10^{-2}$ \\
+ $1M_{\odot}-1M_{\odot}$ & \vline & $3.64\times 10^{1}$ & \vline & $2.23\times 10^{-1}$ & \vline & $1.45$ & \vline & $1.48$ & \vline & $1.88$\\
 \hline
- $1.4M_{\odot}-1.4M_{\odot}$ & \vline & $5.52\times 10^{1}$ & \vline & $2.56\times 10^{-1}$ & \vline & $2.60\times 10^{-2}$ & \vline & $2.62\times 10^{-2}$ \\
+ $1.4M_{\odot}-1.4M_{\odot}$ & \vline & $5.52\times 10^{1}$ & \vline & $2.56\times 10^{-1}$ & \vline & $1.49$ & \vline & $1.50$ & \vline & $2.26$\\
 \hline
- $1M_{\odot}-2.5M_{\odot}$  & \vline & $6.48\times 10^{1}$ & \vline & $2.93\times 10^{-1}$ & \vline & $2.68\times 10^{-2}$ & \vline & $2.87\times 10^{-2}$ \\\hline
- $2.5M_{\odot}-2.5M_{\odot}$ & \vline & $1.06\times 10^{2}$ & \vline & $2.99\times 10^{-1}$ & \vline & $1.80\times 10^{-1}$ & \vline & $2.80\times 10^{-2}$ \\
+ $1M_{\odot}-2.5M_{\odot}$  & \vline & $6.48\times 10^{1}$ & \vline & $2.93\times 10^{-1}$ & \vline & $1.54$ & \vline & $1.64$ & \vline & $2.10$\\
+ \hline
+ $2.5M_{\odot}-2.5M_{\odot}$ & \vline & $1.06\times 10^{2}$ & \vline & $2.99\times 10^{-1}$ & \vline & $1.03\times 10^{1}$ & \vline & $1.61$ & \vline & $2.22$\\
 \hline\hline
 
 \\
 HLV\\
 
 \hline\hline
- System & \vline & $\Delta D$ $(mpc)$ & \vline & $\Delta |\cos(\iota)|$ & \vline & $\Delta \alpha$ $(rad)$& \vline &  $\Delta \delta$   $(rad)$\\
+ System & \vline & $\Delta D$ $(mpc)$ & \vline & $\Delta |\cos(\iota)|$ & \vline & $\Delta \alpha$ $(deg)$& \vline &  $\Delta \delta$   $(deg)$ & \vline & $\Delta\Omega$ $(deg^2)$\\
 \hline\hline
- $1M_{\odot}-1M_{\odot}$ & \vline & $4.34\times 10^{1}$ & \vline & $3.04\times 10^{-1}$ & \vline & $2.53\times 10^{-1}$ & \vline & $1.09\times 10^{-1}$ \\
+ $1M_{\odot}-1M_{\odot}$ & \vline & $4.34\times 10^{1}$ & \vline & $3.04\times 10^{-1}$ & \vline & $1.45\times 10^{1}$ & \vline & $6.24$ & \vline & $5.57$\\
 \hline
- $1.4M_{\odot}-1.4M_{\odot}$  & \vline & $5.32\times 10^{1}$ & \vline & $2.87\times 10^{-1}$ & \vline & $1.21\times 10^{-1}$ & \vline & $1.24\times 10^{-1}$ \\
+ $1.4M_{\odot}-1.4M_{\odot}$  & \vline & $5.32\times 10^{1}$ & \vline & $2.87\times 10^{-1}$ & \vline & $6.92$ & \vline & $7.11$ & \vline & $8.35$\\
 \hline
-  $1M_{\odot}-2.5M_{\odot}$& \vline & $6.13\times 10^{1}$ & \vline & $3.12\times 10^{-1}$ & \vline & $4.68\times 10^{-2}$ & \vline & $7.44\times 10^{-2}$ \\
+  $1M_{\odot}-2.5M_{\odot}$& \vline & $6.11\times 10^{1}$ & \vline & $3.11\times 10^{-1}$ & \vline & $2.67$ & \vline & $4.20$ & \vline & $7.39$\\
 \hline
- $2.5M_{\odot}-2.5M_{\odot}$ & \vline & $1.04\times 10^{2}$ & \vline & $3.42\times 10^{-1}$ & \vline & $1.97\times 10^{-1}$ & \vline & $5.77\times 10^{-2}$ \\
+ $2.5M_{\odot}-2.5M_{\odot}$ & \vline & $1.04\times 10^{2}$ & \vline & $3.42\times 10^{-1}$ & \vline & $1.13\times 10^{1}$ & \vline & $3.31$ & \vline & $6.27$\\
 \hline\hline
 
 
@@ -851,16 +859,18 @@ distances themselves.  However, it was found that the cosine of the orbital incl
 angles in coincidence with electromagnetic observations.
 
 Finally, we reported the ability of advanced networks to constrain the sky location of BNS signals.  It was found that 
-the three detector configuration, consisting of the Washington and Louisiana LIGO sites plus the Italian Virgo site,
- was able to constrain all signals with within 50 $deg^2$ on the sky, while the four-detector
+the three-detector configuration, consisting of the Washington and Louisiana LIGO sites plus the Italian Virgo site,
+ was able to constrain all signals with within 60 $deg^2$ on the sky at the 65\% confidence interval, with an average
+65\% confidence interval of $\sim 7$ $deg^2$.  Meanwhile, the four-detector
 configuration, consisting of the three-detector sites plus a LIGO India detector, was able to localize the sky-locations
-to within \carl{[QUOTE REAL DEG2 HERE, NOT RA AND DEC]}.
+to within  13 $deg^2$ on the sky at the 65\% confidence interval, with an average
+65\% confidence interval of $\sim 2$ $deg^2$.
 
 It should be noted that there are two distinct types of systematic error, highly relevant to the gravitational-wave parameter estimation problem, that we have not addressed in this study.  First, we have studied the parameter estimation uncertainties under the assumption that the waveform template we use to recover the signal template exactly matches the fully relativistic waveforms nature provides.  In practice, these waveforms are only approximations to the fully general-relativistic physics required to solve the problem.  See \carl{[CITE]} for a better description of the systematic uncertainties present in the most common waveform families.  Additionally, there are several astrophysical assumptions that can potentially contribute
 to systematic uncertainties in the waveforms, such as the neutron-star equation of state, possible modifications to 
-General Relativity, etc.
+General Relativity, eccentricity, etc.
 
-Secondly, as stated above, the noise realization that we have employed here is an substantial idealization.  In practice the noise levels of Advanced LIGO and Advanced Virgo will be highly variable over time, and will \emph{not} be stationary or Gaussian, as is commonly assumed.  Unfortunately, there is no reliable or simple way to simulate the sort of non-Gaussian detector glitches and instrumentation effects that will arise in any advanced gravitational-wave detector.  Since the realization of noise will be the primary factor in the deflection of true signal PDFs from the averages quoted here \carl{TYSON WILL WRITE}
+Secondly, as stated above, the noise realization that we have employed here is an substantial idealization.  In practice the noise levels of Advanced LIGO and Advanced Virgo will be highly variable over time, and will \emph{not} be stationary or Gaussian, as is commonly assumed.  Unfortunately, there is no reliable or simple way to simulate the sort of non-Gaussian detector glitches and instrumentation effects that will arise in any advanced gravitational-wave detector.  Since the realization of noise will be the primary factor in the deflection of true signal PDFs from the averages quoted here \carl{[TYSON WILL WRITE]}
 
 In this study, we have also neglected the effects of spin in the parameter space, electing to focus on the absolute basic
  parameters that will be measured routinely in the Advanced Detector era.  Given the high degree of coupling
@@ -871,12 +881,8 @@ black holes.  Future work will explore this potential mass/spin degeneracy, with
 \carl{
 \section{TODO}
  \begin{itemize}
- \item Discuss the problem of no-spin/how that screws up our ability to constrain masses (BH vs NS)
- \item Be sure to add links to the 1d credible intervals in the abstract, introduction, conclusion, and at the end of each subsection
- \item Also point out how this is a idealization, not an average case (SNR 20 vs reality, again NS vs BH)
  \item Finish adding bibliography/sources
  \item double check the distribution of sources in Distance/Iota; make sure iota is actually uniform in cos(i)
- \item also, check the relative SNRs in each detector for the D-i plots, see if you can tell what's making them double peaked 
  \end{itemize}
  }
 

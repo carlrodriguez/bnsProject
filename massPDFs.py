@@ -10,8 +10,8 @@ def m1m2fromMcq(Mc,q):
 
 	return m1, m2
 
-massBins = ['11','114','125','2525']
-chirpMasses = [0.870661, 1.218771, 1.348809, 2.176374]
+massBins = ['11','1414','125','2525']
+chirpMasses = [0.8705506, 1.218771, 1.348809, 2.176376]
 massRatios = [1,1,0.4,1]
 indivMasses = [(1.,1.),(1.4,1.4),(1.,2.5),(2.5,2.5)]
 Bin = 0
@@ -32,19 +32,20 @@ for number in massBins:
 		M  = []
 		k = 0
 
-		for i in range(0,len(mcdata),50):
-			q.append(float(qdata[i].rstrip())*massRatios[Bin])
-			mc.append(float(mcdata[i].rstrip()))
+		for i in range(0,len(mcdata),20):
+			q.append(float(qdata[i].rstrip()))
+			mc.append(float(mcdata[i].rstrip())/chirpMasses[Bin])
 			m1Temp, m2Temp = m1m2fromMcq(mc[k]*chirpMasses[Bin],q[k])
 			m1.append(m1Temp / indivMasses[Bin][1])
 			m2.append(m2Temp / indivMasses[Bin][0])
 			M.append((m1Temp + m2Temp)/sum(indivMasses[Bin]))
 			k += 1
+		print min(M)
 
 		m1KDE = scipy.stats.gaussian_kde(m1)
 		m2KDE = scipy.stats.gaussian_kde(m2)
 		mcKDE = scipy.stats.gaussian_kde(mc)
-		mKDE  = scipy.stats.gaussian_kde(mc)
+		mKDE  = scipy.stats.gaussian_kde(M)
 		qKDE  = scipy.stats.gaussian_kde(q)
 
 		Xm1 = []
@@ -93,7 +94,7 @@ for number in massBins:
 		l2=legend([lb1,lb2,lb3,lb4],["$1M_{\odot} - 1M_{\odot}$","$1.4M_{\odot} - 1.4M_{\odot}$","$1M_{\odot} - 2.5M_{\odot}$","$2.5M_{\odot} - 2.5M_{\odot}$"], loc='upper left', title="Neutron Star Masses")
 		gca().add_artist(l1)
 		xlabel('Component Masses ($M_{\odot}/M_{\odot}^{inject}$)', fontsize=18)
-		title('Mass Probabilitiy Density Functions', fontsize=26)
+		title('Mass Posterior PDFs', fontsize=26)
 
 #		mcMin = min(mc)
 #		mcMax = max(mc)
@@ -112,8 +113,8 @@ for number in massBins:
 #		ax2.grid(True)
 #		xlabel('Chirp Masses ($M_{\odot}/M_{\odot}^{inject}$)', fontsize=18)
 
-		mMin = 0.9995# min(M)
-		mMax = 1.0005#max(M)
+		mMin = min(M)
+		mMax = max(M)
 		dx = (mMax - mMin) / 1000.
 		n = mMin
 
