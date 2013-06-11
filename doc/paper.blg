@@ -1,0 +1,102 @@
+This is BibTeX, Version 0.99d (TeX Live 2011)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: paper.aux
+The style file: apj.bst
+Database file #1: paperNotes.bib
+Database file #2: paper.bib
+Warning--entry type for "ADVLIGONoise" isn't style-file defined
+--line 940 of file paper.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+You can't pop an empty literal stack for entry LSCGRB2010
+while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry RatesPaper
+while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry ArunPE
+while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry Baird2013
+while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry BuonannoWaveform
+while executing---line 1676 of file apj.bst
+Warning--empty journal in Corsi2012
+You can't pop an empty literal stack for entry Corsi2012
+while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry CutlerFlanagan
+while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry Fairhurst2011
+while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry FinnDetection
+while executing---line 1676 of file apj.bst
+ptr=1, stack=
+ (Chapman and Hall/CRC)
+---the literal stack isn't empty for entry Gilks99
+while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry Hannam2013
+while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry AdvLIGO
+while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry VickyRates
+while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry Metzger2013
+while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry Nakar2007
+while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry PoissonWill
+while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry spinspiral2010
+while executing---line 1676 of file apj.bst
+Warning--empty journal in Inadequacies
+You can't pop an empty literal stack for entry Vallisneri
+while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry spinspiral2009
+while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry nestedsampling2010
+while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry Veitch2012
+while executing---line 1676 of file apj.bst
+Warning--empty institution in AdvVirgo
+ptr=1, stack=
+Technical Report VIR-0027A-09
+---the literal stack isn't empty for entry AdvVirgo
+while executing---line 1676 of file apj.bst
+You've used 26 entries,
+            3049 wiz_defined-function locations,
+            850 strings with 10098 characters,
+and the built_in function-call counts, 13795 in all, are:
+= -- 1162
+> -- 806
+< -- 13
++ -- 268
+- -- 289
+* -- 1180
+:= -- 2420
+add.period$ -- 26
+call.type$ -- 26
+change.case$ -- 166
+chr.to.int$ -- 26
+cite$ -- 29
+duplicate$ -- 524
+empty$ -- 952
+format.name$ -- 321
+if$ -- 2888
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 24
+newline$ -- 82
+num.names$ -- 104
+pop$ -- 190
+preamble$ -- 1
+purify$ -- 166
+quote$ -- 0
+skip$ -- 560
+stack$ -- 0
+substring$ -- 944
+swap$ -- 1
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 231
+warning$ -- 3
+while$ -- 113
+width$ -- 0
+write$ -- 277
+(There were 22 error messages)
