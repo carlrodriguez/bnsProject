@@ -11,6 +11,8 @@ You can't pop an empty literal stack for entry LSCGRB2010
 while executing---line 1676 of file apj.bst
 You can't pop an empty literal stack for entry RatesPaper
 while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry Allen:2002jw
+while executing---line 1676 of file apj.bst
 You can't pop an empty literal stack for entry ArunPE
 while executing---line 1676 of file apj.bst
 You can't pop an empty literal stack for entry Baird2013
@@ -36,6 +38,8 @@ You can't pop an empty literal stack for entry AdvLIGO
 while executing---line 1676 of file apj.bst
 You can't pop an empty literal stack for entry VickyRates
 while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry Littenberg:2010gf
+while executing---line 1676 of file apj.bst
 You can't pop an empty literal stack for entry Metzger2013
 while executing---line 1676 of file apj.bst
 You can't pop an empty literal stack for entry Nakar2007
@@ -45,6 +49,8 @@ while executing---line 1676 of file apj.bst
 You can't pop an empty literal stack for entry spinspiral2010
 while executing---line 1676 of file apj.bst
 Warning--empty journal in Inadequacies
+You can't pop an empty literal stack for entry Rover:2011qd
+while executing---line 1676 of file apj.bst
 You can't pop an empty literal stack for entry Vallisneri
 while executing---line 1676 of file apj.bst
 You can't pop an empty literal stack for entry spinspiral2009
@@ -58,45 +64,45 @@ ptr=1, stack=
 Technical Report VIR-0027A-09
 ---the literal stack isn't empty for entry AdvVirgo
 while executing---line 1676 of file apj.bst
-You've used 26 entries,
+You've used 29 entries,
             3049 wiz_defined-function locations,
-            850 strings with 10098 characters,
-and the built_in function-call counts, 13795 in all, are:
-= -- 1162
-> -- 806
-< -- 13
-+ -- 268
-- -- 289
-* -- 1180
-:= -- 2420
-add.period$ -- 26
-call.type$ -- 26
-change.case$ -- 166
-chr.to.int$ -- 26
-cite$ -- 29
-duplicate$ -- 524
-empty$ -- 952
-format.name$ -- 321
-if$ -- 2888
+            873 strings with 10648 characters,
+and the built_in function-call counts, 15434 in all, are:
+= -- 1309
+> -- 878
+< -- 15
++ -- 292
+- -- 314
+* -- 1313
+:= -- 2690
+add.period$ -- 29
+call.type$ -- 29
+change.case$ -- 185
+chr.to.int$ -- 29
+cite$ -- 32
+duplicate$ -- 585
+empty$ -- 1075
+format.name$ -- 351
+if$ -- 3247
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 24
-newline$ -- 82
-num.names$ -- 104
-pop$ -- 190
+missing$ -- 27
+newline$ -- 91
+num.names$ -- 116
+pop$ -- 207
 preamble$ -- 1
-purify$ -- 166
+purify$ -- 185
 quote$ -- 0
-skip$ -- 560
+skip$ -- 640
 stack$ -- 0
-substring$ -- 944
+substring$ -- 1091
 swap$ -- 1
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 231
+type$ -- 258
 warning$ -- 3
-while$ -- 113
+while$ -- 128
 width$ -- 0
-write$ -- 277
-(There were 22 error messages)
+write$ -- 310
+(There were 25 error messages)

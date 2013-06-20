@@ -137,7 +137,7 @@ analyzing the parameter space of each candidate with a Bayesian inference techni
  we will be able to make precise, scientifically meaningful
 statements about the physics of these systems.  To 
 that end, we employ a Markov-Chain Monte Carlo sampling algorithm, 
-\texttt{lalinference\_mcmc}, included in the LIGO Application Library parameter
+\texttt{lalinference\_mcmc}, included in the LIGO Algorithm Library parameter
 estimation code, \texttt{LALInference}, to analyze the parameter space of BNS systems.
 
 By employing the full parameter-estimation machinery that will eventually be
@@ -207,11 +207,11 @@ where $S_n(f)$ is the one-sided power spectral density (PSD) as a function
 of frequency, and $\tilde{a}(f)$ and $\tilde{b}(f)$ are the Fourier
 transforms of the time-domain data $a(t)$ and $b(t)$.  If we pick a set of parameters $\thpara$ such that
 $h(\thpara) = h_0$, then the posterior \eqref{posterior}
-will be near a global maximum; however, the presence of noise will in
+will be near a global maximum; however, our choice of prior the presence of noise will in
 general deflect the maximum of our posterior away from the value at
-$\thpara_0$. That is, in the presence of noise, there is
-no guarantee that the maximum-likelihood of our signal corresponds to
-the true parameters of the system. 
+$\thpara_0$.  Therefore, the maximum posterior parameters do not necessarily 
+correspond to the true parameters of the source, so when interpreting parameter
+ estimation results we must consider the full posterior distribution function.
  
 Once we have the likelihood of the signal \eqref{likelihood}, we
 employ Bayes Theorem to obtain the posterior probability of the system
@@ -235,8 +235,9 @@ from our \textit{a priori} knowledge of astrophysical systems.  We employ priors
 
 \begin{itemize}
 \item uniform in component masses from $0.8M_{\odot} \leq M_{1,2} \leq 30M_{\odot}$, with a minimum chirp mass  \eqref{eqRatioCM} of 0.6 $M_{\odot}$,
-\item uniform in volume, which implies a luminosity distance prior of $p(D) = D^2 dD$, and
-\item uniform in all other parameters.
+\item uniform in volume, which implies a luminosity distance prior of $p(D) = D^2 dD$,
+\item uniform in coalescence time over the segment of data being analyzed, and
+\item uniform in all other parameters, with angular parameters being flat over their corresponding domains.
 \end{itemize}
 
 \noindent  The mass priors listed here are the generic priors used in follow-up analysis, not specifically for BNS systems.  While we could have used a prior with a lower component mass cutoff for the present study, in practice the higher prior boundary does not effect our current analysis.
@@ -409,15 +410,32 @@ in the context of optimal detection candidates.
 Finally, note that the power-spectral density that defines the inner product \eqref{innerProduct} is simply 
 the time-averaged sensitivity of a given detector to a specific frequency.  Ignoring non-Gaussian glitches,
  any stretch of data should contain a specific noise realization drawn from a Gaussian colored by the PSD.
-   However, what we are interested in is not the parameter estimation that can occur in a specific draw
-    from this probability of noises, but the uncertainties averaged over all possible noise
-     realizations.\footnote{Similarly to how the Fisher matrix formalism can provide the Cramer-Rao bound averaged over
-     all noise realizations} Since our noise model is assumed to be Gaussian, it is unnecessary to recover the
-      parameters from a large sample of identical waveforms in different noise; we can simply assume the 
-      noise \emph{is} the mean defined by the power-spectral density.  This ``zero-noise'' parameter estimation
-       provides a statistical statement on the measurable uncertainties, and is what is reported here.  In Section
-        \ref{noiseSection} we provide an example of parameter estimation in several non-zero noise realizations
-compared to the zero-noise equivalent \carl{[TYSON WILL WRITE]}. 
+%   However, what we are interested in is not the parameter estimation that can occur in a specific draw
+  %  from this probability of noises, but the uncertainties averaged over all possible noise
+     realizations. Without a realistic model including the actual instrument sensitivity,
+      non stationary noise, and uncertainty in the PSD we cannot 
+     accurately simulate GW data to the point of making precise predictions about parameter 
+     estimation capabilities.  Furthermore, the posterior distribution from a future 
+     detection will be influenced by 
+     the realization of the noise at the time of the detection.  Because of this, we 
+     elect to focus only on the statistical 
+     errors due to the flexibility of the waveforms and the expected sensitivity of 
+     the advanced era detectors and suppress 
+     any effects of detector noise by not including a noise realization in our simulated data.
+       Consequently, what we recover with the MCMC  
+     could be interpreted as the posterior distribution function for each source averaged over all
+      possible (Gaussian) noise realizations 
+     assuming we have the correct PSD.    \footnote{Similarly to how the Fisher matrix formalism can
+      provide the Cramer-Rao bound averaged over
+     all noise realizations.  Unlike a Fisher matrix study, we make no assumptions about the 
+     shape of the posterior distribution function, nor the location of the peak, while still requiring a
+      feasible number of MCMC runs 
+     to sufficiently cover parameter space, which would not be the case had we needed to 
+     average several noise-dependent results.} To check that our reported statistical errors
+     are not in gross disagreement with those obtained in the presence of noise,  we selected a 
+       particular simulated signal to perform parameter estimation in several noise realizations.  
+       The comparison of the noise-dependent and noise-free results
+       can be found in \ref{noiseSection}.
 
 
 \begin{comment}
@@ -476,7 +494,7 @@ our non-spinning BNS problem as stated in section \ref{waveformSection}.  Note h
 even for parameters with excellent recovery, the peak of the 1D Gaussian is displaced from 
 the injected value (in dashed red).  This is not due to a systematic bias, but is caused by the 
 marginalization of a single dimension from the full 9D posterior space.  To better see this effect, 
-compare the 1D PDF for $\mathcal{M}_{c}$ and $q$ with the 2D marginalized PDF in Figure~\label{9dPDF}}
+compare the 1D PDF for $\mathcal{M}_{c}$ and $q$ with the 2D marginalized PDF in Figure~\ref{1414masses}}
 \end{figure*}
 
 Of the nine parameters in the domain of the waveform, only six are particularly physically
@@ -484,13 +502,13 @@ interesting: the masses of the two binaries, $M_1$ and $M_2$, the orbital inclin
 $\iota$, the angular position on the sky, $\alpha$ and $\delta$, and the luminosity 
 distance of the source, $D$.  While the coalescence phase $\phi_c$, the coalescence time
 $t_c$, and the wave polarization $\psi$ must be included in any parameter estimation of the 
-waveform, they do not encode any information of particular astrophysical interest.
-\footnote{For systems whose components are non-spinning.  The presence of intrinsic angular 
+waveform, they do not encode any information of particular astrophysical interest.\footnote{For systems
+ whose components are non-spinning.  The presence of intrinsic angular 
 momentum will, in general, couple to the coalescence phase and wave polarization.}   
 
 In Figure~\ref{9dPDF}, we provide an example of the nine, 1-dimensional marginalized posterior 
 probability density functions recovered from a single $1.4M_{\odot}/1.4M_{\odot}$ BNS system. 
- These PDFs are the typical of the type of results that will be produced by parameter estimation
+ These PDFs are typical of the type of results that will be produced by parameter estimation
   studies in the advanced  detector era.  Notice that the peak of several parameters, including the 
   chirp mass, $\chmass$,  appears to be displaced from the true values in red.  This effect is due to 
   the reduction of the  9-dimensional PDF to a series of marginalized 1-dimensional PDFs. 
@@ -612,7 +630,7 @@ Given this degeneracy, it should come as no surprise that the 2D marginalized po
 present in the top 2D PDF along the $\iota$ axis, due to the similarity between the evaluated
  likelihoods at $\iota$ and $\iota + \pi/2$.  As the majority of the information extracted via parameter 
  estimation is from the phase of the signal, the recovery of a posterior in $D$-$\iota$ space will be 
- limited, even during the Advanced LIGO/Virgo era; however, there if a gravitational-wave signal is 
+ limited, even during the Advanced LIGO/Virgo era; however, if a gravitational-wave signal is 
  matched to a detected SGRB counterpart (which may occur at the rate of $\sim 3 yr^{-1}$ in Advanced LIGO/Virgo, 
  according to \cite{Metzger2013}), the optical information about the orbital inclination
  will provide an additional constraint on the D-$\iota$ space, vastly improving the luminosity distance recovery
@@ -647,11 +665,13 @@ point reflected through the plane formed by the three detectors.  See  \cite{Fai
      By fitting for the sky location and the polarization simultaneously, the MCMC can often identify
    the correct mode on the sky.  For the four-detector configuration, this concern is irrelevant: even with time-of-arrival
    data alone, the HLVI network can constrain any source to a single mode on the sky.  Even then, there are still locations 
-   on the sky in which two or more detectors are not sensitive to the gravitational-wave signal, distorted, non-Gaussian PDFs.  
+   on the sky in which two or more detectors are not sensitive to the gravitational-wave signal, yielding
+    distorted, non-Gaussian PDFs.  
 
 The sky location uncertainties for HLV and HLVI are shown in Figures \ref{2525SkyLocHLV}
  and \ref{2525SkyLocHLVI} respectively.  We show all four mass bins together, since in practice
-  the mass of the signals has no effect on the recovery of the sky location.  Only the location on 
+  the mass of the signals has no effect on the recovery of the sky location for the considered BNS systems.
+    Only the location on 
   the sky, the network configuration, and the other extrinsic parameters were found to be relevant.  
   In particular, notice the increase in efficiency between the HLV configuration and the HLVI 
   configuration.  In the HLV configuration, there exist points on the sky in which the signal was injected
@@ -685,7 +705,12 @@ The sky location uncertainties for HLV and HLVI are shown in Figures \ref{2525Sk
 \begin{figure}[ht!]
   \centering
  \includegraphics[trim=0cm 0cm 0cm 0cm, clip=true,scale=0.52]{noisePDF.pdf}
- \caption{The effects of a non-zero noise realization on the recovered PDF for five different Gaussian realizations of the Advanced LIGO noise curve.  Each PDF represents the recovery of the same $1M_{\odot}/2.5M_{\odot}$ signal in a different noise curve, picked at random from the Gaussian colored noise defined by the Advanced LIGO power spectral density.  Notice how the curve is relatively unchanged, but usually assumes a Gaussian PDF displaced from the true value.  This only holds true for glitch-free data, which is an unrealistic idealization when compared to real data.}
+ \caption{The effects of a non-zero noise realization on the recovered PDF for five different Gaussian realizations of the 
+ Advanced LIGO noise curve.  Each PDF represents the recovery of the same $1M_{\odot}/2.5M_{\odot}$ signal in a
+  different noise curve, picked at random from the Gaussian colored noise defined by the Advanced LIGO power
+   spectral density, while the gray-shaded curve is the zero-noise PDF.  Notice how the curve is relatively unchanged,
+    but usually assumes a Gaussian PDF displaced from the true value.  This only holds true for glitch-free data, which
+     is an unrealistic idealization when compared to real data.}
  \label{noisePDFs}
 \end{figure}
   
@@ -693,10 +718,12 @@ The sky location uncertainties for HLV and HLVI are shown in Figures \ref{2525Sk
 
 We have performed the current analysis on zero-noise injections for two reason.  First, the results of a zero-noise 
 analysis are identical to those that would be achieved by averaging the results of multiple identical injections 
-in different Gaussian noise realizations, as was argued in Section \ref{waveformSection}.  The second reason is simply
-that no good model exists for the true (decidedly non-Gaussian) noise that will arrive with a single detection candidate,
-Each detection will occur in noisy data, with a specific realization of the PSD provided and with 
-possible instrumentation and environmental glitches.  In the case of a unique Gaussian realization
+in different Gaussian noise realizations, as was argued in Section \ref{waveformSection}.  The second reason is 
+we are not able to predict the characteristics of realistic (often non-Gaussian) advanced detector noise.  
+Attempting to do so would have little chance of being accurate while requiring a huge computational 
+burden to combine the results of many MCMC runs in different noise realizations.
+
+ In the case of a unique Gaussian realization
 of the Advanced-LIGO noise curve, each realization causes the maximum likelihood of the posterior probability 
 distribution to be translated away from the true value; however, these displacements are drawn
 according to the zero-noise distribution \citep{Inadequacies}.  Once averaged, the mean
@@ -709,12 +736,10 @@ can be seen for one-dimensional marginalization of $\chmass$ and $q$ in Fig. \re
 width to the zero-noise PDF, but with the peak likelihood displaced from the true value.  
 
 Of course, the largest concern for gravitational-wave parameter estimation will not be the specific
-realization of Gaussian noise, but the effects of glitches in the data.  These time-series 
-glitches have a variety of well-known and not-so-well-known physical causes in the instrument,
-and can cause substantially greater errors in parameter recovery than any specific noise realizations.  This has already been addressed for the case of space-based gravitational-wave
-detectors (LISA), and is currently being implemented in \texttt{lalinference\_mcmc} 
-\carl{[TYSON WILL WRITE]}.
-
+realization of Gaussian noise, but the effects of non-Gaussianities in the data.  Techniques which build
+ off of the theoretical progress made in~\cite{Allen:2002jw,Rover:2011qd,Littenberg:2010gf} for including
+  glitches in our model for the data, and therefore relaxing the assumptions about stationary and Gaussian
+   noise, are currently under investigation.
 
 \begin{comment}
 \subsection{Timescale for Parameter Estimation}
@@ -765,7 +790,7 @@ network configurations. This essentially quantifies the widths of the posteriors
 \begin{table*}[t!]
 \centering
 \caption{Mean 65\% confidence intervals for intrinsic parameters for each of the four systems considered.  We report the confidence intervals of quantities measured, as well as the component masses and total mass.  Although the results for the 
-HLV and HLVI configurations are quantitatively identical, we report them separately for consistancy.}
+HLV and HLVI configurations are quantitatively identical, we report them separately for consistency.}
 \begin{tabular}{lcccccccccc}
 
 \\HLVI\\
@@ -872,7 +897,7 @@ It should be noted that there are two distinct types of systematic error, highly
 to systematic uncertainties in the waveforms, such as the neutron-star equation of state, possible modifications to 
 General Relativity, eccentricity, etc.
 
-Secondly, as stated above, the noise realization that we have employed here is an substantial idealization.  In practice the noise levels of Advanced LIGO and Advanced Virgo will be highly variable over time, and will \emph{not} be stationary or Gaussian, as is commonly assumed.  Unfortunately, there is no reliable or simple way to simulate the sort of non-Gaussian detector glitches and instrumentation effects that will arise in any advanced gravitational-wave detector.  Since the realization of noise will be the primary factor in the deflection of true signal PDFs from the averages quoted here \carl{[TYSON WILL WRITE]}
+Secondly, as stated above, we have performed our study under idealized detector-noise conditions.  In practice the noise levels of Advanced LIGO and Advanced Virgo can vary with time and contain occasional excursions which are highly non-Gaussian.  Unfortunately, there is no reliable way to predict the sort of non-Gaussian detector glitches and instrumentation effects that will arise in any advanced gravitational-wave detector.  Since the realization of noise will be the primary factor in the deflection of true signal PDFs from the averages quoted here.
 
 In this study, we have also neglected the effects of spin in the parameter space, electing to focus on the absolute basic
  parameters that will be measured routinely in the Advanced Detector era.  Given the high degree of coupling
