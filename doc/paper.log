@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  28 JUN 2013 16:34
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  28 JUN 2013 17:37
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -549,122 +549,122 @@ Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 50.
 
 Class revtex4-1 Warning: Assuming \noaffiliation for authors.
 
-LaTeX Font Info:    Try loading font information for U+lasy on input line 96.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 99.
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 96.
+LaTeX Font Info:    Try loading font information for U+msa on input line 99.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 96.
+LaTeX Font Info:    Try loading font information for U+msb on input line 99.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-Underfull \hbox (badness 1360) in paragraph at lines 144--160
+Underfull \hbox (badness 1360) in paragraph at lines 154--170
 \OT1/cmr/m/n/10 ery that will even-tu-ally be used in the Ad-vanced
  []
 
 [1{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 1024) in paragraph at lines 161--181
+Underfull \hbox (badness 1024) in paragraph at lines 171--193
 \OT1/cmtt/m/n/10 LALInference\OT1/cmr/m/n/10 , and the as-so-ci-ated MCMC sam-p
 ler,
  []
 
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 208.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 219.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 208.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 253.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 219.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 264.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 253.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 264.
 
-Underfull \hbox (badness 1168) in paragraph at lines 275--289
+Underfull \hbox (badness 1168) in paragraph at lines 286--300
 \OT1/cmr/m/n/10 gravitational-wave pa-ram-e-ter es-ti-ma-tion. By us-ing
  []
 
 
-Underfull \hbox (badness 1371) in paragraph at lines 275--289
+Underfull \hbox (badness 1371) in paragraph at lines 286--300
 \OT1/cmr/m/n/10 sam-plers of the pa-ram-e-ter space, in-clud-ing Nested
  []
 
 
-Underfull \hbox (badness 2310) in paragraph at lines 275--289
+Underfull \hbox (badness 2310) in paragraph at lines 286--300
 \OT1/cmr/m/n/10 Sam-pling (\OT1/cmtt/m/n/10 lalinference[]nest\OT1/cmr/m/n/10 ,
  de-scribed in []Veitch
  []
 
 
-Underfull \hbox (badness 1127) in paragraph at lines 275--289
+Underfull \hbox (badness 1127) in paragraph at lines 286--300
 \OT1/cmr/m/n/10 & Vec-chio[] ([]2010[])) and Markov-Chain Monte Carlo
  []
 
-[2] [3] <9dpdf.pdf, id=142, 1300.86pt x 737.15402pt>
+[2]
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 398.
+ [3] <9dpdf.pdf, id=144, 1300.86pt x 737.15402pt>
 File: 9dpdf.pdf Graphic file (type pdf)
  <use 9dpdf.pdf>
-Package pdftex.def Info: 9dpdf.pdf used on input line 573.
+Package pdftex.def Info: 9dpdf.pdf used on input line 597.
 (pdftex.def)             Requested size: 605.9318pt x 405.43596pt.
 
-Overfull \hbox (92.81436pt too wide) in paragraph at lines 573--579
+Overfull \hbox (92.81436pt too wide) in paragraph at lines 597--603
  [][] 
  []
 
-
-LaTeX Warning: Reference `9dPDF' on page 4 undefined on input line 603.
-
-<1414masses2D.pdf, id=149, 466.1415pt x 513.11702pt>
+[4] <1414masses2D.pdf, id=167, 466.1415pt x 513.11702pt>
 File: 1414masses2D.pdf Graphic file (type pdf)
- <use 1414masses2D.pdf>
-Package pdftex.def Info: 1414masses2D.pdf used on input line 637.
+
+<use 1414masses2D.pdf>
+Package pdftex.def Info: 1414masses2D.pdf used on input line 664.
 (pdftex.def)             Requested size: 239.89471pt x 323.26543pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<125masses2D.pdf, id=151, 466.1415pt x 520.34402pt>
+<125masses2D.pdf, id=169, 466.1415pt x 520.34402pt>
 File: 125masses2D.pdf Graphic file (type pdf)
  <use 125masses2D.pdf>
-Package pdftex.def Info: 125masses2D.pdf used on input line 656.
+Package pdftex.def Info: 125masses2D.pdf used on input line 683.
 (pdftex.def)             Requested size: 239.89471pt x 327.81847pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<newMasses.pdf, id=153, 720.89326pt x 737.15402pt>
+<newMasses.pdf, id=171, 720.89326pt x 737.15402pt>
 File: newMasses.pdf Graphic file (type pdf)
  <use newMasses.pdf>
-Package pdftex.def Info: newMasses.pdf used on input line 667.
+Package pdftex.def Info: newMasses.pdf used on input line 694.
 (pdftex.def)             Requested size: 424.9547pt x 516.0043pt.
- [4]
-[5pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
-has been already used, duplicate ignored
+ [5pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
+ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.744 
+l.745 
        <./9dpdf.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 744.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 745.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 744.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 745.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
-<distIota2D.pdf, id=282, 349.60611pt x 737.15402pt>
+<distIota2D.pdf, id=280, 349.60611pt x 737.15402pt>
 File: distIota2D.pdf Graphic file (type pdf)
  <use distIota2D.pdf>
-Package pdftex.def Info: distIota2D.pdf used on input line 760.
+Package pdftex.def Info: distIota2D.pdf used on input line 786.
 (pdftex.def)             Requested size: 262.20392pt x 552.86417pt.
 
-Overfull \hbox (16.9374pt too wide) in paragraph at lines 760--761
+Overfull \hbox (16.9374pt too wide) in paragraph at lines 786--787
  [][] 
  []
 
@@ -672,7 +672,7 @@ Overfull \hbox (16.9374pt too wide) in paragraph at lines 760--761
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 1005) in paragraph at lines 771--780
+Underfull \hbox (badness 1005) in paragraph at lines 797--806
 []\OT1/cmr/m/n/10 Binary neu-tron star sys-tems (along with neu-tron
  []
 
@@ -681,49 +681,49 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.817 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-3}) has been already used, duplicate ignored
+l.810 \end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{figure.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.817 
-       <./1414masses2D.pdf> <./125masses2D.pdf>] [7pdfTeX warning (ext4): desti
-nation with the same identifier (name{figure.4}) has been already used, duplica
-te ignored
+l.810 \end{align}
+                  <./1414masses2D.pdf> <./125masses2D.pdf>] [7pdfTeX warning (e
+xt4): destination with the same identifier (name{figure.4}) has been already us
+ed, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.845 
+l.831 
        <./newMasses.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 845.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 831.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 845.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 831.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
-<HLVsky.pdf, id=519, 1300.86pt x 737.15402pt>
+<HLVsky.pdf, id=518, 1300.86pt x 737.15402pt>
 File: HLVsky.pdf Graphic file (type pdf)
  <use HLVsky.pdf>
-Package pdftex.def Info: HLVsky.pdf used on input line 869.
+Package pdftex.def Info: HLVsky.pdf used on input line 897.
 (pdftex.def)             Requested size: 1073.23535pt x 680.24687pt.
 
-<HLVIsky.pdf, id=520, 1300.86pt x 737.15402pt>
+<HLVIsky.pdf, id=519, 1300.86pt x 737.15402pt>
 File: HLVIsky.pdf Graphic file (type pdf)
  <use HLVIsky.pdf>
-Package pdftex.def Info: HLVIsky.pdf used on input line 883.
+Package pdftex.def Info: HLVIsky.pdf used on input line 911.
 (pdftex.def)             Requested size: 1073.23535pt x 680.24687pt.
 
-<noisePDF.pdf, id=522, 493.24274pt x 715.47299pt>
+<noisePDF.pdf, id=521, 493.24274pt x 715.47299pt>
 File: noisePDF.pdf Graphic file (type pdf)
  <use noisePDF.pdf>
-Package pdftex.def Info: noisePDF.pdf used on input line 900.
+Package pdftex.def Info: noisePDF.pdf used on input line 928.
 (pdftex.def)             Requested size: 256.4877pt x 372.0481pt.
 
-Overfull \hbox (11.22118pt too wide) in paragraph at lines 900--901
+Overfull \hbox (11.22118pt too wide) in paragraph at lines 928--929
  [][] 
  []
 
@@ -732,25 +732,27 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.953 
+l.952 
        <./distIota2D.pdf>] [9pdfTeX warning (ext4): destination with the same i
 dentifier (name{figure.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.995 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-7}) has been already used, duplicate ignored
+l.953 I
+       n the case of a unique Gaussian realization of the Advanced-LIGOpdfTeX w
+arning (ext4): destination with the same identifier (name{figure.7}) has been a
+lready used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.995 
-       <./HLVsky.pdf> <./HLVIsky.pdf>]
+l.953 I
+       n the case of a unique Gaussian realization of the Advanced-LIGO <./HLVs
+ky.pdf> <./HLVIsky.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 995.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 953.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 995.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 953.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
@@ -760,72 +762,66 @@ Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1172 
-        <./noisePDF.pdf>] (./paper.bbl
-Missing character: There is no Ð in font cmr8!
-Missing character: There is no Ð in font cmr8!
- [11pdfTeX warning (ext4): destination with the same identifier (name{table.1})
- has been already used, duplicate ignored
+l.1171 
+        <./noisePDF.pdf>] [11pdfTeX warning (ext4): destination with the same i
+dentifier (name{table.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.73 ...{Metzger} \& {Berger}(2012)}]{Metzger2013}
-                                                  pdfTeX warning (ext4): destin
-ation with the same identifier (name{table.2}) has been already used, duplicate
- ignored
+l.1219 
+       pdfTeX warning (ext4): destination with the same identifier (name{table.
+2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.73 ...{Metzger} \& {Berger}(2012)}]{Metzger2013}
-                                                  ]
+l.1219 
+       ] (./paper.bbl
+Missing character: There is no Ð in font cmr8!
+Missing character: There is no Ð in font cmr8!
 Missing character: There is no Ð in font cmr8!
 Missing character: There is no Ð in font cmr8!
 ) [12]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1195.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1231.
  (./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1195.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1195.
-
-
-LaTeX Warning: There were undefined references.
-
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1231.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1231.
  ) 
 Here is how much of TeX's memory you used:
- 9245 strings out of 493633
- 130200 string characters out of 3143378
- 268612 words of memory out of 3000000
- 12293 multiletter control sequences out of 15000+200000
+ 9246 strings out of 493633
+ 130199 string characters out of 3143378
+ 265104 words of memory out of 3000000
+ 12292 multiletter control sequences out of 15000+200000
  15765 words of font info for 64 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 34i,14n,29p,823b,575s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
-></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></u
-sr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
-/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/l
-ocal/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
-al/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/loc
-al/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr
-/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
-ocal/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/loca
-l/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
-exlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
-ive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
-/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/20
-11/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
-1/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2011/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2011/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2011/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2011/texmf
--dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2011/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2011/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on paper.pdf (12 pages, 6729838 bytes).
+ 34i,14n,29p,823b,403s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pf
+b></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.
+pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
+fb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb
+></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><
+/usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
+sr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr
+/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><
+/usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
+sr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/
+local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loc
+al/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/
+texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
+live/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texliv
+e/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
+/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2
+011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/201
+1/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2011/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2011/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2011/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2011/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on paper.pdf (12 pages, 6731181 bytes).
 PDF statistics:
- 887 PDF objects out of 1000 (max. 8388607)
- 450 compressed objects within 5 object streams
- 86 named destinations out of 1000 (max. 500000)
+ 888 PDF objects out of 1000 (max. 8388607)
+ 451 compressed objects within 5 object streams
+ 87 named destinations out of 1000 (max. 500000)
  59 words of extra memory for PDF output out of 10000 (max. 10000000)
 
