@@ -67,7 +67,7 @@ Vicky Kalogera\altaffilmark{1}}
   in Astrophysics (CIERA) \& Dept.~of Physics and Astronomy,
   Northwestern University, 2145 Sheridan Rd, Evanston, IL 60208, USA;
   [e-mail: {\tt cr@u.northwestern.edu}]} \altaffiltext{2}{California
-  Institute of Technology, Pasadena, CA 92215, USA}
+  Institute of Technology, Pasadena, CA 91125, USA}
 
 
 
@@ -89,11 +89,12 @@ Collaboration.  We find the recovery of the individual masses to be
 fractionally within 10\% at the 65\% credible intervals for equal-mass
 systems, and within 2\% for unequal-mass systems.  We also report the
 average uncertainties on the sky-locations, luminosity distance, and
-orbital inclinations of randomly distributed sources that can be
-achieved by different network configurations.  \will{I'm not sure that
-  we want to say this exactly this way---the sources in this study are
-  not randomly distributed in SNR, but rather cluster at rather loud
-  signals.}
+orbital inclinations of ideal detection candidates  sources that can be
+achieved by different network configurations.
+% \will{I'm not sure that
+  %we want to say this exactly this way---the sources in this study are
+ % not randomly distributed in SNR, but rather cluster at rather loud
+  %signals.}
 \end{abstract}
 
 \maketitle
@@ -107,20 +108,21 @@ binary compact object mergers, including the merger of binary neutron
 star systems.  Intense preparations are underway to characterize and
 extract as much physical information as possible from these signals.
  
-The mergers of binary neutron stars (BNS) are expected to be the most
-common compact binary source in the advanced detector era.  \will{This
-  is technically true (thanks to the word ``expected''), but the
-  uncertainty in rates is so large that it would not be surprising at
-  all for it to be wrong.  Re-word or eliminate.} Models from stellar
+The mergers of binary neutron stars (BNS) are expected to be the one of the most
+common compact binary source in the advanced detector era.  %\will{This
+  %is technically true (thanks to the word ``expected''), but the
+ % uncertainty in rates is so large that it would not be surprising at
+ % all for it to be wrong.  Re-word or eliminate.} Added "one of the "
+  Models from stellar
 evolution and observations of binary pulsars suggest that the number
 of binary neutron star mergers within Advanced LIGO/Virgo's detection
-horizon could reach \will{several tens to hundreds} each year
+horizon could reach several tens to hundreds each year
 \citep{RatesPaper}.  Although the peak sensitivity of ground-based
 detectors is not focused on the frequency at which BNS systems merge,
 it could still be possible to extract information about both strong
-field gravitational physics \carl{[CITE]} and the hydrodynamics of
-dense matter (e.g. the equation of state of nuclear matter)
-\carl{[CITE]}.  Furthermore, the observations of multiple BNS systems
+field gravitational physics \citep{Li2012} and the hydrodynamics of
+dense matter (e.g. the equation of state of nuclear matter,
+\citep{HindererBNS2010}).  Furthermore, the observations of multiple BNS systems
 will provide key insight into the evolution of binary systems in the
 field \citep{VickyRates,KimRates} . As such, BNS systems will likely
 form the ``bread and butter'' of the compact binary coalescence
@@ -133,18 +135,13 @@ The detection of BNS systems will be performed with a matched
 filtering approach.  By comparing the data stream with a bank of
 theoretical templates, the time-series data can be searched for
 candidate signals at a sufficiently rapid rate to analyze months of
-data.  When the overlap between one of the template waveforms and the
-detector output is sufficiently large (97\%), a detection candidate is
-found.  \will{This is not true.  The \emph{templates} are chosen so
-  that any signal should have 97\% overlap with at least one template,
-  but detection depends on the intrinsic strength of the signal, not
-  its degree of overlap with templates.}  However, the parameter space
+data.  However, the parameter space
 of these signals can be highly degenerate, with several locations in
-parameter space corresponding to nearly identical waveforms.  In order
+parameter space corresponding to waveforms with nearly identical overlap.  In order
 to fully realize the science potential of these instruments, we must
 perform a full exploration of the parameter space for each detection.
 By analyzing the parameter space of each candidate with a Bayesian
-inference technique, we will be able to make precise, scientifically
+inference technique, we will be able to make informative, scientifically
 meaningful statements about the physics of these systems.  To that
 end, we employ a Markov-Chain Monte Carlo sampling algorithm,
 \texttt{lalinference\_mcmc}, included in the LIGO Algorithm Library
@@ -153,7 +150,7 @@ parameter space of BNS systems.
 
 By employing the full parameter-estimation machinery that will
 eventually be used in the Advanced LIGO/Virgo era, our results give
-\will{\sout{the first}} estimates at the realistic capabilities of
+ estimates at the realistic capabilities of
 advanced ground-based detectors to characterize BNS systems.  Until
 recently, the majority of studies have employed the Fisher matrix
 formalism which was first adapted for gravitational-wave parameter
@@ -177,10 +174,11 @@ code, \texttt{LALInference}, and the associated MCMC sampler,
 gravitational-wave template we employ.  In Section
 \ref{resultsSection}, we qualitatively analyze the posterior
 probability density functions for BNS systems with different masses
-and extrinsic parameters.  \will{Here would be a good place to have a
-  sentence or two about the distribution of source parameters---the
-  choices of masses, angles, and distances.}  The results are divided
-into three parameter sets of interest: the recovery of the mass
+and extrinsic parameters.  We select three equal-mass an one unequal-mass
+ binary systems as fiducal examples of BNS systems.  Each system was then analyzed 40 
+ times with isotropically selected sky locations and binary orientations, and with a distance
+ such that each signal was injected with a signal-to-noise ratio of 20.
+  The results are divided into three parameter sets of interest: the recovery of the mass
 parameters (Section \ref{massSection}), the recovery of the orbital
 inclination and luminosity distance (Section \ref{idSection}), and the
 localization of sources on the sky (Section \ref{skySection}).
@@ -374,28 +372,30 @@ ratio and chirp mass, defined by
 respectively.\footnote{Most gravitational-wave literature instead uses
   the \textit{symmetric mass ratio}, defined as $\eta \equiv M_1 M_2 /
   M^2$.  We elect to use $q$ as it is more physically intuitive, and
-  the prior $p(q)$ is uniform when the component mass priors are
-  uniform.  \will{This is not true.  I calculate (could be a bug, so
-    check it)
-    \begin{equation}
-      p(\chmass, q) = \frac{\chmass}{q} \left(\frac{\left(1+q\right)^2}{q}\right)^{\frac{1}{5}}
-    \end{equation}
-    when 
-    \begin{equation}
-      p\left(m_1, m_2\right) \propto \mathrm{const}
-    \end{equation}
-    The reasons to use $q$ instead of $\eta$
-    \begin{itemize}
-      \item It is more intuitive to astronomers (you mention this
-        above).
-      \item As $m_1 \to m_2$, or $q \to 1$, or $\eta \to 1/4$, the
-        prior on $\eta$ for equal mass systems diverges (it is an
-        integrable singularity, but still singular), while the prior
-        on $q$ is well-behaved.  This doesn't matter for sampling
-        purposes, since the divergence in integrable, but it is
-        disconcerting for near-equal-mass systems to see a large peak
-        in the histogram for $\eta$ near $\eta = 1/4$.
-    \end{itemize}}}  By convention, $M_1 \geq M_2$.  The stationary phase then
+  because avoids an integrable singularity that can appear for
+  equal-mass systems when employing a prior on $p(\eta)$.  
+  %\will{This is not true.  I calculate (could be a bug, so
+   % check it)
+   % \begin{equation}
+   %   p(\chmass, q) = \frac{\chmass}{q} \left(\frac{\left(1+q\right)^2}{q}\right)^{\frac{1}{5}}
+   % \end{equation}
+  %  when 
+   % \begin{equation}
+    %  p\left(m_1, m_2\right) \propto \mathrm{const}
+   % \end{equation}
+   % The reasons to use $q$ instead of $\eta$
+   % \begin{itemize}
+     % \item It is more intuitive to astronomers (you mention this
+      %  above).
+     % \item As $m_1 \to m_2$, or $q \to 1$, or $\eta \to 1/4$, the
+      %  prior on $\eta$ for equal mass systems diverges (it is an
+      %  integrable singularity, but still singular), while the prior
+       % on $q$ is well-behaved.  This doesn't matter for sampling
+      %  purposes, since the divergence in integrable, but it is
+      %  disconcerting for near-equal-mass systems to see a large peak
+       % in the histogram for $\eta$ near $\eta = 1/4$.
+    %\end{itemize}}
+    }  By convention, $M_1 \geq M_2$.  The stationary phase then
 becomes an expansion in the Newtonian orbital velocity, $v=(\pi
 M_{tot} f)^{1/3}$,
 \begin{equation}
@@ -504,15 +504,15 @@ was selected to provide a network SNR of $\rho_{\text{network}}=20$
 for each source.  While unphysical from an astrophysics perspective
 (binary sources should be distributed evenly in comoving volume), this
 choice allows us to explore the parameter estimation in the context of
-\will{\sout{optimal}} \will{loud, but plausible} detection candidates.
+loud, but plausible detection candidates.
 
 Finally, note that the power-spectral density that defines the inner
 product \eqref{innerProduct} is simply the time-averaged sensitivity
 of a given detector to a specific frequency.  Ignoring non-Gaussian
 glitches, any stretch of data should contain a specific noise
 realization drawn from a Gaussian colored by the PSD.  Without a
-realistic model including the actual instrument sensitivity, non
-stationary noise, and uncertainty in the PSD we cannot accurately
+realistic model including the actual instrument sensitivity, non-stationary
+ noise, and uncertainty in the PSD we cannot accurately
 simulate GW data to the point of making precise predictions about
 parameter estimation capabilities.  Furthermore, the posterior
 distribution from a future detection will be influenced by the
@@ -621,13 +621,13 @@ distance of the source, $D$.  While the coalescence phase $\phi_c$,
 the coalescence time $t_c$, and the wave polarization $\psi$ must be
 included in any parameter estimation of the waveform, they do not
 encode any information of particular astrophysical
-interest.\footnote{For systems whose components are non-spinning.  The
-  presence of intrinsic angular momentum will, in general, couple to
-  the coalescence phase and wave polarization.  \will{But those
-    parameters are still physically uninteresting.  They couple to
-    interesting parameters in both the spinning and non-spinning
-    cases, which is why they must be included.  I would just eliminate
-    this footnote.}}
+interest.%\footnote{For systems whose components are non-spinning.  The
+  %presence of intrinsic angular momentum will, in general, couple to
+  %the coalescence phase and wave polarization.  \will{But those
+   % parameters are still physically uninteresting.  They couple to
+   % interesting parameters in both the spinning and non-spinning
+  %  cases, which is why they must be included.  I would just eliminate
+   % this footnote.}}
 
 In Figure~\ref{9dPDF}, we provide an example of the nine,
 1-dimensional marginalized posterior probability density functions
@@ -953,12 +953,14 @@ combine the results of many MCMC runs in different noise realizations.
 In the case of a unique Gaussian realization of the Advanced-LIGO
 noise curve, each realization causes the maximum likelihood of the
 posterior probability distribution to be translated away from the true
-value; however, these displacements are drawn according to the
-zero-noise distribution \citep{Inadequacies} \will{I don't understand
+value; however, these displacements are drawn from the same probability
+distribution we are attempting to sample with the MCMC \citep{Inadequacies}.
+ \will{I don't understand
   what ``drawn according to the zero-noise distribution'' means.  I
-  don't think this sentence makes sense.}.  Once averaged, the mean
-uncertainties should be equal to the uncertainty drawn from the
-zero-noise runs.  \will{Again, not strictly true.}
+  don't think this sentence makes sense.} \carl{Changed the sentence, but
+   I think you, Tyson, and I will need to chat about this}.  These displacements average to 
+   zero over many runs, ensuring that the mean uncertainties should be equal to 
+   the uncertainty drawn from the zero-noise runs.  \will{Again, not strictly true.}
 
 As a demonstration of this, we injected a single
 $1M_{\odot}/2.5M_{\odot}$ system, detected in HLVI, into 5 separate
@@ -1151,23 +1153,30 @@ neglecting the effects of spin, the component masses can be
 constrained to within 10\% of their true value to a confidence of
 65\%.  This value drops below 2\% for systems with an asymmetric mass
 ratio.  These results were summarized in Table \ref{ciTableIntrinsic}.
-\will{You should mention the fact that our signals were chosen to be
-  loud, but plausible here.  Make sure to note that the average
-  uncertainties below do not necessarily reflect the average
-  uncertainty expected in the analysis of advanced detector era
-  detections.}
+It should be remembered that these signals were injected at high, 
+but not unrealistic, SNRs.  Thus, the results quoted can be thought of as the
+average uncertainties for a ``good'' Advanced LIGO/Virgo detection.
+
+%\will{You should mention the fact that our signals were chosen to be
+%  loud, but plausible here.  Make sure to note that the average
+  %uncertainties below do not necessarily reflect the average
+ % uncertainty expected in the analysis of advanced detector era
+ % detections.}
  
 We also reported on the ability of the two network configurations to
 constrain the luminosity distance and orbital inclination.  For
 distance, it was found that the uncertainties will fall anywhere from
 40 to 100 MPC at 65\% confidence, making the uncertainties frequently
-larger than the luminosity distances themselves.  However, it was
+larger than the luminosity distances themselves.  Furthermore, it was
 found that the cosine of the orbital inclination can be constrained to
-within 0.3 at the 65\% level, suggesting that Advanced LIGO/Virgo will
-be able to offer some information on GRB beaming angles in coincidence
-with electromagnetic observations.  \will{Are you sure about this?
-  Beaming angles about 10 degrees would have $\Delta \cos i \simeq
-  0.01$.}
+within 0.3 at the 65\% level, suggesting that Advanced LIGO/Virgo will not
+be able to offer constraining information on GRB beaming angles in coincidence
+with electromagnetic observations.  Coincidence detections will still be possible, but
+the orbital orientation information from gravitational-waves will 
+not provide astropysically relevant constrains.
+%  \will{Are you sure about this?
+ % Beaming angles about 10 degrees would have $\Delta \cos i \simeq
+ % 0.01$.}
 
 Finally, we reported the ability of advanced networks to constrain the
 sky location of BNS signals.  It was found that the three-detector
@@ -1189,7 +1198,7 @@ that the waveform template we use to recover the signal template
 exactly matches the fully relativistic waveforms nature provides.  In
 practice, these waveforms are only approximations to the fully
 general-relativistic physics required to solve the problem.  See
-\carl{[CITE]} for a better description of the systematic uncertainties
+\cite{BuonannoWaveform} for a better description of the systematic uncertainties
 present in the most common waveform families.  Additionally, there are
 several astrophysical assumptions that can potentially contribute to
 systematic uncertainties in the waveforms, such as the neutron-star
@@ -1216,15 +1225,6 @@ neutron stars from highly-spinning low-mass black holes.  Future work
 will explore this potential mass/spin degeneracy, including the
 effects of orbital precession, with the aim of definitively answering
 this question.
-
-\carl{
-\section{TODO}
- \begin{itemize}
- \item Finish adding bibliography/sources
- \item double check the distribution of sources in Distance/Iota; make
-   sure iota is actually uniform in cos(i)
- \end{itemize}
- }
 
 \bibliographystyle{apj} \bibliography{paper}{}
 

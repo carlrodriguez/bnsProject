@@ -36,7 +36,11 @@ You can't pop an empty literal stack for entry Hannam2013
 while executing---line 1676 of file apj.bst
 You can't pop an empty literal stack for entry AdvLIGO
 while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry HindererBNS2010
+while executing---line 1676 of file apj.bst
 You can't pop an empty literal stack for entry VickyRates
+while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry Li2012
 while executing---line 1676 of file apj.bst
 You can't pop an empty literal stack for entry Littenberg:2010gf
 while executing---line 1676 of file apj.bst
@@ -64,45 +68,45 @@ ptr=1, stack=
 Technical Report VIR-0027A-09
 ---the literal stack isn't empty for entry AdvVirgo
 while executing---line 1676 of file apj.bst
-You've used 29 entries,
+You've used 31 entries,
             3049 wiz_defined-function locations,
-            873 strings with 10648 characters,
-and the built_in function-call counts, 15434 in all, are:
-= -- 1309
-> -- 878
+            885 strings with 11195 characters,
+and the built_in function-call counts, 16710 in all, are:
+= -- 1413
+> -- 963
 < -- 15
-+ -- 292
-- -- 314
-* -- 1313
-:= -- 2690
-add.period$ -- 29
-call.type$ -- 29
-change.case$ -- 185
-chr.to.int$ -- 29
-cite$ -- 32
-duplicate$ -- 585
-empty$ -- 1075
-format.name$ -- 351
-if$ -- 3247
++ -- 320
+- -- 346
+* -- 1432
+:= -- 2909
+add.period$ -- 31
+call.type$ -- 31
+change.case$ -- 198
+chr.to.int$ -- 31
+cite$ -- 34
+duplicate$ -- 627
+empty$ -- 1157
+format.name$ -- 384
+if$ -- 3517
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 27
-newline$ -- 91
-num.names$ -- 116
-pop$ -- 207
+missing$ -- 29
+newline$ -- 97
+num.names$ -- 124
+pop$ -- 220
 preamble$ -- 1
-purify$ -- 185
+purify$ -- 198
 quote$ -- 0
-skip$ -- 640
+skip$ -- 692
 stack$ -- 0
-substring$ -- 1091
+substring$ -- 1189
 swap$ -- 1
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 258
+type$ -- 276
 warning$ -- 3
-while$ -- 128
+while$ -- 137
 width$ -- 0
-write$ -- 310
-(There were 25 error messages)
+write$ -- 332
+(There were 27 error messages)
