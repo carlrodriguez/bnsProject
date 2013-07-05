@@ -76,8 +76,8 @@ Vicky Kalogera\altaffilmark{1}}
 Within the next five years, the Advanced LIGO/Virgo network will have
 reached a sensitivity sufficient to enable the routine detection of
 gravitational waves.  Beyond the initial detection, the scientific
-promise of these instruments relies on the ability to perform
-parameter estimation. The majority of this effort has been towards the
+promise of these instruments relies on the effectiveness of our
+parameter estimation techniques. The majority of this effort has been towards the
 detection and characterization of gravitational waves from compact
 binary coalescence, e.g. the coalescence of binary neutron stars.
 While several previous studies have focused on the parameter
@@ -88,8 +88,8 @@ the full parameter estimation machinery developed by the LIGO/Virgo
 Collaboration.  We find the recovery of the individual masses to be
 fractionally within 10\% at the 65\% credible intervals for equal-mass
 systems, and within 2\% for unequal-mass systems.  We also report the
-average uncertainties on the sky-locations, luminosity distance, and
-orbital inclinations of ideal detection candidates  sources that can be
+average uncertainties on the sky-locations, luminosity distances, and
+orbital inclinations of ideal detection candidates that can be
 achieved by different network configurations.
 % \will{I'm not sure that
   %we want to say this exactly this way---the sources in this study are
@@ -102,40 +102,40 @@ achieved by different network configurations.
 
 Within the next few years, the first generation of gravitational-wave
 detectors capable of regularly resolving astrophysical sources will
-come online \citep{AdvLIGO,AdvVirgo}.  The Advanced LIGO and Virgo
+come online \citep{AdvLIGO,AdvVirgo}.  The Advanced LIGO and Advanced Virgo
 detectors will provide the first insights into the final moments of
-binary compact object mergers, including the merger of binary neutron
+binary compact object mergers, including the mergers of binary neutron
 star systems.  Intense preparations are underway to characterize and
 extract as much physical information as possible from these signals.
  
 The mergers of binary neutron stars (BNS) are expected to be the one of the most
-common compact binary source in the advanced detector era.  %\will{This
+common compact binary sources in the advanced detector era.  %\will{This
   %is technically true (thanks to the word ``expected''), but the
  % uncertainty in rates is so large that it would not be surprising at
  % all for it to be wrong.  Re-word or eliminate.} Added "one of the "
   Models from stellar
 evolution and observations of binary pulsars suggest that the number
-of binary neutron star mergers within Advanced LIGO/Virgo's detection
+of BNS mergers within Advanced LIGO/Virgo's detection
 horizon could reach several tens to hundreds each year
 \citep{RatesPaper}.  Although the peak sensitivity of ground-based
 detectors is not focused on the frequency at which BNS systems merge,
 it could still be possible to extract information about both strong
-field gravitational physics \citep{Li2012} and the hydrodynamics of
-dense matter (e.g. the equation of state of nuclear matter,
-\citep{HindererBNS2010}).  Furthermore, the observations of multiple BNS systems
-will provide key insight into the evolution of binary systems in the
+field gravitational physics \citep{Li2012} and the the equation of state of
+dense nuclear matter
+\citep{HindererBNS2010}.  Furthermore, the observations of multiple BNS systems
+will provide key insights into the evolution of binary systems in the
 field \citep{VickyRates,KimRates} . As such, BNS systems will likely
 form the ``bread and butter'' of the compact binary coalescence
 detection effort in the coming years.
 
 
-Of course one must distinguish between the detection of such events,
-and the precision measurement of the relevant physical parameters.
+Of course one must distinguish between the detection of such events
+and the precision measurement of their relevant physical parameters.
 The detection of BNS systems will be performed with a matched
 filtering approach.  By comparing the data stream with a bank of
 theoretical templates, the time-series data can be searched for
 candidate signals at a sufficiently rapid rate to analyze months of
-data.  However, the parameter space
+data.  See \cite{S6search}.  However, the parameter space
 of these signals can be highly degenerate, with several locations in
 parameter space corresponding to waveforms with nearly identical overlap.  In order
 to fully realize the science potential of these instruments, we must
@@ -152,7 +152,7 @@ By employing the full parameter-estimation machinery that will
 eventually be used in the Advanced LIGO/Virgo era, our results give
  estimates at the realistic capabilities of
 advanced ground-based detectors to characterize BNS systems.  Until
-recently, the majority of studies have employed the Fisher matrix
+recently, the majority of studies have employed the Fisher-matrix
 formalism which was first adapted for gravitational-wave parameter
 estimation by \citet{FinnDetection}.  While each of these studies
 \citep{PoissonWill,CutlerFlanagan,ArunPE} have pointed out the
@@ -174,15 +174,15 @@ code, \texttt{LALInference}, and the associated MCMC sampler,
 gravitational-wave template we employ.  In Section
 \ref{resultsSection}, we qualitatively analyze the posterior
 probability density functions for BNS systems with different masses
-and extrinsic parameters.  We select three equal-mass an one unequal-mass
+and extrinsic parameters.  We select three equal-mass and one unequal-mass
  binary systems as fiducal examples of BNS systems.  Each system was then analyzed 40 
- times with isotropically selected sky locations and binary orientations, and with a distance
+ times with isotropically selected sky locations and orbital orientations, and with a distance
  such that each signal was injected with a signal-to-noise ratio of 20.
-  The results are divided into three parameter sets of interest: the recovery of the mass
+  The results are divided into three subsections of interest: the recovery of the mass
 parameters (Section \ref{massSection}), the recovery of the orbital
 inclination and luminosity distance (Section \ref{idSection}), and the
 localization of sources on the sky (Section \ref{skySection}).
-Finally we provide quantitative 1-dimensional confidence intervals on
+Finally we provide quantitative 1-dimensional credible intervals on
 each parameter in Section \ref{ciSection}.  These results, contained
 in Tables \ref{ciTableIntrinsic} and \ref{ciTableExtrinsic}, are
 intended as a reference for the optimal BNS parameter estimation
@@ -200,7 +200,7 @@ We begin by introducing a Bayesian formalism for parameter estimation.
 We assume that the time-domain signal in a gravitational-wave network
 can be written as a combination of a gravitational waveform $h_0$ and
 the noise of the detector $n$.  We further assume that this noise is
-stationary and Gaussian with zero mean.  The detector output is
+stationary and Gaussian with zero mean.  The detector output is simply
 \begin{equation}
 s = n + h_0 .
 \label{SignalAddition}
@@ -224,13 +224,13 @@ given the parameters $\thpara$.  The inner product, $\left< ~|~
   \frac{\tilde{a}(f)\tilde{b}^*(f)}{S_n(f)} df ,
   \label{innerProduct}
 \end{equation}
-where $S_n(f)$ is the one-sided power spectral density (PSD) as a
+where $S_n(f)$ is the one-sided power-spectral density (PSD) as a
 function of frequency, and $\tilde{a}(f)$ and $\tilde{b}(f)$ are the
 Fourier transforms of the time-domain data $a(t)$ and $b(t)$.  If we
 pick a set of parameters $\thpara$ such that $h(\thpara) = h_0$, then
 the posterior \eqref{posterior} will be near a global maximum;
 however, the presence of noise will in general deflect the maximum of
-our posterior away from the value at $\thpara_0$.  Therefore, the
+our posterior away from the value at $h(\thpara) = h_0$.  Therefore, the
 maximum posterior parameters do not necessarily correspond to the true
 parameters of the source; when interpreting parameter estimation
 results it is important to consider the full posterior distribution
@@ -253,7 +253,7 @@ information about the prior state of knowledge about the problem in
 addition to the likelihood of the signal.  For instance, since it is
 assumed that compact binaries form homogeneously in the local universe
 observable by advanced detectors, we can safely assume that the
-population of sources will be distributed homogeneously in volume, or
+population of sources will be distributed homogeneously in volume, i.e.\
 with a density proportional to $D^2$.  Our prior information can come
 from mathematical limits in the parameter space or from our \textit{a
   priori} knowledge of astrophysical systems.  We employ priors which
@@ -265,9 +265,8 @@ are
 \item uniform in volume, which implies a luminosity distance prior of
   $p(D)dD = D^2 dD$,
 \item uniform in coalescence time over the segment of data being
-  analyzed, and
-\item a delta function at zero spin (i.e.\ we use waveforms without
-  spin)
+  analyzed,
+  \item a delta function at zero spin, and
 \item isotropic in all angles
 \end{itemize}
 The mass priors listed here are the generic priors used in follow-up
@@ -301,7 +300,7 @@ follows \citep{Gilks99}:
   ($\boldsymbol{\theta_{\text{old}}}$), and then propose a random
   ``jump'' to a new set of waveform parameters,
   $\boldsymbol{\theta_{\text{new}}}$.  The jump follows the
-  (conditional) probability distribution $q\left(
+  proposal distribution $q\left(
   \boldsymbol{\theta_{\text{new}}} | \boldsymbol{\theta_{\text{old}}}
   \right)$.
 \item Calculate the posterior probability,
@@ -319,8 +318,8 @@ follows \citep{Gilks99}:
   \end{equation}
   If the new parameters are accepted, record
   $\boldsymbol{\theta_\text{new}}$ and repeat with
-  $\boldsymbol{\theta_\text{old}} \gets
-  \boldsymbol{\theta_\text{new}}$; otherwise, record
+  $\boldsymbol{\theta_\text{new}} \rightarrow
+  \boldsymbol{\theta_\text{old}}$; otherwise, record
   $\boldsymbol{\theta_\text{old}}$, and repeat.
 \end{enumerate} 
   
@@ -365,14 +364,14 @@ inclination, and the wave polarization.  In addition to the total
 mass, $M_{tot}\equiv M_1+M_2$, it is convenient to work with the mass
 ratio and chirp mass, defined by
 \begin{equation}
-  q\equiv M_1/M_2~~~~\text{and}~~~~\chmass = (M_1 M_2)^{3/5}
+  q\equiv M_2/M_1~~~~\text{and}~~~~\chmass = (M_1 M_2)^{3/5}
   M_{tot}^{-1/5},
   \label{eqRatioCM}
 \end{equation}
 respectively.\footnote{Most gravitational-wave literature instead uses
   the \textit{symmetric mass ratio}, defined as $\eta \equiv M_1 M_2 /
   M^2$.  We elect to use $q$ as it is more physically intuitive, and
-  because avoids an integrable singularity that can appear for
+  because it avoids an integrable singularity that can appear for
   equal-mass systems when employing a prior on $p(\eta)$.  
   %\will{This is not true.  I calculate (could be a bug, so
    % check it)
@@ -428,7 +427,7 @@ For a multi-detector network, the noise-weighted inner products
 \eqref{innerProduct} combine linearly, allowing us to use the above
 formalism with minimal modification.  We integrate the inner product
 from a lower-frequency cutoff of $20\text{Hz}$ to the
-innermost-stable-circular orbit of the systems in question, which for
+innermost-stable-circular orbit of the systems, which for
 a non-spinning binary is a function only of the total mass:
 
 \begin{equation}
@@ -437,10 +436,10 @@ a non-spinning binary is a function only of the total mass:
 \end{equation}
    
 We consier the mass parameters ($\chmass,q$) and the phasing
-parameters, ($\phi_0,t_c$), to be the intrinsic parameters of a
+parameters, ($\phi_0,t_c$), to be the intrinsic parameters of the
 gravitational-wave signal.  There are an additional 5 extrinsic
 parameters, independent of the pN orbital phase, which can modulate
-the amplitude of the signal in an independent fashion for each
+the amplitude of the signal independently in each
 detector.  Combining these leads to our 9-dimensional parameter space
 for non-spinning systems,
 \begin{equation}
@@ -463,9 +462,9 @@ where
 \end{itemize}
   Since the wave amplitude depends on the orientation of the binary
   with respect to each detector, most of the information about these
-  extrinsic parameters comes from two quantities: the time-of-arrival
-  triangulation of the source locations, and the relative amplitudes
-  within the detector network.
+  extrinsic parameters comes from two sources: the time-of-arrival
+  triangulation of the signal, and the relative amplitudes
+  in each detector in the network.
 
 We define the signal-to-noise ratio (SNR) of a gravitational wave in a
 single detector as
@@ -504,16 +503,16 @@ was selected to provide a network SNR of $\rho_{\text{network}}=20$
 for each source.  While unphysical from an astrophysics perspective
 (binary sources should be distributed evenly in comoving volume), this
 choice allows us to explore the parameter estimation in the context of
-loud, but plausible detection candidates.
+loud but plausible detection candidates.
 
-Finally, note that the power-spectral density that defines the inner
+Finally, note that the PSD that defines the inner
 product \eqref{innerProduct} is simply the time-averaged sensitivity
 of a given detector to a specific frequency.  Ignoring non-Gaussian
 glitches, any stretch of data should contain a specific noise
 realization drawn from a Gaussian colored by the PSD.  Without a
 realistic model including the actual instrument sensitivity, non-stationary
  noise, and uncertainty in the PSD we cannot accurately
-simulate GW data to the point of making precise predictions about
+simulate gravitational-wave data to the point of making precise predictions about
 parameter estimation capabilities.  Furthermore, the posterior
 distribution from a future detection will be influenced by the
 realization of the noise at the time of the detection.  Because of
@@ -523,7 +522,7 @@ advanced era detectors and suppress any effects of detector noise by
 picking the (most likely) noise realization that has $n(t) \equiv 0$.
 Consequently, what we recover with the MCMC could be interpreted as
 the posterior distribution function for each source averaged over all
-possible (Gaussian) noise realizations assuming we have the correct
+possible (Gaussian) noise realizations, assuming we have the correct
 PSD.  \will{This is not true because the map from noise realization to
   posterior is not linear.}  
 
@@ -531,63 +530,7 @@ To check that our reported statistical errors are not in gross
 disagreement with those obtained in the presence of noise, we selected
 a particular simulated signal to perform parameter estimation in
 several noise realizations.  The comparison of the noise-dependent and
-noise-free results can be found in \ref{noiseSection}.
-
-\begin{comment}
-\subsection{Testing MCMC Convergence}
-
-Each set of MCMC samples is tested for convergence by examining both
-the Gelman-Rubin diagnostic and the auto-correlation length of the
-MCMC chains, the details of which can be found in \carl{[CITE]} and
-\carl{[CITE]}, respectively.  However, there is an additional check we
-can consider: the standard matched filtering searches employed by the
-LIGO/Virgo collaboration assume that a detection will occur when one
-of the template waveforms matches the detector data with a signal
-overlap of 97\% or better \carl{[CITE]}.  That is, for a template
-waveform $h^{t}(f)$ and detector output $s(f)$, an overlap of
-
-\begin{equation}
-\left< s | h^{t}\right> \geq 97\% \nonumber
-\end{equation}
-
-\noindent yields a detection candidate.  This requirement provides us
-with a convenient test for the effectiveness of our parameter
-estimation.  First, we note that maximizing our likelihood function,
-\eqref{likelihood}, is identical to maximizing the SNR
-\eqref{formalSNR} of our template waveform in a given stretch of data.
-Therefore, the better the match between the template waveform and the
-data, the higher the SNR.  Since we assume, quite tautologically, that
-our parameter estimation code should estimate parameters at least as
-well as a matched filtering approach, we would be immediately
-suspicious of any MCMC run whose maximum-likelihood waveform had an
-SNR below that of our pipeline trigger.  In that case, we would
-perform the MCMC with a much longer runtime, until the maximum
-likelihood of our posterior distribution had an SNR at least as high
-as the detection.
-
-For the purposes of our present study, we reproduce this information
-as follows: since we know the true SNR of the signal we are
-simulating, we assume that the ``trigger'' SNR returned by our
-detection pipeline is 97\% of the true SNR.  We then assume any
-posterior distribution whose maximum likelihood satisfies
-
-\begin{equation}
-\text{Maximum Likelihood} \leq 0.97 \times
-\left(\frac{\rho_{inj}^2}{2}\right) \nonumber
-\end{equation}
-
-\noindent has not converged.  As one would expect, the lower-mass,
-longer waveform systems require longer to converge.  With our original
-runtime of one week over 8 processors, we found that seven of our
-$1M_{\odot}/1M_{\odot}$ systems had not converged, while all but one
-system for our $1.4M_{\odot}/1.4M_{\odot}$ and
-$1M_{\odot}/2.5M_{\odot}$ systems had converged.  All of the
-$2.5M_{\odot}/2.5M_{\odot}$ systems converged within one week.
-
-\carl{[THIS SECTION INCOMPLETE WILL REQUIRE THE FINISHED HLV/HLVI RUNS
-    BEFORE I CAN COMPLETE IT]}
-\end{comment}
-
+noise-free results can be found in Section \ref{noiseSection}.
 
 \section{Results}
 \label{resultsSection} 
@@ -610,14 +553,14 @@ $2.5M_{\odot}/2.5M_{\odot}$ systems converged within one week.
   marginalization of a single dimension from the full 9D posterior
   space.  To better see this effect, compare the 1D PDF for
   $\mathcal{M}_{c}$ and $q$ with the 2D marginalized PDF in
-  Figure~\ref{1414masses}}
+  Figure~\ref{1414masses}.}
 \end{figure*}
 
 Of the nine parameters in the domain of the waveform, only six are
 particularly physically interesting: the masses of the two binaries,
 $M_1$ and $M_2$, the orbital inclination, $\iota$, the angular
 position on the sky, $\alpha$ and $\delta$, and the luminosity
-distance of the source, $D$.  While the coalescence phase $\phi_c$,
+distance of the source, $D$.  While the coalescence phase $\phi_0$,
 the coalescence time $t_c$, and the wave polarization $\psi$ must be
 included in any parameter estimation of the waveform, they do not
 encode any information of particular astrophysical
@@ -635,7 +578,7 @@ recovered from a single $1.4M_{\odot}/1.4M_{\odot}$ BNS system.  These
 PDFs are typical of the type of results that will be produced by
 parameter estimation studies in the advanced detector era.  Notice
 that the peak of several parameters, including the chirp mass,
-$\chmass$, appears to be displaced from the true values in red.  This
+$\chmass$, appears to be displaced from the true values in dashed red.  This
 effect is due to the reduction of the 9-dimensional PDF to a series of
 marginalized 1-dimensional PDFs.  For instance, the 1-dimensional PDF
 for chirp mass is marginalized via
@@ -668,11 +611,11 @@ Monte-Carlo integral over all other parameters.
    terms of parameters used in the waveform, chirp mass
    ($\mathcal{M}_C$) and the mass ratio ($q$), and in the individual
    component masses of the binary ($M_1$ and $M_2$).  In the
-   $\chmass$-$q$ space, the posterior would resemble a Gaussian if not
+   $\chmass$-$q$ space, the posterior would almost resemble a Gaussian if not
    for the limitation of $q \leq 1$.  The presence of the $q$ cutoff
    and the convention that $M_1 \geq M_2$ inform the non-Gaussian
    features present.  When projected as 1D marginalized posteriors,
-   the component masses resemble the posterior PDFs shown in figure
+   the component masses resemble the posterior PDFs shown in Figure
    \ref{metaMassPDFs}.}
   \label{1414masses}
 \end{figure}
@@ -681,9 +624,9 @@ Monte-Carlo integral over all other parameters.
 \begin{figure}[h!]
   \centering \includegraphics[trim=1cm 0cm 2cm 0cm,
     clip=false,scale=0.63]{125masses2D.pdf}
- \caption{Similar to Figure~\ref{1414masses}, for a typical
+ \caption{Similar to Figure~\ref{1414masses}, but for a typical
    $1M_{\odot}/2.5M_{\odot}$ system.  The unequal mass ratio displaces
-   the posterior PDFs from the $q \leq 1$ present in the equal mass
+   the posterior PDFs from the $q \leq 1$ boundary present in the equal-mass
    case, yielding a Gaussian PDF in both the $\chmass$-$q$ and
    $M_1$-$M_2$ spaces.}
   \label{125masses}
@@ -697,7 +640,7 @@ Monte-Carlo integral over all other parameters.
    there was quantitatively no difference between the recovered PDFs
    for different systems with identical masses and SNRs.  Systems with
    identical mass ratios but different total masses have
-   quantitatively identical PDFs when normalized to the true total
+   quantitatively identical PDFs when normalized to the total
    mass.}
   \label{metaMassPDFs}
 \end{figure*}
@@ -706,7 +649,7 @@ Of the nine variables in our parameter space \eqref{parameterspace},
 the mass parameters, $\chmass$ and $q$, or, correspondingly, $M_1$ and
 $M_2$ are the most astrophysically interesting.  The ability of
 Advanced LIGO/Virgo to construct a population of BNS masses will be
-one of the more useful applications of gravitational-wave astronomy.
+one of the more useful and immediate applications of gravitational-wave astronomy.
 
 We find that there is virtually no difference between the mass PDFs of
 our different injected signals within each mass bin.  While this may
@@ -736,7 +679,7 @@ address in Section \ref{noiseSection}.
 
 In Figures~\ref{1414masses} and~\ref{125masses}, we show the
 marginalized 2D posterior PDFs of our mass parameters for prototypical
-equal mass and unequal mass binaries.  We include the PDF in both the
+equal-mass and unequal-mass binaries.  We include the PDF in both the
 $\chmass$-$q$ space (relevant for the waveform and the MCMC
 algorithm), and the more physically interesting component mass space
 ($M_1$-$M_2$).  Although only the $1.4M_{\odot}/1.4M_{\odot}$ system
@@ -745,13 +688,13 @@ identical to the other equal mass cases, modulo a scaling factor.
 
 To condense the results into a single figure of merit, we average the
 1-dimensional mass PDFs into a single posterior probability for the
-system.  See Figure~\ref{metaMassPDFs}.  Notice how when averaged and
+system in Figure~\ref{metaMassPDFs}.  Notice how, when averaged and
 normalized to the injected values, the recovery of the component
 masses depends only on the mass ratio.  Furthermore, for systems with
 equal component masses, the posterior barely extends beyond 15\% of
 the injected values.  If one assumes that the threshold between black
 holes and neutron stars lies at approximately $3M_{\odot}$, then it
-might be assumed that the mass recovery would allow one to
+might be naively assumed that the mass recovery would allow one to
 discriminate between black holes and neutron stars.
    
 Unfortunately, this will not be feasible in practice.  We have
@@ -802,16 +745,16 @@ orbital angular momentum, making the inclination of the binary system
 of particular interest to gamma-ray astronomy
 \citep{LSCGRB2010,Corsi2012}.  The inclination is detected as a
 relative amplitude difference between the two gravitational-wave
-polarizations, such that to lowest order
+polarizations, such that to lowest order:
 
 \begin{align}
 h_+(f) &= \frac{1+\cos^2(\iota)}{2 D} \tilde{h}(f) \nonumber
-\\ h_\times(f) &= i \frac{\cos(\iota)}{D}\tilde{h}(f)
+\\ h_\times(f) &= i \frac{\cos(\iota)}{D}\tilde{h}(f) .
 \end{align}
 
 \noindent It should be apparent that the luminosity distance $D$ and
 the inclination $\iota$ can be highly correlated in any parameter
-estimation study.
+estimation recovery.
 
 Given this degeneracy, it should come as no surprise that the 2D
 marginalized posteriors of distance and inclination are the broadest
@@ -820,7 +763,7 @@ are presented in Figure~\ref{distIotaPDF}.  Notice the bimodal
 uncertainty present in the top 2D PDF along the $\iota$ axis, due to
 the similarity between the evaluated likelihoods at $\iota$ and $\iota
 + \pi/2$.  As the majority of the information extracted via parameter
-estimation is from the phase of the signal, the recovery of a
+estimation is from the phase of the signal, the recovery of the
 posterior in $D$-$\iota$ space will be limited, even during the
 Advanced LIGO/Virgo era; however, if a gravitational-wave signal is
 matched to a detected SGRB counterpart (which may occur at the rate of
@@ -860,7 +803,7 @@ those considered here.
   
 In practice, however, additional information from the wave
 polarization and the relative difference in SNR between individual
-detectors can break this plane-reflected degeneracy, leading to a
+detectors can break this plane-reflection degeneracy, leading to a
 bi-modal distribution with significantly more support in one mode of
 the PDF.  By fitting for the sky location and the polarization
 simultaneously, the MCMC can often identify the correct mode on the
@@ -886,8 +829,8 @@ In the HLVI configuration, the plane is no longer relevant, and there
 are substantially fewer regions in which only two detectors see a
 sufficiently strong signal.  See \cite{Veitch2012} for a more detailed
 comparison of the sky-localization benefits of the HLVI configuration
-verses the three-detector network.  As previously, the quantitative
-results for the two network configurations are reported in Table
+verses the three-detector network.  The quantitative
+results for the two network configurations are again reported in Table
 \ref{ciTableExtrinsic}.
 
 
@@ -895,14 +838,14 @@ results for the two network configurations are reported in Table
 \begin{figure*}[ht!]
   \centering \includegraphics[angle=0,scale=0.4, trim=5cm 2cm 3cm
     0cm]{HLVsky.pdf}
- \caption{The uncertainty on the sky of 160 BNS systems in the HLV
+ \caption{The uncertainties on the sky of 160 BNS systems in the HLV
    detector configuration.  Each region represents a single injection,
    with the colored central region representing the 65\% uncertainty
-   region on the sphere, and the gray region representing the 90\%
+   region on the sphere, and the gray shade representing the 90\%
    uncertainty region.  The color scheme indicates the total solid
    angle size of the 65\% region.  Note the similar shape of the
    uncertainty regions at particular points; this is due to the
-   specific realization of our network pattern sensitivity.}
+   specific pattern of sensitivity over the sky for the three-detector network.}
  \label{2525SkyLocHLV}
 \end{figure*}
 
@@ -914,7 +857,7 @@ results for the two network configurations are reported in Table
    uncertainties on the skies for the majority of the injections.
    Also note the lack of large, ``banana-shaped'' uncertainties that
    were recovered by the HLV configuration.  The two improvements are
-   due to the breaking of the degeneracy in sky location recovery that
+   due to the breaking of the plane degeneracy that
    is facilitated by the transition to a four-detector network.}
  \label{2525SkyLocHLVI}
 \end{figure*}
@@ -932,8 +875,8 @@ results for the two network configurations are reported in Table
    $1M_{\odot}/2.5M_{\odot}$ signal in a different noise curve, picked
    at random from the Gaussian colored noise defined by the Advanced
    LIGO power spectral density, while the gray-shaded curve is the
-   zero-noise PDF.  Notice how the curve is relatively unchanged, but
-   usually assumes a Gaussian PDF displaced from the true value.  This
+   zero-noise PDF.  Notice how each curve is a Gaussian PDF with roughly similar shape,
+   but different mean, to the zero-noise PDF.  This
    only holds true for glitch-free data, which is an unrealistic
    idealization when compared to real data.}
  \label{noisePDFs}
@@ -950,7 +893,7 @@ advanced detector noise.  Attempting to do so would have little chance
 of being accurate while requiring a huge computational burden to
 combine the results of many MCMC runs in different noise realizations.
 
-In the case of a unique Gaussian realization of the Advanced-LIGO
+In the case of a unique Gaussian realization of the Advanced LIGO
 noise curve, each realization causes the maximum likelihood of the
 posterior probability distribution to be translated away from the true
 value; however, these displacements are drawn from the same probability
@@ -966,7 +909,7 @@ As a demonstration of this, we injected a single
 $1M_{\odot}/2.5M_{\odot}$ system, detected in HLVI, into 5 separate
 realizations of Gaussian noise colored by the Advanced LIGO PSD, and
 compared the results to the same MCMC recovery in the zero-noise case.
-This example can be seen for one-dimensional marginalization of
+This example can be seen for one-dimensional marginalizations of
 $\chmass$ and $q$ in Fig. \ref{noisePDFs}.  In effect, the ``real
 answer'' that will be recovered is a single PDF with similar width to
 the zero-noise PDF, but with the peak likelihood displaced from the
@@ -1017,9 +960,9 @@ network configuration in Figures~\ref{HLVRuntimes} and
 \label{ciSection}
 
 When quoting parameter estimation results, it is often convenient to
-reduce the full parameter space to credible intervals about single,
+reduce the full parameter space to credible intervals about single
 marginalized parameters..  To that end, we state the averaged 65\%
-confidence intervals about the single parameters for each of the three
+intervals about the single parameters for each of the three
 parameter pairs of interest.  These were already plotted for the sky
 locations in Figures~\ref{2525SkyLocHLV} and \ref{2525SkyLocHLVI}.
 
@@ -1172,7 +1115,7 @@ found that the cosine of the orbital inclination can be constrained to
 within 0.3 at the 65\% level, suggesting that Advanced LIGO/Virgo will not
 be able to offer constraining information on GRB beaming angles in coincidence
 with electromagnetic observations.  Coincidence detections will still be possible, but
-the orbital orientation information from gravitational-waves will 
+the orbital orientation information from gravitational waves will 
 not provide astropysically relevant constrains.
 %  \will{Are you sure about this?
  % Beaming angles about 10 degrees would have $\Delta \cos i \simeq
@@ -1186,7 +1129,7 @@ plus the Italian Virgo site, was able to constrain all signals within
 an average 65\% confidence interval of $\sim 7$ $\mathrm{deg}^2$.
 Meanwhile, the four-detector configuration, consisting of the
 three-detector sites plus a LIGO India detector, was able to localize
-the sky-locations to within 13 $\mathrm{deg}^2$ on the sky at the 65\%
+all the sky locations to within 13 $\mathrm{deg}^2$ on the sky at the 65\%
 confidence interval, with an average 65\% confidence interval of $\sim
 2$ $\mathrm{deg}^2$.
 
@@ -1218,7 +1161,7 @@ presented here.
 In this study, we have also neglected the effects of spin in the
 parameter space, electing to focus on the absolute basic parameters
 that will be measured routinely in the Advanced Detector era.  Given
-the high degree of coupling between the spin and the mass of objects
+the high degree of coupling between the spin and mass of objects
 in the gravitational-wave parameter space, it remains unclear if the
 mass measurement alone will be sufficient to distinguish non-spinning
 neutron stars from highly-spinning low-mass black holes.  Future work

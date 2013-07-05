@@ -11,6 +11,8 @@ You can't pop an empty literal stack for entry LSCGRB2010
 while executing---line 1676 of file apj.bst
 You can't pop an empty literal stack for entry RatesPaper
 while executing---line 1676 of file apj.bst
+You can't pop an empty literal stack for entry S6search
+while executing---line 1676 of file apj.bst
 You can't pop an empty literal stack for entry Allen:2002jw
 while executing---line 1676 of file apj.bst
 You can't pop an empty literal stack for entry ArunPE
@@ -68,45 +70,45 @@ ptr=1, stack=
 Technical Report VIR-0027A-09
 ---the literal stack isn't empty for entry AdvVirgo
 while executing---line 1676 of file apj.bst
-You've used 31 entries,
+You've used 32 entries,
             3049 wiz_defined-function locations,
-            885 strings with 11195 characters,
-and the built_in function-call counts, 16710 in all, are:
-= -- 1413
-> -- 963
+            890 strings with 11519 characters,
+and the built_in function-call counts, 17370 in all, are:
+= -- 1462
+> -- 1013
 < -- 15
-+ -- 320
-- -- 346
-* -- 1432
-:= -- 2909
-add.period$ -- 31
-call.type$ -- 31
-change.case$ -- 198
-chr.to.int$ -- 31
-cite$ -- 34
-duplicate$ -- 627
-empty$ -- 1157
-format.name$ -- 384
-if$ -- 3517
++ -- 336
+- -- 364
+* -- 1497
+:= -- 3026
+add.period$ -- 32
+call.type$ -- 32
+change.case$ -- 203
+chr.to.int$ -- 32
+cite$ -- 35
+duplicate$ -- 648
+empty$ -- 1198
+format.name$ -- 403
+if$ -- 3655
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 29
-newline$ -- 97
-num.names$ -- 124
-pop$ -- 220
+missing$ -- 30
+newline$ -- 100
+num.names$ -- 128
+pop$ -- 225
 preamble$ -- 1
-purify$ -- 198
+purify$ -- 203
 quote$ -- 0
-skip$ -- 692
+skip$ -- 718
 stack$ -- 0
-substring$ -- 1189
+substring$ -- 1238
 swap$ -- 1
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 276
+type$ -- 285
 warning$ -- 3
-while$ -- 137
+while$ -- 141
 width$ -- 0
-write$ -- 332
-(There were 27 error messages)
+write$ -- 343
+(There were 28 error messages)
