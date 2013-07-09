@@ -80,7 +80,7 @@ for number in massBins:
 			n += dx
 
 		ax1 = subplot(3,1,1)
-		fill_between(Xm1,Ym1,zeros(len(Ym1)), alpha=0.4, color=colors[Bin])
+		fill_between(Xm1,Ym1,zeros(len(Ym1)), alpha=0.3, color=colors[Bin])
 		plot(Xm1,Ym1, color=colors[Bin], linestyle='solid', lw=3)
 		fill_between(Xm2,Ym2,zeros(len(Ym2)), alpha=0.4, color=colors[Bin])
 		plot(Xm2,Ym2, color=colors[Bin], linestyle='dashed', lw=3)
@@ -124,8 +124,8 @@ for number in massBins:
 			n += dx
 
 		ax3 = subplot(3,1,2)
-		plot(Xm,Ym, color=colors[Bin], lw=1)
-		fill_between(Xm,Ym,zeros(len(Ym)), alpha=0.4, color=colors[Bin])
+		plot(Xm,Ym, color=colors[Bin], lw=3)
+		fill_between(Xm,Ym,zeros(len(Ym)), alpha=0.3, color=colors[Bin])
 		axvline(1,0,max(Ym),color='black', lw=3)
 		ax3.grid(True)
 		ylabel('Probability Densities',fontsize=22)
@@ -143,8 +143,8 @@ for number in massBins:
 			n += dx
 
 		ax4 = subplot(3,1,3)
-		plot(Xq,Yq, color=colors[Bin], lw=1)
-		fill_between(Xq,Yq,zeros(len(Yq)), alpha=0.4, color=colors[Bin])
+		plot(Xq,Yq, color=colors[Bin], lw=3)
+		fill_between(Xq,Yq,zeros(len(Yq)), alpha=0.3, color=colors[Bin])
 #		axvline(1,0,max(Yq),color='black', lw=3)
 		ax4.grid(True)
 		xlabel('Mass Ratios ($q$)', fontsize=18)

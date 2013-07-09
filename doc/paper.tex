@@ -519,12 +519,12 @@ realization of the noise at the time of the detection.  Because of
 this, we elect to focus only on the statistical errors due to the
 flexibility of the waveforms and the expected sensitivity of the
 advanced era detectors and suppress any effects of detector noise by
-picking the (most likely) noise realization that has $n(t) \equiv 0$.
+picking $n(t) \equiv 0$.
 Consequently, what we recover with the MCMC could be interpreted as
 the posterior distribution function for each source averaged over all
 possible (Gaussian) noise realizations, assuming we have the correct
-PSD.  \will{This is not true because the map from noise realization to
-  posterior is not linear.}  
+PSD and that the signal is sufficiently powerful for the linearized-signal
+approximation \citep{Vallisneri} to be valid.
 
 To check that our reported statistical errors are not in gross
 disagreement with those obtained in the presence of noise, we selected
@@ -884,10 +884,10 @@ results for the two network configurations are again reported in Table
   
 We have performed the current analysis on zero-noise injections for
 two reasons.  First, the results of a zero-noise analysis are
-identical to those that would be achieved by averaging the results of
+similar to those that would be achieved by averaging the results of
 multiple identical injections in different Gaussian noise
-realizations, as was argued in Section \ref{waveformSection}.
-\will{Again, this is not true!}  The second reason is we are not able
+realizations, as was argued in Section \ref{waveformSection}.  The second reason 
+is we are not able
 to predict the characteristics of realistic (often non-Gaussian)
 advanced detector noise.  Attempting to do so would have little chance
 of being accurate while requiring a huge computational burden to
@@ -896,14 +896,11 @@ combine the results of many MCMC runs in different noise realizations.
 In the case of a unique Gaussian realization of the Advanced LIGO
 noise curve, each realization causes the maximum likelihood of the
 posterior probability distribution to be translated away from the true
-value; however, these displacements are drawn from the same probability
-distribution we are attempting to sample with the MCMC \citep{Inadequacies}.
- \will{I don't understand
-  what ``drawn according to the zero-noise distribution'' means.  I
-  don't think this sentence makes sense.} \carl{Changed the sentence, but
-   I think you, Tyson, and I will need to chat about this}.  These displacements average to 
-   zero over many runs, ensuring that the mean uncertainties should be equal to 
-   the uncertainty drawn from the zero-noise runs.  \will{Again, not strictly true.}
+value.  These displacements tend to cancel 
+    over many runs, ensuring that the mean uncertainties should be nearly identical to 
+   the uncertainty drawn from the zero-noise runs.  Again, this only holds in the case
+  where a signal is sufficiently loud that the posterior is linear in the parameters 
+  $\thpara$.
 
 As a demonstration of this, we injected a single
 $1M_{\odot}/2.5M_{\odot}$ system, detected in HLVI, into 5 separate
