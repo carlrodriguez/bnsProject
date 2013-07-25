@@ -108,7 +108,7 @@ binary compact object mergers, including the mergers of binary neutron
 star systems.  Intense preparations are underway to characterize and
 extract as much physical information as possible from these signals.
  
-The mergers of binary neutron stars (BNS) are expected to be the one of the most
+The mergers of binary neutron stars (BNS) are expected to be one of the most
 common compact binary sources in the advanced detector era.  %\will{This
   %is technically true (thanks to the word ``expected''), but the
  % uncertainty in rates is so large that it would not be surprising at
@@ -175,7 +175,7 @@ gravitational-wave template we employ.  In Section
 \ref{resultsSection}, we qualitatively analyze the posterior
 probability density functions for BNS systems with different masses
 and extrinsic parameters.  We select three equal-mass and one unequal-mass
- binary systems as fiducal examples of BNS systems.  Each system was then analyzed 40 
+ binary systems as fiducial examples of BNS systems.  Each system was then analyzed 40 
  times with isotropically selected sky locations and orbital orientations, and with a distance
  such that each signal was injected with a signal-to-noise ratio of 20.
   The results are divided into three subsections of interest: the recovery of the mass
@@ -198,7 +198,7 @@ We begin by introducing a Bayesian formalism for parameter estimation.
 %Before offering a brief derivation of the FIM, a few preliminary
 %techniques must be introduced.  First,
 We assume that the time-domain signal in a gravitational-wave network
-can be written as a combination of a gravitational waveform $h_0$ and
+can be written as the sum of a gravitational waveform $h_0$ and
 the noise of the detector $n$.  We further assume that this noise is
 stationary and Gaussian with zero mean.  The detector output is simply
 \begin{equation}
@@ -206,7 +206,7 @@ s = n + h_0 .
 \label{SignalAddition}
 \end{equation}
 Since the noise model is Gaussian, we can write the probability of a
-specific signal realization $s$ given an input waveform as
+specific signal realization $s$ given an input waveform $h(\thpara)$ as
 proportional to the probability that the residual is Gaussian
 distributed once the waveform has been subtracted
 \begin{align}
@@ -254,10 +254,10 @@ addition to the likelihood of the signal.  For instance, since it is
 assumed that compact binaries form homogeneously in the local universe
 observable by advanced detectors, we can safely assume that the
 population of sources will be distributed homogeneously in volume, i.e.\
-with a density proportional to $D^2$.  Our prior information can come
-from mathematical limits in the parameter space or from our \textit{a
-  priori} knowledge of astrophysical systems.  We employ priors which
-are
+with a density proportional to the square of the luminosity distance $D^2$.  
+Our prior information can come from mathematical limits in the parameter space 
+or from our \textit{a priori} knowledge of astrophysical systems.  
+We employ priors which are
 \begin{itemize}
 \item uniform in component masses from $0.8M_{\odot} \leq M_{1,2} \leq
   30M_{\odot}$, with a minimum chirp mass (see Eq.~\eqref{eqRatioCM})
@@ -272,7 +272,7 @@ are
 The mass priors listed here are the generic priors used in follow-up
 analysis, not specifically for BNS systems.  While we could have used
 a prior with a lower component mass cutoff for the present study, in
-practice the higher prior boundary does not effect our current
+practice the higher prior boundary does not affect our current
 analysis.
 
 
@@ -481,7 +481,7 @@ normalization $\sigma$ is given by
   \label{SNRnorm}
 \end{equation}
 
-When dealing with network a of gravitational-wave detectors, the SNRs
+When dealing with a network of gravitational-wave detectors, the SNRs
 of the individual detectors add in quadrature.  That is, the network
 SNR for a detection is
 
@@ -493,7 +493,7 @@ SNR for a detection is
 \noindent where $\rho_i$ is the SNR, given by \eqref{formalSNR}, of
 the $i^{\text{th}}$ detector.
 
-For this study, we consider four seperate populations of BNS systems,
+For this study, we consider four separate populations of BNS systems,
 with component mass combinations of $1M_{\odot}/1M_{\odot}$,
 $1.4M_{\odot}/1.4M_{\odot}$, $1M_{\odot}/2.5M_{\odot}$, and
 $2.5M_{\odot}/2.5M_{\odot}$.  Each population consisted of 40 signals
@@ -575,7 +575,7 @@ interest.%\footnote{For systems whose components are non-spinning.  The
 In Figure~\ref{9dPDF}, we provide an example of the nine,
 1-dimensional marginalized posterior probability density functions
 recovered from a single $1.4M_{\odot}/1.4M_{\odot}$ BNS system.  These
-PDFs are typical of the type of results that will be produced by
+PDFs are representative of the type of results that will be produced by
 parameter estimation studies in the advanced detector era.  Notice
 that the peak of several parameters, including the chirp mass,
 $\chmass$, appears to be displaced from the true values in dashed red.  This
@@ -829,7 +829,7 @@ In the HLVI configuration, the plane is no longer relevant, and there
 are substantially fewer regions in which only two detectors see a
 sufficiently strong signal.  See \cite{Veitch2012} for a more detailed
 comparison of the sky-localization benefits of the HLVI configuration
-verses the three-detector network.  The quantitative
+versus the three-detector network.  The quantitative
 results for the two network configurations are again reported in Table
 \ref{ciTableExtrinsic}.
 
@@ -1151,7 +1151,7 @@ LIGO and Advanced Virgo can vary with time and contain occasional
 excursions which are highly non-Gaussian.  Unfortunately, there is no
 reliable way to predict the sort of non-Gaussian detector glitches and
 instrumentation effects that will arise in any advanced
-gravitational-wave detector.  The realization of noise will be the a
+gravitational-wave detector.  The realization of noise will be a
 major factor in the deflection of signal PDFs from the idealized cases
 presented here.
 
