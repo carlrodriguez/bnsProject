@@ -1,4 +1,4 @@
-\begin{thebibliography}{32}
+\begin{thebibliography}{34}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Abadie {et~al.}(2010)Abadie, Abbott, Abbott, Accadia, Acernese,
@@ -90,6 +90,16 @@ Littenberg, T.~B., \& Cornish, N.~J. 2010, Phys. Rev. D, 82, 103007, 103007
 
 \bibitem[{Nakar(2007)}]{Nakar2007}
 Nakar, E. 2007, Physics Reports, 442, 166Ð236, 166Ð236
+
+\bibitem[{{O'Shaughnessy} {et~al.}(2010){O'Shaughnessy}, {Kalogera}, \&
+  {Belczynski}}]{RichardRates2010}
+{O'Shaughnessy}, R., {Kalogera}, V., \& {Belczynski}, K. 2010, \apj, 716, 615,
+  615
+
+\bibitem[{{Os{\l}owski} {et~al.}(2011){Os{\l}owski}, {Bulik},
+  {Gondek-Rosi{\'n}ska}, \& {Belczy{\'n}ski}}]{OsowskiRates2011}
+{Os{\l}owski}, S., {Bulik}, T., {Gondek-Rosi{\'n}ska}, D., \& {Belczy{\'n}ski},
+  K. 2011, \mnras, 413, 461, 461
 
 \bibitem[{{Poisson} \& {Will}(1995)}]{PoissonWill}
 {Poisson}, E., \& {Will}, C.~M. 1995, \prd, 52, 848, 848

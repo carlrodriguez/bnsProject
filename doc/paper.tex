@@ -73,22 +73,25 @@ Vicky Kalogera\altaffilmark{1}}
 
 \begin{abstract}
 
-Within the next five years, the Advanced LIGO/Virgo network will have
+Within the next five years, it is expected that the Advanced LIGO/Virgo network will have
 reached a sensitivity sufficient to enable the routine detection of
 gravitational waves.  Beyond the initial detection, the scientific
-promise of these instruments relies on the effectiveness of our
-parameter estimation techniques. The majority of this effort has been towards the
+promise of these instruments relies on the effectiveness of our physical
+parameter estimation capabilities. The majority of this effort has been towards the
 detection and characterization of gravitational waves from compact
 binary coalescence, e.g. the coalescence of binary neutron stars.
-While several previous studies have focused on the parameter
-estimation abilities of advanced detectors, the majority have relied
-on approximation techniques such as the Fisher Matrix.  We report the
-statistical uncertainties that will be achievable, in practice, using
+While several previous studies have investigated the accuracy of parameter
+estimation with advanced detectors, the majority have relied
+on approximation techniques such as the Fisher Matrix.  Here we report the
+statistical uncertainties that will be achievable using
 the full parameter estimation machinery developed by the LIGO/Virgo
-Collaboration.  We find the recovery of the individual masses to be
-fractionally within 10\% at the 65\% credible intervals for equal-mass
-systems, and within 2\% for unequal-mass systems.  We also report the
-average uncertainties on the sky-locations, luminosity distances, and
+Collaboration via Markov-Chain Monte Carlo methods. 
+ We find the recovery of the individual masses to be
+fractionally within 8.5\% (13.4\%) at the 65\% (90\%) credible intervals for equal-mass
+systems, and within 2\% (3.1\%) for unequal-mass systems.  We also find that the Advanced
+LIGO/Virgo network will constrain the locations of binary neutron star mergers to an average
+ uncertainty of $7.4$ $\mathrm{deg}^2$ (18.6 $\mathrm{deg}^2$) on the sky.  This region is improved to  2.2 $\mathrm{deg}^2$ $(5$ $\mathrm{deg}^2)$ with the addition of the proposed LIGO India detector to the network.  We also report the
+average uncertainties on the luminosity distances and
 orbital inclinations of ideal detection candidates that can be
 achieved by different network configurations.
 % \will{I'm not sure that
@@ -101,9 +104,10 @@ achieved by different network configurations.
 \section{Introduction}
 
 Within the next few years, the first generation of gravitational-wave
-detectors capable of regularly resolving astrophysical sources will
+interferometers capable of regularly detecting astrophysical sources will
 come online \citep{AdvLIGO,AdvVirgo}.  The Advanced LIGO and Advanced Virgo
-detectors will provide the first insights into the final moments of
+detectors (and the anticipated LIGO India detector)
+ will provide the first insights into the final moments of
 binary compact object mergers, including the mergers of binary neutron
 star systems.  Intense preparations are underway to characterize and
 extract as much physical information as possible from these signals.
@@ -124,7 +128,7 @@ field gravitational physics \citep{Li2012} and the the equation of state of
 dense nuclear matter
 \citep{HindererBNS2010}.  Furthermore, the observations of multiple BNS systems
 will provide key insights into the evolution of binary systems in the
-field \citep{VickyRates,KimRates} . As such, BNS systems will likely
+field \citep{VickyRates,KimRates,OsowskiRates2011,RichardRates2010} . As such, BNS systems will likely
 form the ``bread and butter'' of the compact binary coalescence
 detection effort in the coming years.
 
@@ -149,8 +153,8 @@ parameter estimation code, \texttt{LALInference}, to analyze the
 parameter space of BNS systems.
 
 By employing the full parameter-estimation machinery that will
-eventually be used in the Advanced LIGO/Virgo era, our results give
- estimates at the realistic capabilities of
+eventually be used in the Advanced LIGO/Virgo era, our results
+ give estimates of the realistic capabilities of
 advanced ground-based detectors to characterize BNS systems.  Until
 recently, the majority of studies have employed the Fisher-matrix
 formalism which was first adapted for gravitational-wave parameter
@@ -175,9 +179,9 @@ gravitational-wave template we employ.  In Section
 \ref{resultsSection}, we qualitatively analyze the posterior
 probability density functions for BNS systems with different masses
 and extrinsic parameters.  We select three equal-mass and one unequal-mass
- binary systems as fiducial examples of BNS systems.  Each system was then analyzed 40 
+ binary systems as prototypical examples of BNS systems.  Each system is analyzed 40 
  times with isotropically selected sky locations and orbital orientations, and with a distance
- such that each signal was injected with a signal-to-noise ratio of 20.
+ such that each signal was injected with a network signal-to-noise ratio of 20.
   The results are divided into three subsections of interest: the recovery of the mass
 parameters (Section \ref{massSection}), the recovery of the orbital
 inclination and luminosity distance (Section \ref{idSection}), and the
@@ -228,13 +232,11 @@ where $S_n(f)$ is the one-sided power-spectral density (PSD) as a
 function of frequency, and $\tilde{a}(f)$ and $\tilde{b}(f)$ are the
 Fourier transforms of the time-domain data $a(t)$ and $b(t)$.  If we
 pick a set of parameters $\thpara$ such that $h(\thpara) = h_0$, then
-the posterior \eqref{posterior} will be near a global maximum;
+the likelihood \eqref{likelihood} will be near a global maximum;
 however, the presence of noise will in general deflect the maximum of
-our posterior away from the value at $h(\thpara) = h_0$.  Therefore, the
-maximum posterior parameters do not necessarily correspond to the true
-parameters of the source; when interpreting parameter estimation
-results it is important to consider the full posterior distribution
-function.
+our likelood away from the value at $h(\thpara) = h_0$.  Therefore, the
+maximum likelihood parameters do not necessarily correspond to the true
+parameters of the source.
  
 Once we have the likelihood of the signal \eqref{likelihood}, we
 employ Bayes Theorem to obtain the posterior probability of the system
@@ -410,31 +412,6 @@ $t_c$ and $\phi_0$ in equation (\ref{phase}) are constants of
 integration, referred to as the chirp time and coalescence phase,
 respectively.
 
-To perform the integral defined in \eqref{innerProduct}, we used as
-our power-spectral density the best estimate for a high-power,
-zero-detuning configuration of Advanced LIGO, provided by the LIGO
-Scientific Collaboration.  Both the noise curve and technical reports
-describing it can be found in \cite{ADVLIGONoise}.  We consider two
-configurations of the advanced detector network: a three-detector
-configuation consistanting of the two LIGO sites (in Hanford, WA and
-Livingston, LA) and the Virgo site (in Pisa, Italy), and a
-four-detector configuration that adds the proposed LIGO-India detector
-(in Chitradurga, KA).  For simplicity, we assume each detector to be
-operating at the Advanced LIGO sensitivity.
-
-
-For a multi-detector network, the noise-weighted inner products
-\eqref{innerProduct} combine linearly, allowing us to use the above
-formalism with minimal modification.  We integrate the inner product
-from a lower-frequency cutoff of $20\text{Hz}$ to the
-innermost-stable-circular orbit of the systems, which for
-a non-spinning binary is a function only of the total mass:
-
-\begin{equation}
-  \pi f_{\text{ISCO}} = \frac{1}{6^{3/2}M_{tot}}.
-  \label{ISCOFrequency}
-\end{equation}
-   
 We consier the mass parameters ($\chmass,q$) and the phasing
 parameters, ($\phi_0,t_c$), to be the intrinsic parameters of the
 gravitational-wave signal.  There are an additional 5 extrinsic
@@ -465,6 +442,35 @@ where
   extrinsic parameters comes from two sources: the time-of-arrival
   triangulation of the signal, and the relative amplitudes
   in each detector in the network.
+  
+  \subsection{Detector Configuration and Noise Models}
+  \label{detectorSection}
+  
+To perform the integral defined in \eqref{innerProduct}, we used as
+our power-spectral density the best estimate for a high-power,
+zero-detuning configuration of Advanced LIGO, provided by the LIGO
+Scientific Collaboration.  Both the noise curve and technical reports
+describing it can be found in \cite{ADVLIGONoise}.  We consider two
+configurations of the advanced detector network: a three-detector
+configuation consistanting of the two LIGO sites (in Hanford, WA and
+Livingston, LA) and the Virgo site (in Pisa, Italy), and a
+four-detector configuration that adds the proposed LIGO-India detector
+(in Chitradurga, KA).  For simplicity, we assume each detector to be
+operating at the Advanced LIGO sensitivity.
+
+
+For a multi-detector network, the noise-weighted inner products
+\eqref{innerProduct} combine linearly, allowing us to use the above
+formalism with minimal modification.  We integrate the inner product
+from a lower-frequency cutoff of $20\text{Hz}$ to the
+innermost-stable-circular orbit of the systems, which for
+a non-spinning binary is a function only of the total mass:
+
+\begin{equation}
+  \pi f_{\text{ISCO}} = \frac{1}{6^{3/2}M_{tot}}.
+  \label{ISCOFrequency}
+\end{equation}
+   
 
 We define the signal-to-noise ratio (SNR) of a gravitational wave in a
 single detector as
@@ -481,7 +487,7 @@ normalization $\sigma$ is given by
   \label{SNRnorm}
 \end{equation}
 
-When dealing with a network of gravitational-wave detectors, the SNRs
+\noindent When dealing with a network of gravitational-wave detectors, the SNRs
 of the individual detectors add in quadrature.  That is, the network
 SNR for a detection is
 
@@ -501,7 +507,7 @@ distributed randomly in sky location, polarization, inclination,
 time-of-arrival, and coalescence phase.  The luminosity distance, $D$,
 was selected to provide a network SNR of $\rho_{\text{network}}=20$
 for each source.  While unphysical from an astrophysics perspective
-(binary sources should be distributed evenly in comoving volume), this
+(binary sources are expected to be distributed uniformly in comoving volume), this
 choice allows us to explore the parameter estimation in the context of
 loud but plausible detection candidates.
 
@@ -653,7 +659,8 @@ one of the more useful and immediate applications of gravitational-wave astronom
 
 We find that there is virtually no difference between the mass PDFs of
 our different injected signals within each mass bin.  While this may
-initially seem disconcerting, it is to be expected.  Recall that all
+initially seem disconcerting, it is to be expected for the analysis presented here.
+  Recall that all
 of the BNS signals were injected with a network SNR of 20 into a
 zero-noise detector realization.  Furthermore, note that the mass
 parameters are the only two which directly affect the phase of the
@@ -697,12 +704,13 @@ holes and neutron stars lies at approximately $3M_{\odot}$, then it
 might be naively assumed that the mass recovery would allow one to
 discriminate between black holes and neutron stars.
    
-Unfortunately, this will not be feasible in practice.  We have
+In practice, there is a physical complication to this claim: we have
 neglected the spin of the binaries, which will be highly correlated to
-the masses.  This coupling means that a higher-massed spinning black
+the masses.  This coupling means that, in the case where the black hole spins
+are parallel to the orbital angular momentum, a higher-massed spinning black
 hole systems can produce waveforms very similar to non-spinning,
-low-mass systems, making it extremely difficult to discern between
-non-spinning neutron stars and spinning, more massive black holes
+low-mass systems.  This effect makes it extremely difficult to discern between
+non-spinning neutron stars and spin-aligned, more massive black holes
 \citep{Baird2013,Hannam2013}.  However, the situation is not hopeless:
 if the spins are misaligned, the spin vectors will couple to the
 orientation of the binary (encoded in the three angles $\phi_0$,
@@ -829,9 +837,14 @@ In the HLVI configuration, the plane is no longer relevant, and there
 are substantially fewer regions in which only two detectors see a
 sufficiently strong signal.  See \cite{Veitch2012} for a more detailed
 comparison of the sky-localization benefits of the HLVI configuration
-versus the three-detector network.  The quantitative
-results for the two network configurations are again reported in Table
-\ref{ciTableExtrinsic}.
+versus the three-detector network.  For the HLV configuration, we find that
+ all of the signals are recovered with
+a solid angle uncertainty of less than 60 $\mathrm{deg}^2$ (120 $\mathrm{deg}^2$)
+at the 65\% (90\%) credible interval, while the HLVI configuration 
+recovers all signals to less than 13 $\mathrm{deg}^2$ (34 $\mathrm{deg}^2$).
+The mean quantitative results for the two network configurations show a similar
+ benefit with the addition of LIGO India, and are again reported in
+  Table \ref{ciTableExtrinsic}. 
 
 
 
@@ -886,12 +899,12 @@ We have performed the current analysis on zero-noise injections for
 two reasons.  First, the results of a zero-noise analysis are
 similar to those that would be achieved by averaging the results of
 multiple identical injections in different Gaussian noise
-realizations, as was argued in Section \ref{waveformSection}.  The second reason 
+realizations, as was argued in Section \ref{detectorSection}.  The second reason 
 is we are not able
 to predict the characteristics of realistic (often non-Gaussian)
 advanced detector noise.  Attempting to do so would have little chance
 of being accurate while requiring a huge computational burden to
-combine the results of many MCMC runs in different noise realizations.
+combine the results of many MCMC runs in many different noise realizations.
 
 In the case of a unique Gaussian realization of the Advanced LIGO
 noise curve, each realization causes the maximum likelihood of the
@@ -958,7 +971,7 @@ network configuration in Figures~\ref{HLVRuntimes} and
 
 When quoting parameter estimation results, it is often convenient to
 reduce the full parameter space to credible intervals about single
-marginalized parameters..  To that end, we state the averaged 65\%
+marginalized parameters..  To that end, we state the averaged 65\% and 90\% credible
 intervals about the single parameters for each of the three
 parameter pairs of interest.  These were already plotted for the sky
 locations in Figures~\ref{2525SkyLocHLV} and \ref{2525SkyLocHLVI}.
@@ -973,7 +986,7 @@ this procedure can prove hazardous for multi-modal distributions, it
 is straightforward and reliable for single-peaked distributions as
 reported here.
 
-In Table~\ref{ciTableIntrinsic}, we list the mean 65\% confidence
+In Table~\ref{ciTableIntrinsic}, we list the mean 65\% and 90\% credible
 intervals recovered for the four mass configurations in both network
 configurations. This essentially quantifies the widths of the
 posteriors plotted throughout Section~\ref{resultsSection}.  The
@@ -982,103 +995,129 @@ to provide a quantitative and quotable source for studies seeking to
 determine how well a physical question about BNS systems can be
 answered with the Advanced LIGO/Virgo network.
 
+Given the previous reliance of parameter estimation studies on the Fisher
+Information Matrix, it is informative to compare the credible intervals quoted here 
+to previously reported values in the literature.  We recompute the credible intervals 
+of the chirp mass and the symmetric mass ratio ($\eta \equiv m_1 m_2 / M_{tot}^2$)
+at the 68\% level (1-$\sigma$) for the $1.4M_{\odot}/1.4M_{\odot}$ system presented 
+here.  We then compare the findings of the MCMC to the Fisher matrix predictions using
+an identical network configuration (HLV), noise curve, and waveform model.  
+We compute the Fisher matrix uncertainties 
+using a code previously described in \cite{Inadequacies}.  We find that the MCMC credible
+ intervals vary significantly from
+the estimates of the Fisher matrix, with the Fisher matrix underestimating the 
+fractional uncertainties by as much as a factor of three.  See Table~\ref{FIMvsMCMC}.
+   This disagreement, while 
+   unsurprising, emphasizes the importance of employing the full parameter estimation
+    machinery of an MCMC when making physically relevant claims.
 
 \begin{table*}[t!]
 \centering
-\caption{Mean 65\% confidence intervals for intrinsic parameters for
-  each of the four systems considered.  We report the confidence
+\caption{Mean 65\% and 90\% credible intervals for intrinsic parameters for
+  each of the four systems considered.  We report the credible
   intervals of quantities measured, as well as the component masses
   and total mass.  Although the results for the HLV and HLVI
   configurations are quantitatively identical, we report them
   separately for consistency.}
-\begin{tabular}{lcccccccccc}
+  \tabcolsep=0.11cm
+      {\renewcommand{\arraystretch}{1.3} 
+\begin{tabular}{lcccccccccccccccccccc}
 
-\\HLVI\\ \hline\hline System & \vline & $\Delta \chmass / \chmass$ &
-\vline & $\Delta M_1 / M_1$ & \vline & $\Delta M_2 / M_2$ & \vline &
-$\Delta M_{tot}/M_{tot}$ & \vline & $\Delta q$\\ \hline\hline
-$1M_{\odot}-1M_{\odot}$ & \vline & $4.70\times 10^{-5}$ & \vline &
-$6.83\times 10^{-2}$ & \vline & $6.09\times 10^{-2}$ & \vline &
-$3.67\times 10^{-3}$ & \vline & $1.17\times 10^{-1}$\\ \hline
-$1.4M_{\odot}-1.4M_{\odot}$ & \vline & $8.27\times 10^{-5}$ & \vline &
-$7.27\times 10^{-2}$ & \vline & $6.45\times 10^{-2}$ & \vline &
-$4.10\times 10^{-3}$ & \vline & $1.24\times 10^{-1}$ \\ \hline
-$1M_{\odot}-2.5M_{\odot}$ & \vline & $1.65\times 10^{-4}$ & \vline &
-$1.74\times 10^{-2}$ & \vline & $1.49\times 10^{-2}$ & \vline &
-$8.15\times 10^{-3}$ & \vline & $1.29\times 10^{-2}$\\\hline
-$2.5M_{\odot}-2.5M_{\odot}$ & \vline & $2.29\times 10^{-4}$ & \vline &
-$8.52\times 10^{-2}$ & \vline & $7.41\times 10^{-2}$ & \vline &
-$5.51\times 10^{-3}$ & \vline & $1.41\times 10^{-1}$\\ \hline\hline
+\\HLVI\\
+
+ \hline\hline System & \vline & \multicolumn{3}{c}{$\Delta \chmass / \chmass$} &
+\vline & \multicolumn{3}{c}{$\Delta M_1 / M_1$} & \vline & \multicolumn{3}{c}{$\Delta M_2 / M_2$} & \vline &
+\multicolumn{3}{c}{$\Delta M_{tot}/M_{tot}$} & \vline & \multicolumn{3}{c}{$\Delta q$}\\ \hline
+Credible Level & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% \\
+\hline\hline
+
+$1M_{\odot}-1M_{\odot}$ & \vline &$0.00465\%$ & \vline &$0.00863\%$ & \vline & $6.78\%$ & \vline &$10.6\%$ & \vline & $6.06\%$ & \vline &$9.28\%$ & \vline & $0.362\%$ & \vline &$0.633\%$ & \vline & $0.117$ & \vline &$0.178$\\\hline$1.4M_{\odot}-1.4M_{\odot}$ & \vline &$0.00827\%$ & \vline &$0.0154\%$ & \vline & $7.27\%$ & \vline &$11.4\%$ & \vline & $6.45\%$ & \vline &$9.90\%$ & \vline & $0.410\%$ & \vline &$0.724\%$ & \vline & $0.124$ & \vline &$0.189$\\\hline$1M_{\odot}-2.5M_{\odot}$ & \vline &$0.0165\%$ & \vline &$0.0294\%$ & \vline & $1.74\%$ & \vline &$3.10\%$ & \vline & $1.49\%$ & \vline &$2.67\%$ & \vline & $0.815\%$ & \vline &$1.46\%$ & \vline & $0.0129$ & \vline &$0.0231$\\\hline$2.5M_{\odot}-2.5M_{\odot}$ & \vline &$0.0229\%$ & \vline &$0.0424\%$ & \vline & $8.52\%$ & \vline &$13.3\%$ & \vline & $7.42\%$ & \vline &$11.4\%$ & \vline & $0.551\%$ & \vline &$0.958\%$ & \vline & $0.141$ & \vline &$0.215$\\
+
+\hline
+\hline
 
 \\ HLV\\
 
-\hline\hline System & \vline & $\Delta \chmass / \chmass$ & \vline &
-$\Delta M_1 / M_1$ & \vline & $\Delta M_2 / M_2$ & \vline & $\Delta
-M_{tot}/M_{tot}$ & \vline & $\Delta q$\\ \hline\hline
-$1M_{\odot}-1M_{\odot}$ & \vline & $4.66\times 10^{-5}$ & \vline &
-$6.82\times 10^{-2}$ & \vline & $6.09\times 10^{-2}$ & \vline &
-$3.64\times 10^{-3}$ & \vline & $1.17\times 10^{-1}$ \\ \hline
-$1.4M_{\odot}-1.4M_{\odot}$ & \vline & $8.31\times 10^{-5}$ & \vline &
-$7.35\times 10^{-2}$ & \vline & $6.51\times 10^{-2}$ & \vline &
-$4.18\times 10^{-3}$ & \vline & $1.25\times 10^{-1}$\\ \hline
-$1M_{\odot}-2.5M_{\odot}$ & \vline & $1.65\times 10^{-4}$ & \vline &
-$1.75\times 10^{-2}$ & \vline & $1.50\times 10^{-2}$ & \vline &
-$8.19\times 10^{-3}$ & \vline & $1.30\times 10^{-2}$ \\ \hline
-$2.5M_{\odot}-2.5M_{\odot}$ & \vline & $2.30\times 10^{-4}$ & \vline &
-$8.53\times 10^{-2}$ & \vline & $7.42\times 10^{-2}$ & \vline &
-$5.52\times 10^{-3}$ & \vline & $1.41\times 10^{-1}$ \\ \hline\hline
+ \hline\hline System & \vline & \multicolumn{3}{c}{$\Delta \chmass / \chmass$} &
+\vline & \multicolumn{3}{c}{$\Delta M_1 / M_1$} & \vline & \multicolumn{3}{c}{$\Delta M_2 / M_2$} & \vline &
+\multicolumn{3}{c}{$\Delta M_{tot}/M_{tot}$} & \vline & \multicolumn{3}{c}{$\Delta q$}\\ \hline
+Credible Level & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% \\
+\hline\hline
+
+$1M_{\odot}-1M_{\odot}$ & \vline &$0.00466\%$ & \vline &$0.00865\%$ & \vline & $6.82\%$ & \vline &$10.5\%$ & \vline & $6.09\%$ & \vline &$9.25\%$ & \vline & $0.364\%$ & \vline &$0.633\%$ & \vline & $0.117$ & \vline &$0.177$\\\hline$1.4M_{\odot}-1.4M_{\odot}$ & \vline &$0.00831\%$ & \vline &$0.0155\%$ & \vline & $7.35\%$ & \vline &$11.5\%$ & \vline & $6.51\%$ & \vline &$10.0\%$ & \vline & $0.418\%$ & \vline &$0.743\%$ & \vline & $0.125$ & \vline &$0.191$\\\hline$1M_{\odot}-2.5M_{\odot}$ & \vline &$0.0165\%$ & \vline &$0.0295\%$ & \vline & $1.75\%$ & \vline &$3.11\%$ & \vline & $1.50\%$ & \vline &$2.67\%$ & \vline & $0.819\%$ & \vline &$1.46\%$ & \vline & $0.0130$ & \vline &$0.0232$\\\hline$2.5M_{\odot}-2.5M_{\odot}$ & \vline &$0.023\%$ & \vline &$0.0428\%$ & \vline & $8.53\%$ & \vline &$13.4\%$ & \vline & $7.42\%$ & \vline &$11.4\%$ & \vline & $0.552\%$ & \vline &$0.968\%$ & \vline & $0.141$ & \vline &$0.216$\\
+
+\hline
+\hline
 
 
-\end{tabular}
+\end{tabular}}
 \label{ciTableIntrinsic}
 \end{table*}
 
  
 \begin{table*}[t!]
 \centering
-\caption{Mean 65\% confidence intervals of extrinsic parameters for
+\caption{Mean 65\% and 90\% credible intervals of extrinsic parameters for
   each of the four systems considered.  As expected, there exists a
   substantial improvement in the sky localization capabilities of the
   four-detector HLVI configuration over the three-detector HLV
   configuration.  Note that the solid-angle sky-location confidence
   intervals, $\Delta\Omega$, are calculated directly on the 2D sphere,
   not by combining the $\alpha$ and $\delta$ uncertainties.}
-\begin{tabular}{lcccccccccc}
+  
+  \tabcolsep=0.11cm
+      {\renewcommand{\arraystretch}{1.3} 
+\begin{tabular}{lcccccccccccccccccccc}
 
-\\HLVI\\ \hline\hline System & \vline & $\Delta D$ $(mpc)$ & \vline &
-$\Delta |\cos(\iota)|$ & \vline & $\Delta \alpha$ $(deg)$& \vline &
-$\Delta \delta$ $(deg)$ & \vline & $\Delta\Omega$
-$(deg^2)$\\ \hline\hline $1M_{\odot}-1M_{\odot}$ & \vline &
-$3.64\times 10^{1}$ & \vline & $2.23\times 10^{-1}$ & \vline & $1.45$
-& \vline & $1.48$ & \vline & $1.88$\\ \hline
-$1.4M_{\odot}-1.4M_{\odot}$ & \vline & $5.52\times 10^{1}$ & \vline &
-$2.56\times 10^{-1}$ & \vline & $1.49$ & \vline & $1.50$ & \vline &
-$2.26$\\ \hline $1M_{\odot}-2.5M_{\odot}$ & \vline & $6.48\times
-10^{1}$ & \vline & $2.93\times 10^{-1}$ & \vline & $1.54$ & \vline &
-$1.64$ & \vline & $2.10$\\ \hline $2.5M_{\odot}-2.5M_{\odot}$ & \vline
-& $1.06\times 10^{2}$ & \vline & $2.99\times 10^{-1}$ & \vline &
-$1.03\times 10^{1}$ & \vline & $1.61$ & \vline & $2.22$\\ \hline\hline
+\\HLVI\\ 
+\hline\hline System & \vline & \multicolumn{3}{c}{$\Delta D$ $(mpc)$} & \vline &
+\multicolumn{3}{c}{$\Delta |\cos(\iota)|$} & \vline & \multicolumn{3}{c}{$\Delta \alpha$ $(deg)$} & \vline &
+\multicolumn{3}{c}{$\Delta \delta$ $(deg)$} & \vline & \multicolumn{3}{c}{$\Delta\Omega$
+$(deg^2)$}\\\hline
+Credible Level & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% \\
+ \hline\hline 
+$1M_{\odot}-1M_{\odot}$ & \vline &$36.4$ & \vline &$58.6$ & \vline & $0.223$ & \vline &$0.359$ & \vline & $1.45$ & \vline &$2.58$ & \vline & $1.48$ & \vline &$2.62$ & \vline & $1.88$ & \vline &$4.28$\\\hline$1.4M_{\odot}-1.4M_{\odot}$ & \vline &$55.2$ & \vline &$89.8$ & \vline & $0.256$ & \vline &$0.413$ & \vline & $1.49$ & \vline &$2.67$ & \vline & $1.50$ & \vline &$2.71$ & \vline & $2.26$ & \vline &$5.38$\\\hline$1M_{\odot}-2.5M_{\odot}$ & \vline &$64.8$ & \vline &$101$ & \vline & $0.293$ & \vline &$0.451$ & \vline & $1.54$ & \vline &$2.73$ & \vline & $1.64$ & \vline &$2.92$ & \vline & $2.10$ & \vline &$4.84$\\\hline$2.5M_{\odot}-2.5M_{\odot}$ & \vline &$106$ & \vline &$170$ & \vline & $0.299$ & \vline &$0.473$ & \vline & $1.35$ & \vline &$2.36$ & \vline & $1.61$ & \vline &$2.86$ & \vline & $2.23$ & \vline &$5.04$\\\hline
 
 \\ HLV\\
 
-\hline\hline System & \vline & $\Delta D$ $(mpc)$ & \vline & $\Delta
-|\cos(\iota)|$ & \vline & $\Delta \alpha$ $(deg)$& \vline & $\Delta
-\delta$ $(deg)$ & \vline & $\Delta\Omega$ $(deg^2)$\\ \hline\hline
-$1M_{\odot}-1M_{\odot}$ & \vline & $4.34\times 10^{1}$ & \vline &
-$3.04\times 10^{-1}$ & \vline & $1.45\times 10^{1}$ & \vline & $6.24$
-& \vline & $5.57$\\ \hline $1.4M_{\odot}-1.4M_{\odot}$ & \vline &
-$5.32\times 10^{1}$ & \vline & $2.87\times 10^{-1}$ & \vline & $6.92$
-& \vline & $7.11$ & \vline & $8.35$\\ \hline
-$1M_{\odot}-2.5M_{\odot}$& \vline & $6.11\times 10^{1}$ & \vline &
-$3.11\times 10^{-1}$ & \vline & $2.67$ & \vline & $4.20$ & \vline &
-$7.39$\\ \hline $2.5M_{\odot}-2.5M_{\odot}$ & \vline & $1.04\times
-10^{2}$ & \vline & $3.42\times 10^{-1}$ & \vline & $1.13\times 10^{1}$
-& \vline & $3.31$ & \vline & $6.27$\\ \hline\hline
+\hline\hline System & \vline & \multicolumn{3}{c}{$\Delta D$ $(mpc)$} & \vline &
+\multicolumn{3}{c}{$\Delta |\cos(\iota)|$} & \vline & \multicolumn{3}{c}{$\Delta \alpha$ $(deg)$} & \vline &
+\multicolumn{3}{c}{$\Delta \delta$ $(deg)$} & \vline & \multicolumn{3}{c}{$\Delta\Omega$
+$(deg^2)$}\\\hline
+Credible Level & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% \\
+ \hline\hline 
+
+$1M_{\odot}-1M_{\odot}$ & \vline &$43.4$ & \vline &$70.8$ & \vline & $0.304$ & \vline &$0.501$ & \vline & $5.56$ & \vline &$12.0$ & \vline & $6.24$ & \vline &$11.8$ & \vline & $5.57$ & \vline &$12.4$\\\hline$1.4M_{\odot}-1.4M_{\odot}$ & \vline &$53.2$ & \vline &$87.0$ & \vline & $0.287$ & \vline &$0.485$ & \vline & $6.92$ & \vline &$9.90$ & \vline & $7.11$ & \vline &$10.4$ & \vline & $8.35$ & \vline &$18.6$\\\hline$1M_{\odot}-2.5M_{\odot}$ & \vline &$61.1$ & \vline &$100$ & \vline & $0.311$ & \vline &$0.508$ & \vline & $2.67$ & \vline &$11.9$ & \vline & $4.20$ & \vline &$15.1$ & \vline & $7.39$ & \vline &$16.9$\\\hline$2.5M_{\odot}-2.5M_{\odot}$ & \vline &$104$ & \vline &$161$ & \vline & $0.342$ & \vline &$0.543$ & \vline & $2.42$ & \vline &$9.00$ & \vline & $3.31$ & \vline &$6.18$ & \vline & $6.27$ & \vline &$14.1$\\
+
+\hline\hline
 
 
-\end{tabular}
+\end{tabular}}
 \label{ciTableExtrinsic}
 \end{table*}
 
+
+\begin{table}[b!]
+\centering
+\caption{68\% Credible intervals versus 1-$\sigma$ Fisher matrix uncertainties for each system in the HLV configuration.}
+  \tabcolsep=0.11cm
+    {\renewcommand{\arraystretch}{1.3} 
+\begin{tabular}{lcccccccc}
+
+\hline\hline Parameter & \vline & \multicolumn{3}{c}{$\Delta\mathcal{M}_c / \mathcal{M}_c$} & \vline & \multicolumn{3}{c}{$\Delta \eta / \eta$} \\ \hline \hline
+
+Estimate & \vline & MCMC & \vline & FIM & \vline & MCMC & \vline & FIM \\ \hline
+
+$1M_{\odot}-1M_{\odot}$ & \vline &  0.00497\% & \vline & 0.00205\% & \vline & 0.645\% & \vline & 0.321\% \\
+$1.4M_{\odot}-1.4M_{\odot}$ & \vline &  0.00890\% & \vline & 0.00384\% & \vline & 0.745\% & \vline & 0.380\% \\
+$1M_{\odot}-2.5M_{\odot}$& \vline &  0.0176\% & \vline & 0.00457\% & \vline & 1.475\% & \vline & 0.400\% \\
+$2.5M_{\odot}-2.5M_{\odot}$& \vline &  0.0245\% & \vline & 0.0114\% & \vline & 1.000\% & \vline & 0.612\% \\
+
+\hline\hline
+
+\end{tabular}}
+\label{FIMvsMCMC}
+\end{table}
 
 \section{Conclusion}
 \label{conclusionSection}
@@ -1090,45 +1129,40 @@ focused on the recovery of the two masses, the luminosity distance,
 orbital inclination, and the sky location, as these are the six basic
 parameters of physical interest to the problem.  We found that,
 neglecting the effects of spin, the component masses can be
-constrained to within 10\% of their true value to a confidence of
-65\%.  This value drops below 2\% for systems with an asymmetric mass
+constrained to within 8.5\% (13.4\%) of their true value to a credible level of
+65\% (90\%).  This value drops below 2\% (3.1\%) for systems with an asymmetric mass
 ratio.  These results were summarized in Table \ref{ciTableIntrinsic}.
 It should be remembered that these signals were injected at high, 
 but not unrealistic, SNRs.  Thus, the results quoted can be thought of as the
 average uncertainties for a ``good'' Advanced LIGO/Virgo detection.
 
-%\will{You should mention the fact that our signals were chosen to be
-%  loud, but plausible here.  Make sure to note that the average
-  %uncertainties below do not necessarily reflect the average
- % uncertainty expected in the analysis of advanced detector era
- % detections.}
  
 We also reported on the ability of the two network configurations to
 constrain the luminosity distance and orbital inclination.  For
-distance, it was found that the uncertainties will fall anywhere from
-40 to 100 MPC at 65\% confidence, making the uncertainties frequently
-larger than the luminosity distances themselves.  Furthermore, it was
+distance, it was found that the uncertainties will average anywhere from
+40 to 100 MPC at 65\% credible levels, and from 60 to 170 MPC at 90\% credible levels,
+ making the uncertainties 
+larger than the luminosity distances themselves in many cases.  Furthermore, it was
 found that the cosine of the orbital inclination can be constrained to
-within 0.3 at the 65\% level, suggesting that Advanced LIGO/Virgo will not
+within 0.3 (0.5) at the 65\% (90\%) level on average,
+ suggesting that Advanced LIGO/Virgo will not
 be able to offer constraining information on GRB beaming angles in coincidence
 with electromagnetic observations.  Coincidence detections will still be possible, but
 the orbital orientation information from gravitational waves will 
-not provide astropysically relevant constrains.
-%  \will{Are you sure about this?
- % Beaming angles about 10 degrees would have $\Delta \cos i \simeq
- % 0.01$.}
+not provide astrophysically relevant constrains.
+
 
 Finally, we reported the ability of advanced networks to constrain the
 sky location of BNS signals.  It was found that the three-detector
 configuration, consisting of the Washington and Louisiana LIGO sites
 plus the Italian Virgo site, was able to constrain all signals within
-60 $\mathrm{deg}^2$ on the sky at the 65\% confidence interval, with
-an average 65\% confidence interval of $\sim 7$ $\mathrm{deg}^2$.
+60 $\mathrm{deg}^2$ (120 $\mathrm{deg}^2$) on the sky at the 65\% (90\%) credible level, with
+an average 65\% (90\%) credible interval of $7.4$ $\mathrm{deg}^2$ (18.6 $\mathrm{deg}^2$).
 Meanwhile, the four-detector configuration, consisting of the
 three-detector sites plus a LIGO India detector, was able to localize
-all the sky locations to within 13 $\mathrm{deg}^2$ on the sky at the 65\%
-confidence interval, with an average 65\% confidence interval of $\sim
-2$ $\mathrm{deg}^2$.
+all the sky locations to within 13 $\mathrm{deg}^2$ (34 $\mathrm{deg}^2$) on the sky at the 65\% (90\%)
+credible interval, with an average 65\% (90\%) credible interval of 
+2.2 $\mathrm{deg}^2$ $(5$ $\mathrm{deg}^2)$.
 
 It should be noted that there are two distinct types of systematic
 error, highly relevant to the gravitational-wave parameter estimation

@@ -24,8 +24,7 @@ ra = []
 dec= []
 sa = []
 deg= []
-for prefix in ['2.5_2.5']:
-#for prefix in ['1_1','1.4_1.4','1_2.5','2.5_2.5']:
+for prefix in ['1_1','1.4_1.4','1_2.5','2.5_2.5']:
 	for run in range(1,41):
 		filename = prefix + '/' + str(run) + '/post/ranked_sky_pixels.dat'
 		try: 
@@ -77,8 +76,7 @@ ra = []
 dec= []
 sa = []
 deg= []
-for prefix in ['2.5_2.5']:
-#for prefix in ['1_1','1.4_1.4','1_2.5','2.5_2.5']:
+for prefix in ['1_1','1.4_1.4','1_2.5','2.5_2.5']:
 	for run in range(1,41):
 		filename = prefix + '/' + str(run) + '/post/ranked_sky_pixels.dat'
 		try: 

@@ -37,7 +37,7 @@ for mass in masses:
 			file = open(filename)
 			filedata = file.readlines()
 			for j in range(1,len(filedata)):
-				[cycle,logpost,logprior,iota,psi,dec,ra,dist,phi_orb,time,q,mc,logl,loglh1,logll1,loglv1,logli1,f_lower,chain] = filedata[j].split()
+				[cycle,logpost,logprior,iota,psi,dec,ra,dist,phi_orb,time,q,mc,logl,loglh1,logll1,loglv1,f_lower,chain] = filedata[j].split()
 				posteriorSamples[0][i].append(float(mc)/injectMC[l])
 				m1, m2 = m1m2fromMcq(float(mc),float(q))
 				posteriorSamples[1][i].append(float(m1)/injectM1[l])
@@ -63,6 +63,7 @@ for mass in masses:
 
 	l += 1
 	intervals = [[]for i in range(10)]
+	intervals90 = [[]for i in range(10)]
 	lowers = [[]for i in range(10)]
 	uppers = [[]for i in range(10)]
 	print 'mass Bin: ' + mass
@@ -71,16 +72,19 @@ for mass in masses:
 			if posteriorSamples[i][j] != []:
 				interval = ciInterval(posteriorSamples[i][j],65)
 				intervals[i].append(interval[0] - interval[1])
+				interval90 = ciInterval(posteriorSamples[i][j],90)
+				intervals90[i].append(interval90[0] - interval90[1])
 				lowers[i].append(interval[1])
 				uppers[i].append(interval[0])
 		print params[i] + ': mean:' + str(np.mean(intervals[i])) + ': lower:' + str(np.mean(lowers[i])) + ': upper:' + str(np.mean(uppers[i]))
 
 	for i in range(40):
 		intervals[9].append(posteriorSamples[9][i])
+		intervals90[9].append(posteriorSamples[9][i])
 	print params[9] + ': mean:' + str(np.mean(intervals[9])) + ': max:' + str(max(intervals[9])) + ': min:' + str(min(intervals[9])) 
 	string = ''
 	for i in range(5,10):
-		string += "$%.2e}$" % (np.mean(intervals[i])) +  " & \\vlin & " 
+		string += "$%.2e (%.2e)}$" % (np.mean(intervals[i])) % (np.mean(intervals90[i])) +  " & \\vlin & " 
 	string = string.replace('e','\\times 10^{')
 	string = string.replace('vlin','vline')
 	string = string.replace('+0','')
