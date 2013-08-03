@@ -32,7 +32,7 @@ for number in massBins:
 		M  = []
 		k = 0
 
-		for i in range(0,len(mcdata),20):
+		for i in range(0,len(mcdata),10):
 			q.append(float(qdata[i].rstrip()))
 			mc.append(float(mcdata[i].rstrip())/chirpMasses[Bin])
 			m1Temp, m2Temp = m1m2fromMcq(mc[k]*chirpMasses[Bin],q[k])
@@ -40,7 +40,28 @@ for number in massBins:
 			m2.append(m2Temp / indivMasses[Bin][0])
 			M.append((m1Temp + m2Temp)/sum(indivMasses[Bin]))
 			k += 1
-		print min(M)
+
+		m1.sort()
+		m2.sort()
+		q.sort()
+		M.sort()
+
+		m1Min = min(m1)
+		m1Max = max(m1)
+		m2Min = min(m2)
+		m2Max = max(m2)
+		mMin = min(M)
+		mMax = max(M)
+		qMin = min(q)
+		qMax = max(q)
+
+		if not number == '125':
+			for i in range(1,330):  
+				q.append(2-q[-2*i + 1])  
+				m2.append(2-m2[-2*i + 1])  
+				m1.insert(0,2-m1[2*i - 1])  
+				#M.insert(0,2-M[2*i - 1])  
+
 
 		m1KDE = scipy.stats.gaussian_kde(m1)
 		m2KDE = scipy.stats.gaussian_kde(m2)
@@ -59,8 +80,6 @@ for number in massBins:
 		Xq  = []
 		Yq  = []
 
-		m1Min = min(m1)
-		m1Max = max(m1)
 		dx = (m1Max- m1Min) / 1000.
 		n = m1Min
 
@@ -69,8 +88,6 @@ for number in massBins:
 			Ym1.append(float(m1KDE(n)))
 			n += dx
 
-		m2Min = min(m2)
-		m2Max = max(m2)
 		dx = (m2Max - m2Min) / 1000.
 		n = m2Min
 
@@ -113,8 +130,6 @@ for number in massBins:
 #		ax2.grid(True)
 #		xlabel('Chirp Masses ($M_{\odot}/M_{\odot}^{inject}$)', fontsize=18)
 
-		mMin = min(M)
-		mMax = max(M)
 		dx = (mMax - mMin) / 1000.
 		n = mMin
 
@@ -132,8 +147,6 @@ for number in massBins:
 		xlabel('Total Mass ($M_{\odot}/M_{\odot}^{inject}$)', fontsize=18)
 
 
-		qMin = min(q)
-		qMax = max(q)
 		dx = (qMax - qMin) / 1000.
 		n = qMin
 

@@ -549,17 +549,21 @@ noise-free results can be found in Section \ref{noiseSection}.
 %\includegraphics[width=2.2in]{1dpdfs/time.pdf} &\includegraphics[width=2.2in]{1dpdfs/dist.pdf}  &\includegraphics[width=2.2in]{1dpdfs/iota.pdf}\\
 %\includegraphics[width=2.2in]{1dpdfs/ra.pdf} & \includegraphics[width=2.2in]{1dpdfs/dec.pdf} & \includegraphics[width=2.2in]{1dpdfs/m2.pdf}
 %\end{array}$
-\caption{\label{9dPDF} Marginalized 1D posterior probability density
-  functions taken from a typical $1.4M_{\odot}/1.4M_{\odot}$ BNS
+\caption{\label{9dPDF} Marginalized 1D  posterior probability densities
+  of a typical $1.4M_{\odot}/1.4M_{\odot}$ BNS
   system.  We have plotted each of the 9 parameters for our
   non-spinning BNS problem as stated in section \ref{waveformSection}.
-  Note how, even for parameters with excellent recovery, the peak of
+    Note how, even for parameters with excellent recovery, the peak of
   the 1D Gaussian is displaced from the injected value (in dashed
   red).  This is not due to a systematic bias, but is caused by the
   marginalization of a single dimension from the full 9D posterior
   space.  To better see this effect, compare the 1D PDF for
   $\mathcal{M}_{c}$ and $q$ with the 2D marginalized PDF in
-  Figure~\ref{1414masses}.}
+  Figure~\ref{1414masses}.  The plots here represent the Gaussian kernel density
+  estimator of each PDF.  The estimate for $q$ was 
+  computed by reflecting the highest $10\%$ of samples across the $q=1$ boundary.  
+  This was done to avoid a false decrease in estimated probability density near
+  the boundary.}
 \end{figure*}
 
 Of the nine parameters in the domain of the waveform, only six are
@@ -647,7 +651,8 @@ Monte-Carlo integral over all other parameters.
    for different systems with identical masses and SNRs.  Systems with
    identical mass ratios but different total masses have
    quantitatively identical PDFs when normalized to the total
-   mass.}
+   mass.  Similarly to Fig. \ref{9dPDF}, we plot the Gaussian kernel density
+   estimates, and reflect $10\%$ of the points across the $q = 1$ and $M_1 = M_2$ boundaries (for the three equal-mass cases).}
   \label{metaMassPDFs}
 \end{figure*}
 
@@ -1099,7 +1104,7 @@ $1M_{\odot}-1M_{\odot}$ & \vline &$43.4$ & \vline &$70.8$ & \vline & $0.304$ & \
 
 \begin{table}[b!]
 \centering
-\caption{68\% Credible intervals versus 1-$\sigma$ Fisher matrix uncertainties for each system in the HLV configuration.}
+\caption{68\% Credible intervals versus 1-$\sigma$ Fisher matrix uncertainties for mass parameters in each system in the HLV configuration.}
   \tabcolsep=0.11cm
     {\renewcommand{\arraystretch}{1.3} 
 \begin{tabular}{lcccccccc}

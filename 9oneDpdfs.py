@@ -18,7 +18,7 @@ postSamp = [[] for i in range(9)]
 num = [11, 10, 8, 6,5,7,3,4,9]
 names = ["$\mathcal{M}_c$","$q$","$\phi_c$","$\\alpha$","$\delta$","$D$","$\iota$","$\psi$","$Time$"]
 xaxis = ["Chirp Mass $(M_{\odot})$","Mass Ratio","Chirp Phase $(rad.)$","Right Ascension $(rad.)$","Declination $(rad.)$","Distance $(MPC)$","Inclination $(rad.)$","Polarization $(rad.)$","Time $(msec.)$"]
-inject = [1.21877,1.,2.68833,4.662361,-0.4254096,99.15952,2.353028,2.153679,0.]
+inject = [1.21877,.999,2.68833,4.662361,-0.4254096,99.15952,2.353028,2.153679,0.]
 ticks = [[1.2183,1.2185,1.2187,1.2189],
          [0.7,0.75,0.8,0.85,0.9,0.95,1],
 		 [0,1,2,3,4,5,6],
@@ -39,6 +39,19 @@ for i in range(1,len(filedata)):
 			if j == 8:
 				postSamp[j][i-1] = (postSamp[j][i-1] - 894429279.)*1000
 
+for j in range(9):
+	postSamp[j].sort()
+
+#this part reflects the data across boundares for the purposes of the KDE.
+#for q, it reflects across the q=1 boundary, while it wraps data around for the 
+# phi_0 and psi boundaries
+for i in range(1,1200):  
+	postSamp[1].append(2-postSamp[1][-2*i + 1])  
+for i in range(1,2000):  
+	postSamp[2].insert(0, -(2*pi - postSamp[2][-2*i + 1]))
+	postSamp[2].append(2*pi + postSamp[2][2*i - 1 ]) 
+	postSamp[7].insert(0, -(pi - postSamp[7][-2*i + 1]))
+	postSamp[7].append(pi + postSamp[7][2*i - 1 ])
 
 KDEdataX = []
 KDEdataY = []
@@ -46,8 +59,17 @@ KDEdataY = []
 suptitle("Example 1D Posterior Probability Densities for $1.4M_{\odot}/1.4M_{\odot}$ System", fontsize=26)
 for i in range(9):
 		KDE = scipy.stats.gaussian_kde(postSamp[i])
+		#KDE.set_bandwidth(bw_method=KDE.factor / 2.)
 		m1Min = min(postSamp[i])
 		m1Max = max(postSamp[i])
+		if i == 1:
+			m1Max = 1
+		if i == 2:
+			m1Max = 2*pi
+			m1Min = 0
+		if i == 7:
+			m1Max = pi
+			m1Min = 0
 		dx = (m1Max- m1Min) / 1000.
 		n = m1Min
 		while n <= m1Max:
@@ -55,6 +77,7 @@ for i in range(9):
 			KDEdataY.append(float(KDE(n)))
 			n += dx
 		ax1 = subplot(3,3,i+1)
+		#hist(postSamp[i],40)
 		ax1.plot(KDEdataX,KDEdataY,lw=1,color='black')
 		ax1.fill_between(KDEdataX,KDEdataY,zeros(len(KDEdataY)), alpha=0.7, color="blue")
 		xlabel(xaxis[i])
