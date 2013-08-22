@@ -1,4 +1,7 @@
 import scipy.stats
+from matplotlib import rc
+rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+rc('text', usetex=True)
 from matplotlib import pyplot as plt,cm as mpl_cm,lines as mpl_lines,colorbar
 
 def m1m2fromMcq(Mc,q):
@@ -16,7 +19,8 @@ file.close()
 
 postSamp = [[] for i in range(9)]
 num = [11, 10, 8, 6,5,7,3,4,9]
-names = ["$\mathcal{M}_c$","$q$","$\phi_c$","$\\alpha$","$\delta$","$D$","$\iota$","$\psi$","$Time$"]
+names = ["$\mathcal{M}_c$","$q$","$\phi_c$","$\\alpha$","$\delta$","$D$","$\iota$","$\psi$",
+'Time']
 xaxis = ["Chirp Mass $(M_{\odot})$","Mass Ratio","Chirp Phase $(rad.)$","Right Ascension $(rad.)$","Declination $(rad.)$","Distance $(MPC)$","Inclination $(rad.)$","Polarization $(rad.)$","Time $(msec.)$"]
 inject = [1.21877,.999,2.68833,4.662361,-0.4254096,99.15952,2.353028,2.153679,0.]
 ticks = [[1.2183,1.2185,1.2187,1.2189],
@@ -86,7 +90,11 @@ for i in range(9):
 		ax1.grid("on")
 		ax1.set_xticks(ticks[i])
 		axvline(inject[i],color='red', lw=3,linestyle="--")
-		title(names[i], fontsize = 22)
+		if i==8:
+			title(names[i], fontsize = 18)
+		else:
+			title(names[i], fontsize = 22)
+			
 		KDEdataX = []
 		KDEdataY = []
 

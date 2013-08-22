@@ -1,4 +1,7 @@
 import scipy.stats
+from matplotlib import rc
+rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+rc('text', usetex=True)
 from matplotlib import pyplot as plt,cm as mpl_cm,lines as mpl_lines,colorbar
 
 def m1m2fromMcq(Mc,q):
@@ -110,7 +113,7 @@ for number in massBins:
 		lb4 = Rectangle((0, 0), 1, 1, fc='green')
 		l2=legend([lb1,lb2,lb3,lb4],["$1M_{\odot} - 1M_{\odot}$","$1.4M_{\odot} - 1.4M_{\odot}$","$1M_{\odot} - 2.5M_{\odot}$","$2.5M_{\odot} - 2.5M_{\odot}$"], loc='upper left', title="Neutron Star Masses")
 		gca().add_artist(l1)
-		xlabel('Component Masses ($M_{\odot}/M_{\odot}^{inject}$)', fontsize=18)
+		xlabel('Component Masses ($M/M_{inject}$)', fontsize=18)
 		title('Mass Posterior PDFs', fontsize=26)
 
 #		mcMin = min(mc)
@@ -144,7 +147,7 @@ for number in massBins:
 		axvline(1,0,max(Ym),color='black', lw=3)
 		ax3.grid(True)
 		ylabel('Probability Densities',fontsize=22)
-		xlabel('Total Mass ($M_{\odot}/M_{\odot}^{inject}$)', fontsize=18)
+		xlabel('Total Mass ($M/M_{inject}$)', fontsize=18)
 
 
 		dx = (qMax - qMin) / 1000.

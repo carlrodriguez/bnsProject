@@ -83,14 +83,15 @@ binary coalescence, e.g. the coalescence of binary neutron stars.
 While several previous studies have investigated the accuracy of parameter
 estimation with advanced detectors, the majority have relied
 on approximation techniques such as the Fisher Matrix.  Here we report the
-statistical uncertainties that will be achievable using
+statistical uncertainties that will be achievable for optimal detection candidates
+ ($\text{SNR}=20$) using
 the full parameter estimation machinery developed by the LIGO/Virgo
 Collaboration via Markov-Chain Monte Carlo methods. 
  We find the recovery of the individual masses to be
-fractionally within 8.5\% (13.4\%) at the 65\% (90\%) credible intervals for equal-mass
-systems, and within 2\% (3.1\%) for unequal-mass systems.  We also find that the Advanced
-LIGO/Virgo network will constrain the locations of binary neutron star mergers to an average
- uncertainty of $7.4$ $\mathrm{deg}^2$ (18.6 $\mathrm{deg}^2$) on the sky.  This region is improved to  2.2 $\mathrm{deg}^2$ $(5$ $\mathrm{deg}^2)$ with the addition of the proposed LIGO India detector to the network.  We also report the
+fractionally within 9\% (15\%) at the 68\% (95\%) credible intervals for equal-mass
+systems, and within 1.9\% (3.7\%) for unequal-mass systems.  We also find that the Advanced
+LIGO/Virgo network will constrain the locations of binary neutron star mergers to a median
+ uncertainty of $5.1$ $\mathrm{deg}^2$ (13.5 $\mathrm{deg}^2$) on the sky.  This region is improved to  2.3 $\mathrm{deg}^2$ $(6$ $\mathrm{deg}^2)$ with the addition of the proposed LIGO India detector to the network.  We also report the
 average uncertainties on the luminosity distances and
 orbital inclinations of ideal detection candidates that can be
 achieved by different network configurations.
@@ -154,20 +155,22 @@ parameter space of BNS systems.
 
 By employing the full parameter-estimation machinery that will
 eventually be used in the Advanced LIGO/Virgo era, our results
- give estimates of the realistic capabilities of
+ give realistic estimates of the capabilities of
 advanced ground-based detectors to characterize BNS systems.  Until
 recently, the majority of studies have employed the Fisher-matrix
 formalism which was first adapted for gravitational-wave parameter
 estimation by \citet{FinnDetection}.  While each of these studies
 \citep{PoissonWill,CutlerFlanagan,ArunPE} have pointed out the
 limitations and flaws of the Fisher Information Matrix, there has been
-no study which investigates the BNS parameter estimation capabilities
+relatively few studies which investigate the BNS parameter estimation capabilities
 of Advanced LIGO/Virgo using the techniques that will eventually be
 employed.  The recent work of \cite{Vallisneri} and our own work
 \citep{Inadequacies} has demonstrated that the Fisher matrix cannot
 even be treated as a lower bound on the standard deviations of certain
 parameters (particularly the masses) measurable in gravitational-wave
-detectors.
+detectors.  While previous studies have employed MCMC techniques for specific
+parameters,  \citep{Nissanke2011,Nissanke2013,Veitch2012}, none have considered 
+the full range of parameters, in particular the neutron star masses.
 
 In this paper, we perform a systematic study of the statistical
 uncertainties with which the Advanced LIGO/Virgo network will be able
@@ -265,7 +268,7 @@ We employ priors which are
   30M_{\odot}$, with a minimum chirp mass (see Eq.~\eqref{eqRatioCM})
   of 0.6 $M_{\odot}$,
 \item uniform in volume, which implies a luminosity distance prior of
-  $p(D)dD = D^2 dD$,
+  $p(D)dD \propto D^2 dD$,
 \item uniform in coalescence time over the segment of data being
   analyzed,
   \item a delta function at zero spin, and
@@ -346,7 +349,8 @@ checks for convergence, can be found in \cite{S6PE}.
 \label{waveformSection}
   
 We use a frequency-domain waveform accurate up to $3.5$ post-Newtonian
-(pN) order in phase and 3 pN order in amplitude.  We restrict
+(pN) order in phase and 3 pN order in amplitude of the lowest ($l=m=2$) spatial mode.
+  We restrict
 ourselves to quasi-circular, non-spinning waveforms as a simplifying
 assumption.  The standard form of our waveform model, known as the
 \textit{TaylorF2} approximant, is calculated via the stationary-phase
@@ -412,7 +416,7 @@ $t_c$ and $\phi_0$ in equation (\ref{phase}) are constants of
 integration, referred to as the chirp time and coalescence phase,
 respectively.
 
-We consier the mass parameters ($\chmass,q$) and the phasing
+We consider the mass parameters ($\chmass,q$) and the phasing
 parameters, ($\phi_0,t_c$), to be the intrinsic parameters of the
 gravitational-wave signal.  There are an additional 5 extrinsic
 parameters, independent of the pN orbital phase, which can modulate
@@ -506,8 +510,9 @@ $2.5M_{\odot}/2.5M_{\odot}$.  Each population consisted of 40 signals
 distributed randomly in sky location, polarization, inclination,
 time-of-arrival, and coalescence phase.  The luminosity distance, $D$,
 was selected to provide a network SNR of $\rho_{\text{network}}=20$
-for each source.  While unphysical from an astrophysics perspective
-(binary sources are expected to be distributed uniformly in comoving volume), this
+for each source in each network configuration. 
+ While unphysical from an astrophysics perspective
+(binary sources are expected to be distributed uniformly in co-moving volume), this
 choice allows us to explore the parameter estimation in the context of
 loud but plausible detection candidates.
 
@@ -525,12 +530,18 @@ realization of the noise at the time of the detection.  Because of
 this, we elect to focus only on the statistical errors due to the
 flexibility of the waveforms and the expected sensitivity of the
 advanced era detectors and suppress any effects of detector noise by
-picking $n(t) \equiv 0$.
+picking $n(t) \equiv 0$.  It can be shown that this ``zero-noise'' injection
+represents the geometric mean of the same experiment over many different
+noise realizations drawn from the same PSD.  See \cite{Nissanke2010}, c.f. equation
+53.
+
 Consequently, what we recover with the MCMC could be interpreted as
 the posterior distribution function for each source averaged over all
 possible (Gaussian) noise realizations, assuming we have the correct
 PSD and that the signal is sufficiently powerful for the linearized-signal
-approximation \citep{Vallisneri} to be valid.
+approximation \citep{Vallisneri} to be valid.  By selecting a source population
+with an artificial distribution in SNR, we ensure that the ``zero-noise'' as
+average uncertainty 
 
 To check that our reported statistical errors are not in gross
 disagreement with those obtained in the presence of noise, we selected
@@ -543,7 +554,7 @@ noise-free results can be found in Section \ref{noiseSection}.
 
 \begin{figure*}[t!]
 \centering \includegraphics[trim=7cm 0cm 0cm 0cm,
-  clip=true,scale=0.55]{9dpdf}
+  clip=true,scale=0.58]{9dpdf}
 %\begin{array}{ccc} 
 %\includegraphics[width=2.2in]{1dpdfs/mc.pdf} &\includegraphics[width=2.2in]{1dpdfs/eta.pdf}  & \includegraphics[width=2.2in]{1dpdfs/m1.pdf}\\
 %\includegraphics[width=2.2in]{1dpdfs/time.pdf} &\includegraphics[width=2.2in]{1dpdfs/dist.pdf}  &\includegraphics[width=2.2in]{1dpdfs/iota.pdf}\\
@@ -643,8 +654,8 @@ Monte-Carlo integral over all other parameters.
 \end{figure}
 
 \begin{figure*}[ht!]
-  \centering \includegraphics[trim=2cm 0cm 2cm 0cm,
-    clip=false,scale=0.7]{newMasses.pdf}
+  \centering \includegraphics[trim=3cm 0cm 2cm 0cm,
+    clip=false,scale=0.75]{newMasses.pdf}
  \caption{Mass PDFs for the four BNS systems, averaged over each of
    the 40 injections.  The average is reported since, in practice,
    there was quantitatively no difference between the recovered PDFs
@@ -724,11 +735,11 @@ seen if using fully spinning waveforms will make it possible for
 Advanced\ LIGO/Virgo to discern binary neutron stars from their
 spinning black hole counterparts.
 
-In Table \ref{ciTableIntrinsic}, we list the 65\% and 90\% fractional credible
+In Table \ref{ciTableIntrinsic}, we list the 68\% and 95\% credible
 intervals for the mass parameters.  We find that the component masses
-for equal mass systems can be isolated to between 6\% and 9\%
-fractional uncertainty at the 65\% credible interval.  This value
-drops to less than 2\% for the components of the unequal mass systems.
+for equal mass systems can be isolated to between 6.4\% and 9\% (10.3\% and 15\%)
+fractional uncertainty at the 68\% (95\%) credible interval.  This value
+drops to less than 1.9\% (3.7\%) for the components of the unequal mass systems.
 Again, this neglects the effects of spin which can substantially
 increase these values.
 
@@ -783,10 +794,13 @@ matched to a detected SGRB counterpart (which may occur at the rate of
 $\sim 3 yr^{-1}$ in Advanced LIGO/Virgo, according to
 \cite{Metzger2013}), the optical information about the orbital
 inclination will provide an additional constraint on the D-$\iota$
-space, vastly improving the luminosity distance recovery quoted here.
+space, vastly improving the luminosity distance recovery quoted here.  These results
+qualitatively agree with those of \cite{Nissanke2011}, who studied in detail
+MCMC estimation of $D$-$\iota$ measurements from gravitational-wave detectors with 
+coincident GRB detections.
  
  
-In Table \ref{ciTableExtrinsic}, we list the averaged 65\% and 90\% credible
+In Table \ref{ciTableExtrinsic}, we list the averaged 68\% and 95\% credible
 intervals for distance and inclination.  Notice that the uncertainties
 on distance can be extreme, from tens to hundreds of Mpc.  When
 discussing the inclination angle, we elected to use $|\cos(\iota)|$,
@@ -844,13 +858,13 @@ sufficiently strong signal.  See \cite{Veitch2012} for a more detailed
 comparison of the sky-localization benefits of the HLVI configuration
 versus the three-detector network.  For the HLV configuration, we find that
  all of the signals are recovered with
-a solid angle uncertainty of less than 60 $\mathrm{deg}^2$ (120 $\mathrm{deg}^2$)
-at the 65\% (90\%) credible interval, while the HLVI configuration 
-recovers all signals to less than 13 $\mathrm{deg}^2$ (34 $\mathrm{deg}^2$).
-The mean quantitative results for the two network configurations show a similar
- benefit with the addition of LIGO India, and are again reported in
-  Table \ref{ciTableExtrinsic}. 
+a solid angle uncertainty of less than 64 $\mathrm{deg}^2$ (136 $\mathrm{deg}^2$)
+at the 68\% (95\%) credible interval, while the HLVI configuration 
+recovers all signals to less than 14 $\mathrm{deg}^2$ (45 $\mathrm{deg}^2$).
+The median quantitative results for the two network configurations show a similar
+ benefit with the addition of LIGO India, and are again reported in Table \ref{ciTableExtrinsic}. 
 
+Two previous studies have considered the increase in sensitivity from the addition of the LIGO India site. \carl{[INCOMPLETE]}  
 
 
 \begin{figure*}[ht!]
@@ -858,10 +872,10 @@ The mean quantitative results for the two network configurations show a similar
     0cm]{HLVsky.pdf}
  \caption{The uncertainties on the sky of 160 BNS systems in the HLV
    detector configuration.  Each region represents a single injection,
-   with the colored central region representing the 65\% uncertainty
-   region on the sphere, and the gray shade representing the 90\%
+   with the colored central region representing the 68\% uncertainty
+   region on the sphere, and the gray shade representing the 95\%
    uncertainty region.  The color scheme indicates the total solid
-   angle size of the 65\% region.  Note the similar shape of the
+   angle size of the 68\% region.  Note the similar shape of the
    uncertainty regions at particular points; this is due to the
    specific pattern of sensitivity over the sky for the three-detector network.}
  \label{2525SkyLocHLV}
@@ -976,7 +990,7 @@ network configuration in Figures~\ref{HLVRuntimes} and
 
 When quoting parameter estimation results, it is often convenient to
 reduce the full parameter space to credible intervals about single
-marginalized parameters..  To that end, we state the averaged 65\% and 90\% credible
+marginalized parameters..  To that end, we state the averaged 68\% and 95\% credible
 intervals about the single parameters for each of the three
 parameter pairs of interest.  These were already plotted for the sky
 locations in Figures~\ref{2525SkyLocHLV} and \ref{2525SkyLocHLVI}.
@@ -991,7 +1005,7 @@ this procedure can prove hazardous for multi-modal distributions, it
 is straightforward and reliable for single-peaked distributions as
 reported here.
 
-In Table~\ref{ciTableIntrinsic}, we list the mean 65\% and 90\% credible
+In Table~\ref{ciTableIntrinsic}, we list the mean 68\% and 95\% credible
 intervals recovered for the four mass configurations in both network
 configurations. This essentially quantifies the widths of the
 posteriors plotted throughout Section~\ref{resultsSection}.  The
@@ -1018,7 +1032,7 @@ fractional uncertainties by as much as a factor of three.  See Table~\ref{FIMvsM
 
 \begin{table*}[t!]
 \centering
-\caption{Mean 65\% and 90\% credible intervals for intrinsic parameters for
+\caption{Median 68\% and 95\% credible intervals for intrinsic parameters for
   each of the four systems considered.  We report the credible
   intervals of quantities measured, as well as the component masses
   and total mass.  Although the results for the HLV and HLVI
@@ -1028,28 +1042,29 @@ fractional uncertainties by as much as a factor of three.  See Table~\ref{FIMvsM
       {\renewcommand{\arraystretch}{1.3} 
 \begin{tabular}{lcccccccccccccccccccc}
 
-\\HLVI\\
-
- \hline\hline System & \vline & \multicolumn{3}{c}{$\Delta \chmass / \chmass$} &
-\vline & \multicolumn{3}{c}{$\Delta M_1 / M_1$} & \vline & \multicolumn{3}{c}{$\Delta M_2 / M_2$} & \vline &
-\multicolumn{3}{c}{$\Delta M_{tot}/M_{tot}$} & \vline & \multicolumn{3}{c}{$\Delta q$}\\ \hline
-Credible Level & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% \\
-\hline\hline
-
-$1M_{\odot}-1M_{\odot}$ & \vline &$0.00465\%$ & \vline &$0.00863\%$ & \vline & $6.78\%$ & \vline &$10.6\%$ & \vline & $6.06\%$ & \vline &$9.28\%$ & \vline & $0.362\%$ & \vline &$0.633\%$ & \vline & $0.117$ & \vline &$0.178$\\\hline$1.4M_{\odot}-1.4M_{\odot}$ & \vline &$0.00827\%$ & \vline &$0.0154\%$ & \vline & $7.27\%$ & \vline &$11.4\%$ & \vline & $6.45\%$ & \vline &$9.90\%$ & \vline & $0.410\%$ & \vline &$0.724\%$ & \vline & $0.124$ & \vline &$0.189$\\\hline$1M_{\odot}-2.5M_{\odot}$ & \vline &$0.0165\%$ & \vline &$0.0294\%$ & \vline & $1.74\%$ & \vline &$3.10\%$ & \vline & $1.49\%$ & \vline &$2.67\%$ & \vline & $0.815\%$ & \vline &$1.46\%$ & \vline & $0.0129$ & \vline &$0.0231$\\\hline$2.5M_{\odot}-2.5M_{\odot}$ & \vline &$0.0229\%$ & \vline &$0.0424\%$ & \vline & $8.52\%$ & \vline &$13.3\%$ & \vline & $7.42\%$ & \vline &$11.4\%$ & \vline & $0.551\%$ & \vline &$0.958\%$ & \vline & $0.141$ & \vline &$0.215$\\
-
-\hline
-\hline
 
 \\ HLV\\
 
  \hline\hline System & \vline & \multicolumn{3}{c}{$\Delta \chmass / \chmass$} &
 \vline & \multicolumn{3}{c}{$\Delta M_1 / M_1$} & \vline & \multicolumn{3}{c}{$\Delta M_2 / M_2$} & \vline &
 \multicolumn{3}{c}{$\Delta M_{tot}/M_{tot}$} & \vline & \multicolumn{3}{c}{$\Delta q$}\\ \hline
-Credible Level & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% \\
+Credible Level & \vline & 68\% & \vline & 95\% & \vline & 68\% & \vline & 95\% & \vline & 68\% & \vline & 95\% & \vline & 68\% & \vline & 95\% & \vline & 68\% & \vline & 95\% \\
 \hline\hline
 
-$1M_{\odot}-1M_{\odot}$ & \vline &$0.00466\%$ & \vline &$0.00865\%$ & \vline & $6.82\%$ & \vline &$10.5\%$ & \vline & $6.09\%$ & \vline &$9.25\%$ & \vline & $0.364\%$ & \vline &$0.633\%$ & \vline & $0.117$ & \vline &$0.177$\\\hline$1.4M_{\odot}-1.4M_{\odot}$ & \vline &$0.00831\%$ & \vline &$0.0155\%$ & \vline & $7.35\%$ & \vline &$11.5\%$ & \vline & $6.51\%$ & \vline &$10.0\%$ & \vline & $0.418\%$ & \vline &$0.743\%$ & \vline & $0.125$ & \vline &$0.191$\\\hline$1M_{\odot}-2.5M_{\odot}$ & \vline &$0.0165\%$ & \vline &$0.0295\%$ & \vline & $1.75\%$ & \vline &$3.11\%$ & \vline & $1.50\%$ & \vline &$2.67\%$ & \vline & $0.819\%$ & \vline &$1.46\%$ & \vline & $0.0130$ & \vline &$0.0232$\\\hline$2.5M_{\odot}-2.5M_{\odot}$ & \vline &$0.023\%$ & \vline &$0.0428\%$ & \vline & $8.53\%$ & \vline &$13.4\%$ & \vline & $7.42\%$ & \vline &$11.4\%$ & \vline & $0.552\%$ & \vline &$0.968\%$ & \vline & $0.141$ & \vline &$0.216$\\
+$1M_{\odot}-1M_{\odot}$ & \vline &$0.00497\%$ & \vline &$0.0104\%$ & \vline & $7.17\%$ & \vline &$11.9\%$ & \vline & $6.39\%$ & \vline &$10.3\%$ & \vline & $0.643\%$ & \vline &$1.25\%$ & \vline & $0.123$ & \vline &$0.197$\\\hline$1.4M_{\odot}-1.4M_{\odot}$ & \vline &$0.00883\%$ & \vline &$0.0188\%$ & \vline & $7.77\%$ & \vline &$13\%$ & \vline & $6.87\%$ & \vline &$11.1\%$ & \vline & $0.746\%$ & \vline &$1.47\%$ & \vline & $0.132$ & \vline &$0.212$\\\hline$1M_{\odot}-2.5M_{\odot}$ & \vline &$0.0176\%$ & \vline &$0.0355\%$ & \vline & $1.86\%$ & \vline &$3.74\%$ & \vline & $1.59\%$ & \vline &$3.23\%$ & \vline & $1.48\%$ & \vline &$2.99\%$ & \vline & $0.0138$ & \vline &$0.028$\\\hline$2.5M_{\odot}-2.5M_{\odot}$ & \vline &$0.0246\%$ & \vline &$0.0522\%$ & \vline & $9.02\%$ & \vline &$15\%$ & \vline & $7.82\%$ & \vline &$12.6\%$ & \vline & $1.01\%$ & \vline &$1.94\%$ & \vline & $0.149$ & \vline &$0.239$\\
+
+\hline
+\hline
+
+\\HLVI\\
+
+ \hline\hline System & \vline & \multicolumn{3}{c}{$\Delta \chmass / \chmass$} &
+\vline & \multicolumn{3}{c}{$\Delta M_1 / M_1$} & \vline & \multicolumn{3}{c}{$\Delta M_2 / M_2$} & \vline &
+\multicolumn{3}{c}{$\Delta M_{tot}/M_{tot}$} & \vline & \multicolumn{3}{c}{$\Delta q$}\\ \hline
+Credible Level & \vline & 68\% & \vline & 95\% & \vline & 68\% & \vline & 95\% & \vline & 68\% & \vline & 95\% & \vline & 68\% & \vline & 95\% & \vline & 68\% & \vline & 95\% \\
+\hline\hline
+
+$1M_{\odot}-1M_{\odot}$ & \vline &$0.00497\%$ & \vline &$0.0106\%$ & \vline & $7.15\%$ & \vline &$11.9\%$ & \vline & $6.38\%$ & \vline &$10.4\%$ & \vline & $0.646\%$ & \vline &$1.27\%$ & \vline & $0.123$ & \vline &$0.198$\\\hline$1.4M_{\odot}-1.4M_{\odot}$ & \vline &$0.00884\%$ & \vline &$0.0188\%$ & \vline & $7.67\%$ & \vline &$12.8\%$ & \vline & $6.79\%$ & \vline &$11.1\%$ & \vline & $0.733\%$ & \vline &$1.46\%$ & \vline & $0.13$ & \vline &$0.211$\\\hline$1M_{\odot}-2.5M_{\odot}$ & \vline &$0.0176\%$ & \vline &$0.0352\%$ & \vline & $1.85\%$ & \vline &$3.72\%$ & \vline & $1.59\%$ & \vline &$3.2\%$ & \vline & $1.47\%$ & \vline &$2.96\%$ & \vline & $0.0137$ & \vline &$0.0277$\\\hline$2.5M_{\odot}-2.5M_{\odot}$ & \vline &$0.0243\%$ & \vline &$0.0515\%$ & \vline & $9.03\%$ & \vline &$14.9\%$ & \vline & $7.84\%$ & \vline &$12.6\%$ & \vline & $0.998\%$ & \vline &$1.92\%$ & \vline & $0.149$ & \vline &$0.238$\\
 
 \hline
 \hline
@@ -1062,7 +1077,7 @@ $1M_{\odot}-1M_{\odot}$ & \vline &$0.00466\%$ & \vline &$0.00865\%$ & \vline & $
  
 \begin{table*}[t!]
 \centering
-\caption{Mean 65\% and 90\% credible intervals of extrinsic parameters for
+\caption{Median 68\% and 95\% credible intervals of extrinsic parameters for
   each of the four systems considered.  As expected, there exists a
   substantial improvement in the sky localization capabilities of the
   four-detector HLVI configuration over the three-detector HLV
@@ -1074,28 +1089,28 @@ $1M_{\odot}-1M_{\odot}$ & \vline &$0.00466\%$ & \vline &$0.00865\%$ & \vline & $
       {\renewcommand{\arraystretch}{1.3} 
 \begin{tabular}{lcccccccccccccccccccc}
 
-\\HLVI\\ 
-\hline\hline System & \vline & \multicolumn{3}{c}{$\Delta D$ $(mpc)$} & \vline &
-\multicolumn{3}{c}{$\Delta |\cos(\iota)|$} & \vline & \multicolumn{3}{c}{$\Delta \alpha$ $(deg)$} & \vline &
-\multicolumn{3}{c}{$\Delta \delta$ $(deg)$} & \vline & \multicolumn{3}{c}{$\Delta\Omega$
-$(deg^2)$}\\\hline
-Credible Level & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% \\
- \hline\hline 
-$1M_{\odot}-1M_{\odot}$ & \vline &$36.4$ & \vline &$58.6$ & \vline & $0.223$ & \vline &$0.359$ & \vline & $1.45$ & \vline &$2.58$ & \vline & $1.48$ & \vline &$2.62$ & \vline & $1.88$ & \vline &$4.28$\\\hline$1.4M_{\odot}-1.4M_{\odot}$ & \vline &$55.2$ & \vline &$89.8$ & \vline & $0.256$ & \vline &$0.413$ & \vline & $1.49$ & \vline &$2.67$ & \vline & $1.50$ & \vline &$2.71$ & \vline & $2.26$ & \vline &$5.38$\\\hline$1M_{\odot}-2.5M_{\odot}$ & \vline &$64.8$ & \vline &$101$ & \vline & $0.293$ & \vline &$0.451$ & \vline & $1.54$ & \vline &$2.73$ & \vline & $1.64$ & \vline &$2.92$ & \vline & $2.10$ & \vline &$4.84$\\\hline$2.5M_{\odot}-2.5M_{\odot}$ & \vline &$106$ & \vline &$170$ & \vline & $0.299$ & \vline &$0.473$ & \vline & $1.35$ & \vline &$2.36$ & \vline & $1.61$ & \vline &$2.86$ & \vline & $2.23$ & \vline &$5.04$\\\hline
-
 \\ HLV\\
 
 \hline\hline System & \vline & \multicolumn{3}{c}{$\Delta D$ $(mpc)$} & \vline &
 \multicolumn{3}{c}{$\Delta |\cos(\iota)|$} & \vline & \multicolumn{3}{c}{$\Delta \alpha$ $(deg)$} & \vline &
 \multicolumn{3}{c}{$\Delta \delta$ $(deg)$} & \vline & \multicolumn{3}{c}{$\Delta\Omega$
 $(deg^2)$}\\\hline
-Credible Level & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% & \vline & 65\% & \vline & 90\% \\
+Credible Level & \vline & 68\% & \vline & 95\% & \vline & 68\% & \vline & 95\% & \vline & 68\% & \vline & 95\% & \vline & 68\% & \vline & 95\% & \vline & 68\% & \vline & 95\% \\
  \hline\hline 
 
-$1M_{\odot}-1M_{\odot}$ & \vline &$43.4$ & \vline &$70.8$ & \vline & $0.304$ & \vline &$0.501$ & \vline & $5.56$ & \vline &$12.0$ & \vline & $6.24$ & \vline &$11.8$ & \vline & $5.57$ & \vline &$12.4$\\\hline$1.4M_{\odot}-1.4M_{\odot}$ & \vline &$53.2$ & \vline &$87.0$ & \vline & $0.287$ & \vline &$0.485$ & \vline & $6.92$ & \vline &$9.90$ & \vline & $7.11$ & \vline &$10.4$ & \vline & $8.35$ & \vline &$18.6$\\\hline$1M_{\odot}-2.5M_{\odot}$ & \vline &$61.1$ & \vline &$100$ & \vline & $0.311$ & \vline &$0.508$ & \vline & $2.67$ & \vline &$11.9$ & \vline & $4.20$ & \vline &$15.1$ & \vline & $7.39$ & \vline &$16.9$\\\hline$2.5M_{\odot}-2.5M_{\odot}$ & \vline &$104$ & \vline &$161$ & \vline & $0.342$ & \vline &$0.543$ & \vline & $2.42$ & \vline &$9.00$ & \vline & $3.31$ & \vline &$6.18$ & \vline & $6.27$ & \vline &$14.1$\\
+$1M_{\odot}-1M_{\odot}$ & \vline &$49.4$ & \vline &$89.9$ & \vline & $0.323$ & \vline &$0.611$ & \vline & $1.73$ & \vline &$4.09$ & \vline & $2.51$ & \vline &$5.52$ & \vline & $5.12$ & \vline &$13.5$\\\hline$1.4M_{\odot}-1.4M_{\odot}$ & \vline &$61.4$ & \vline &$107$ & \vline & $0.314$ & \vline &$0.588$ & \vline & $2.63$ & \vline &$5.42$ & \vline & $2.53$ & \vline &$5.27$ & \vline & $4.12$ & \vline &$11.2$\\\hline$1M_{\odot}-2.5M_{\odot}$ & \vline &$68.8$ & \vline &$127$ & \vline & $0.31$ & \vline &$0.549$ & \vline & $2.41$ & \vline &$4.6$ & \vline & $2.77$ & \vline &$6.2$ & \vline & $4.37$ & \vline &$12.1$\\\hline$2.5M_{\odot}-2.5M_{\odot}$ & \vline &$116$ & \vline &$198$ & \vline & $0.349$ & \vline &$0.613$ & \vline & $1.75$ & \vline &$4.51$ & \vline & $2.42$ & \vline &$5.01$ & \vline & $4.62$ & \vline &$12$\\
 
 \hline\hline
 
+
+\\HLVI\\ 
+\hline\hline System & \vline & \multicolumn{3}{c}{$\Delta D$ $(mpc)$} & \vline &
+\multicolumn{3}{c}{$\Delta |\cos(\iota)|$} & \vline & \multicolumn{3}{c}{$\Delta \alpha$ $(deg)$} & \vline &
+\multicolumn{3}{c}{$\Delta \delta$ $(deg)$} & \vline & \multicolumn{3}{c}{$\Delta\Omega$
+$(deg^2)$}\\\hline
+Credible Level & \vline & 68\% & \vline & 95\% & \vline & 68\% & \vline & 95\% & \vline & 68\% & \vline & 95\% & \vline & 68\% & \vline & 95\% & \vline & 68\% & \vline & 95\% \\
+ \hline\hline 
+$1M_{\odot}-1M_{\odot}$ & \vline &$42.7$ & \vline &$76.2$ & \vline & $0.267$ & \vline &$0.455$ & \vline & $1.13$ & \vline &$2.25$ & \vline & $1.48$ & \vline &$3.01$ & \vline & $1.87$ & \vline &$5.37$\\\hline$1.4M_{\odot}-1.4M_{\odot}$ & \vline &$66.6$ & \vline &$121$ & \vline & $0.285$ & \vline &$0.509$ & \vline & $1.27$ & \vline &$2.48$ & \vline & $1.49$ & \vline &$3.01$ & \vline & $2$ & \vline &$5.12$\\\hline$1M_{\odot}-2.5M_{\odot}$ & \vline &$73.7$ & \vline &$130$ & \vline & $0.297$ & \vline &$0.499$ & \vline & $1.29$ & \vline &$2.42$ & \vline & $1.42$ & \vline &$2.89$ & \vline & $1.75$ & \vline &$4.87$\\\hline$2.5M_{\odot}-2.5M_{\odot}$ & \vline &$120$ & \vline &$213$ & \vline & $0.301$ & \vline &$0.517$ & \vline & $1.18$ & \vline &$2.34$ & \vline & $1.55$ & \vline &$3.14$ & \vline & $2.25$ & \vline &$5.99$\\ \hline
 
 \end{tabular}}
 \label{ciTableExtrinsic}
@@ -1134,8 +1149,8 @@ focused on the recovery of the two masses, the luminosity distance,
 orbital inclination, and the sky location, as these are the six basic
 parameters of physical interest to the problem.  We found that,
 neglecting the effects of spin, the component masses can be
-constrained to within 8.5\% (13.4\%) of their true value to a credible level of
-65\% (90\%).  This value drops below 2\% (3.1\%) for systems with an asymmetric mass
+constrained to within 9\% (15\%) of their true value to a credible level of
+68\% (95\%).  This value drops below 1.9\% (3.7\%) for systems with an asymmetric mass
 ratio.  These results were summarized in Table \ref{ciTableIntrinsic}.
 It should be remembered that these signals were injected at high, 
 but not unrealistic, SNRs.  Thus, the results quoted can be thought of as the
@@ -1145,11 +1160,11 @@ average uncertainties for a ``good'' Advanced LIGO/Virgo detection.
 We also reported on the ability of the two network configurations to
 constrain the luminosity distance and orbital inclination.  For
 distance, it was found that the uncertainties will average anywhere from
-40 to 100 MPC at 65\% credible levels, and from 60 to 170 MPC at 90\% credible levels,
+43 to 120 MPC at 68\% credible levels, and from 76 to 213 MPC at 96\% credible levels,
  making the uncertainties 
 larger than the luminosity distances themselves in many cases.  Furthermore, it was
 found that the cosine of the orbital inclination can be constrained to
-within 0.3 (0.5) at the 65\% (90\%) level on average,
+within 0.35 (0.61) at the 68\% (95\%) level on average,
  suggesting that Advanced LIGO/Virgo will not
 be able to offer constraining information on GRB beaming angles in coincidence
 with electromagnetic observations.  Coincidence detections will still be possible, but
@@ -1161,13 +1176,15 @@ Finally, we reported the ability of advanced networks to constrain the
 sky location of BNS signals.  It was found that the three-detector
 configuration, consisting of the Washington and Louisiana LIGO sites
 plus the Italian Virgo site, was able to constrain all signals within
-60 $\mathrm{deg}^2$ (120 $\mathrm{deg}^2$) on the sky at the 65\% (90\%) credible level, with
-an average 65\% (90\%) credible interval of $7.4$ $\mathrm{deg}^2$ (18.6 $\mathrm{deg}^2$).
+64 $\mathrm{deg}^2$ (136 $\mathrm{deg}^2$) on the sky at the 68\% (95\%) 
+credible level, with
+an average median 68\% (95\%) credible interval of 
+$4.6$ $\mathrm{deg}^2$ (12.2 $\mathrm{deg}^2$).
 Meanwhile, the four-detector configuration, consisting of the
 three-detector sites plus a LIGO India detector, was able to localize
-all the sky locations to within 13 $\mathrm{deg}^2$ (34 $\mathrm{deg}^2$) on the sky at the 65\% (90\%)
-credible interval, with an average 65\% (90\%) credible interval of 
-2.2 $\mathrm{deg}^2$ $(5$ $\mathrm{deg}^2)$.
+all the sky locations to within 14 $\mathrm{deg}^2$ (45 $\mathrm{deg}^2$) on the sky at the 68\% (95\%)
+credible interval, with an average median 68\% (95\%) credible interval of 
+2 $\mathrm{deg}^2$ $(5.3$ $\mathrm{deg}^2)$.
 
 It should be noted that there are two distinct types of systematic
 error, highly relevant to the gravitational-wave parameter estimation
@@ -1193,8 +1210,6 @@ instrumentation effects that will arise in any advanced
 gravitational-wave detector.  The realization of noise will be a
 major factor in the deflection of signal PDFs from the idealized cases
 presented here.
-
-%quick test
 
 In this study, we have also neglected the effects of spin in the
 parameter space, electing to focus on the absolute basic parameters
