@@ -864,8 +864,17 @@ recovers all signals to less than 14 $\mathrm{deg}^2$ (45 $\mathrm{deg}^2$).
 The median quantitative results for the two network configurations show a similar
  benefit with the addition of LIGO India, and are again reported in Table \ref{ciTableExtrinsic}. 
 
-Two previous studies have considered the increase in sensitivity from the addition of the LIGO India site. \carl{[INCOMPLETE]}  
-
+Two previous studies have considered the increase in sensitivity from the addition of the 
+LIGO India site. \cite{Veitch2012} and \cite{Nissanke2013} studied the decrease in
+sky-location uncertainties obtained by the inclusion of the LIGO India site
+into the advanced detector network.  Both studies employed an MCMC sampling technique 
+(Veitch et al.\ via \texttt{LALInference}, Nissanke et al. via a modified version of CosmoMC),
+to determine the average parameter estimation uncertainties for a realistic distribution
+of sources in co-moving volume.  As the current study is interested in the uncertainties
+of optimal sources at $\text{SNR}_{network}=20$, ignoring the effects of less viable 
+detection candidates, it is instructive to compare the $95\%$ credible intervals
+between the three studies.  The cumulative distributions of sky-area uncertainties
+for both network configurations in each study are plotted in Fig. \ref{compSky}.
 
 \begin{figure*}[ht!]
   \centering \includegraphics[angle=0,scale=0.4, trim=5cm 2cm 3cm
@@ -894,6 +903,20 @@ Two previous studies have considered the increase in sensitivity from the additi
  \label{2525SkyLocHLVI}
 \end{figure*}
   
+\begin{figure}[ht!]
+  \centering \includegraphics[angle=0,scale=0.58, trim=0.5cm 1cm 0cm 0cm]{comparitiveSkyAreas.pdf}
+  
+ \caption{The cumulative fraction of sources found within $deg^2$ at the 95\% credible
+ interval.  This plot contains results from three separate studies: the current study, in
+ which optimal detection candidates are considered ($SNR_{network}=20$), 
+ \cite{Veitch2012}, which employs several \texttt{LALInference} samplers (including the
+ MCMC sampler used here) on an source population evenly distributed in co-moving 
+ volume, and \cite{Nissanke2013}, which employs a separate MCMC code on a
+ realistic source population.  The optimal detection candidates are constrained
+ to substantially smaller solid angles on the sky, as is expected for such ``gold-plated''
+ events.}
+ \label{compSky}
+\end{figure}
 
 \subsection{Varied Noise Realizations}
 \label{noiseSection}
@@ -903,7 +926,7 @@ Two previous studies have considered the increase in sensitivity from the additi
     clip=true,scale=0.52]{noisePDF.pdf}
  \caption{The effects of a non-zero noise realization on the recovered
    PDF for five different Gaussian realizations of the Advanced LIGO
-   noise curve.  Each PDF represents the recovery of the same
+   noise curve.  Each blue-dashed PDF represents the recovery of the same
    $1M_{\odot}/2.5M_{\odot}$ signal in a different noise curve, picked
    at random from the Gaussian colored noise defined by the Advanced
    LIGO power spectral density, while the gray-shaded curve is the
