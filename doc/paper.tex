@@ -170,7 +170,7 @@ even be treated as a lower bound on the standard deviations of certain
 parameters (particularly the masses) measurable in gravitational-wave
 detectors.  While previous studies have employed MCMC techniques for specific
 parameters,  \citep{Nissanke2011,Nissanke2013,Veitch2012}, none have considered 
-the full range of parameters, in particular the neutron star masses.
+the full range of parameters measurable for an optimal detection candidate.
 
 In this paper, we perform a systematic study of the statistical
 uncertainties with which the Advanced LIGO/Virgo network will be able
@@ -533,15 +533,20 @@ advanced era detectors and suppress any effects of detector noise by
 picking $n(t) \equiv 0$.  It can be shown that this ``zero-noise'' injection
 represents the geometric mean of the same experiment over many different
 noise realizations drawn from the same PSD.  See \cite{Nissanke2010}, c.f. equation
-53.
+(53), for a proof that the geometric mean of the posteriors over many realizations of the 
+noise is identical to the $n(t) = 0$ selection, given a sufficiently loud gravitational-wave
+event.
 
 Consequently, what we recover with the MCMC could be interpreted as
 the posterior distribution function for each source averaged over all
 possible (Gaussian) noise realizations, assuming we have the correct
 PSD and that the signal is sufficiently powerful for the linearized-signal
-approximation \citep{Vallisneri} to be valid.  By selecting a source population
-with an artificial distribution in SNR, we ensure that the ``zero-noise'' as
-average uncertainty 
+approximation to be valid\footnote{This can also be seen in \cite{Vallisneri}, equation (74).
+  By expanding the posterior variance as a series in $1/\text{SNR}$, it can be seen that the 
+  $n(t) = 0$ posterior variance is identical to the frequentist average 
+  over noise realizations of the posterior variance up to third order in $1/\text{SNR}$. }.
+    By selecting a source population with an artificial distribution in SNR, we ensure that the
+     ``zero-noise'' as average uncertainty approximation is valid.
 
 To check that our reported statistical errors are not in gross
 disagreement with those obtained in the presence of noise, we selected
@@ -854,9 +859,7 @@ injected near the plane of the detector network.  This causes the
 elongated, ``banana-shaped'' PDFs seen in Figure \ref{2525SkyLocHLV}.
 In the HLVI configuration, the plane is no longer relevant, and there
 are substantially fewer regions in which only two detectors see a
-sufficiently strong signal.  See \cite{Veitch2012} for a more detailed
-comparison of the sky-localization benefits of the HLVI configuration
-versus the three-detector network.  For the HLV configuration, we find that
+sufficiently strong signal.  For the HLV configuration, we find that
  all of the signals are recovered with
 a solid angle uncertainty of less than 64 $\mathrm{deg}^2$ (136 $\mathrm{deg}^2$)
 at the 68\% (95\%) credible interval, while the HLVI configuration 
@@ -864,17 +867,37 @@ recovers all signals to less than 14 $\mathrm{deg}^2$ (45 $\mathrm{deg}^2$).
 The median quantitative results for the two network configurations show a similar
  benefit with the addition of LIGO India, and are again reported in Table \ref{ciTableExtrinsic}. 
 
-Two previous studies have considered the increase in sensitivity from the addition of the 
-LIGO India site. \cite{Veitch2012} and \cite{Nissanke2013} studied the decrease in
+Previous studies have considered the increase in sensitivity from the addition of the 
+LIGO India site.  \cite{Nissanke2013} studied the decrease in
 sky-location uncertainties obtained by the inclusion of the LIGO India site
-into the advanced detector network.  Both studies employed an MCMC sampling technique 
-(Veitch et al.\ via \texttt{LALInference}, Nissanke et al. via a modified version of CosmoMC),
+into the advanced detector network.  Their study also employed an MCMC sampling technique 
+ (a modified version of CosmoMC),
 to determine the average parameter estimation uncertainties for a realistic distribution
-of sources in co-moving volume.  As the current study is interested in the uncertainties
+of sources.  As the current study is interested in the uncertainties
 of optimal sources at $\text{SNR}_{network}=20$, ignoring the effects of less viable 
 detection candidates, it is instructive to compare the $95\%$ credible intervals
-between the three studies.  The cumulative distributions of sky-area uncertainties
+between the two studies.  The cumulative distributions of sky-area uncertainties
 for both network configurations in each study are plotted in Fig. \ref{compSky}.
+
+The difference in uncertainties between the two studies is illustrative.  \cite{Nissanke2013}
+considered a realistic distribution of sources motivated by a local galaxy catalogue for
+ sources where $D\leq 200\text{Mpc}$, and homogeneously distributed in co-moving
+ volume for sources where $D > 200\text{Mpc}$.  These were then limited to those signals
+ where $\text{SNR}_{network} \geq 8.5$ (the threshold for detection candidates in the
+ current LIGO/Virgo software framework) for the MCMC parameter estimation.
+   The current study considers a source
+ population isotropically distributed on the sky, but at distances such that each signal
+ represents an optimal case for parameter estimation.   Fig. \ref{compSky} compares
+ the sky-area uncertainties that will be available to those considering ``good 
+ gravitational-wave events'' (e.g. precision source isolation), and the 
+ uncertainties that one can gather by considering all gravitational-wave candidates with 
+ $\text{SNR}_{network}\geq 8.5$ (e.g. electromagnetic follow-up).  As expected, both source
+ populations show a dramatic decrease in parameter estimation uncertainties with the
+ addition of the LIGO India site to the advanced detector network.  This holds true even when
+ considering the increased number of nominal sources available to the HLVI network 
+ configuration in the Nissanke population, where the extension of the network detection 
+ horizon due to the Indian detector increases the number of sources to 130, versus 90 in 
+ the HLV configuration.  
 
 \begin{figure*}[ht!]
   \centering \includegraphics[angle=0,scale=0.4, trim=5cm 2cm 3cm
@@ -907,14 +930,13 @@ for both network configurations in each study are plotted in Fig. \ref{compSky}.
   \centering \includegraphics[angle=0,scale=0.58, trim=0.5cm 1cm 0cm 0cm]{comparitiveSkyAreas.pdf}
   
  \caption{The cumulative fraction of sources found within $deg^2$ at the 95\% credible
- interval.  This plot contains results from three separate studies: the current study, in
- which optimal detection candidates are considered ($SNR_{network}=20$), 
- \cite{Veitch2012}, which employs several \texttt{LALInference} samplers (including the
- MCMC sampler used here) on an source population evenly distributed in co-moving 
- volume, and \cite{Nissanke2013}, which employs a separate MCMC code on a
- realistic source population.  The optimal detection candidates are constrained
+ interval.  This plot contains results from two separate studies: the current study, in
+ which optimal detection candidates are considered ($\rho_{network}=20$), 
+and \cite{Nissanke2013}, which employs a separate MCMC code on a
+ realistic source population (where $\rho_{trigger} \geq 8.5$ is employed to determine
+ parameter estimation sources).  The optimal detection candidates are constrained
  to substantially smaller solid angles on the sky, as is expected for such ``gold-plated''
- events.}
+ events, while both studies show a substantial decrease in sky-area uncertainties for the HLVI configuration.}
  \label{compSky}
 \end{figure}
 
@@ -955,7 +977,8 @@ value.  These displacements tend to cancel
     over many runs, ensuring that the mean uncertainties should be nearly identical to 
    the uncertainty drawn from the zero-noise runs.  Again, this only holds in the case
   where a signal is sufficiently loud that the posterior is linear in the parameters 
-  $\thpara$.
+  $\thpara$.  Meanwhile, the posterior variances, averaged over many noise realizations, 
+  are identical to the $n(t) = 0$ variance, up to third order in $1/\text{SNR}$.
 
 As a demonstration of this, we injected a single
 $1M_{\odot}/2.5M_{\odot}$ system, detected in HLVI, into 5 separate
@@ -1048,7 +1071,9 @@ We compute the Fisher matrix uncertainties
 using a code previously described in \cite{Inadequacies}.  We find that the MCMC credible
  intervals vary significantly from
 the estimates of the Fisher matrix, with the Fisher matrix underestimating the 
-fractional uncertainties by as much as a factor of three.  See Table~\ref{FIMvsMCMC}.
+fractional uncertainties by as much as a factor of three.  See Table~\ref{FIMvsMCMC}.  This 
+result agrees with the conventional wisdom surrounding the Fisher Matrix accuracy,
+as well as results where the Fisher Matrix is computed to higher order \citep{Vitale2010}
    This disagreement, while 
    unsurprising, emphasizes the importance of employing the full parameter estimation
     machinery of an MCMC when making physically relevant claims.

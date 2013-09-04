@@ -1,4 +1,4 @@
-\begin{thebibliography}{37}
+\begin{thebibliography}{38}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Abadie {et~al.}(2010)Abadie, Abbott, Abbott, Accadia, Acernese,
@@ -125,8 +125,8 @@ Nakar, E. 2007, Physics Reports, 442, 166Ð236, 166Ð236
 
 \bibitem[{{Rodriguez} {et~al.}(2013){Rodriguez}, {Farr}, {Farr}, \&
   {Mandel}}]{Inadequacies}
-{Rodriguez}, C.~L., {Farr}, B., {Farr}, W., \& {Mandel}, I. 2013, arXiv:Working
-  on it...
+{Rodriguez}, C.~L., {Farr}, B., {Farr}, W.~M., \& {Mandel}, I. 2013, ArXiv
+  e-prints, arXiv:1308.1397
 
 \bibitem[{Rover(2011)}]{Rover:2011qd}
 Rover, C. 2011, Phys. Rev. D, 84, 122004, 122004
@@ -160,5 +160,8 @@ Shoemaker, D. 2009, Advanced LIGO anticipated sensitivity curves
 
 \bibitem[{{Virgo Collaboration}(2009)}]{AdvVirgo}
 {Virgo Collaboration}. 2009, Advanced Virgo Baseline Design,
+
+\bibitem[{{Vitale} \& {Zanolin}(2010)}]{Vitale2010}
+{Vitale}, S., \& {Zanolin}, M. 2010, \prd, 82, 124065, 124065
 
 \end{thebibliography}
