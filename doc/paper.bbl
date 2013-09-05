@@ -1,4 +1,4 @@
-\begin{thebibliography}{38}
+\begin{thebibliography}{39}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Abadie {et~al.}(2010)Abadie, Abbott, Abbott, Accadia, Acernese,
@@ -81,6 +81,12 @@ Hinderer, T., Lackey, B.~D., Lang, R.~N., \& Read, J.~S. 2010, Physical Review
   Veitch, Grover, Sidery, Sturani, \& Vecchio}]{Li2012}
 Li, T. G.~F., Del~Pozzo, W., Vitale, S., {et~al.} 2012, Physical Review D, 85,
   082003, 082003
+
+\bibitem[{{LIGO Scientific Collaboration} {et~al.}(2013){LIGO Scientific
+  Collaboration}, {Virgo Collaboration}, {Aasi}, {Abadie}, {Abbott}, {Abbott},
+  {Abbott}, {Abernathy}, {Accadia}, {Acernese}, \& et~al.}]{Prospects2013}
+{LIGO Scientific Collaboration}, {Virgo Collaboration}, {Aasi}, J., {et~al.}
+  2013, ArXiv e-prints, arXiv:1304.0670
 
 \bibitem[{Littenberg \& Cornish(2010)}]{Littenberg:2010gf}
 Littenberg, T.~B., \& Cornish, N.~J. 2010, Phys. Rev. D, 82, 103007, 103007

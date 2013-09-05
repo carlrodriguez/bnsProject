@@ -109,7 +109,7 @@ interferometers capable of regularly detecting astrophysical sources will
 come online \citep{AdvLIGO,AdvVirgo}.  The Advanced LIGO and Advanced Virgo
 detectors (and the anticipated LIGO India detector)
  will provide the first insights into the final moments of
-binary compact object mergers, including the mergers of binary neutron
+ compact object mergers, including the mergers of binary neutron
 star systems.  Intense preparations are underway to characterize and
 extract as much physical information as possible from these signals.
  
@@ -170,13 +170,13 @@ even be treated as a lower bound on the standard deviations of certain
 parameters (particularly the masses) measurable in gravitational-wave
 detectors.  While previous studies have employed MCMC techniques for specific
 parameters,  \citep{Nissanke2011,Nissanke2013,Veitch2012}, none have considered 
-the full range of parameters measurable for an optimal detection candidate.
+the full range of parameters measurable for an optimal detection candidates.
 
 In this paper, we perform a systematic study of the statistical
 uncertainties with which the Advanced LIGO/Virgo network will be able
 to measure the basic parameters of BNS mergers.  In Section
 \ref{PEsection}, we describe the machinery of our parameter estimation
-code, \texttt{LALInference}, and the associated MCMC sampler,
+code, \texttt{LALInference}, and its associated MCMC sampler,
 \texttt{lalinference\_mcmc}, as well as the frequency-domain
 gravitational-wave template we employ.  In Section
 \ref{resultsSection}, we qualitatively analyze the posterior
@@ -479,11 +479,11 @@ a non-spinning binary is a function only of the total mass:
 We define the signal-to-noise ratio (SNR) of a gravitational wave in a
 single detector as
 \begin{equation}
-  \rho \equiv \frac{4}{\sigma} \int^{\infty}_{0}\frac{|
+  \text{SNR} \equiv \frac{4}{\sigma} \int^{\infty}_{0}\frac{|
     \tilde{s}(f)\tilde{h}(f)|}{S_{n}(f)}df,
   \label{formalSNR}
 \end{equation}
-where $\rho$ is the SNR and $\tilde s(f)$ and $\tilde{h}^{*}(f)$ are
+where $\tilde s(f)$ and $\tilde{h}^{*}(f)$ are
 the frequency-domain data and template, respectively, and the
 normalization $\sigma$ is given by
 \begin{equation}
@@ -496,11 +496,11 @@ of the individual detectors add in quadrature.  That is, the network
 SNR for a detection is
 
 \begin{equation}
-\rho_{\text{network}} = \sqrt{\sum_i \rho_{i}^2}
+\text{SNR}_{\text{network}} = \sqrt{\sum_i \text{SNR}_{i}^2}
 \label{SNRnetwork}
 \end{equation}
 
-\noindent where $\rho_i$ is the SNR, given by \eqref{formalSNR}, of
+\noindent where $\text{SNR}_i$ is the SNR, given by \eqref{formalSNR}, of
 the $i^{\text{th}}$ detector.
 
 For this study, we consider four separate populations of BNS systems,
@@ -509,7 +509,7 @@ $1.4M_{\odot}/1.4M_{\odot}$, $1M_{\odot}/2.5M_{\odot}$, and
 $2.5M_{\odot}/2.5M_{\odot}$.  Each population consisted of 40 signals
 distributed randomly in sky location, polarization, inclination,
 time-of-arrival, and coalescence phase.  The luminosity distance, $D$,
-was selected to provide a network SNR of $\rho_{\text{network}}=20$
+was selected to yield a signal strength of $\text{SNR}_{network}=20$
 for each source in each network configuration. 
  While unphysical from an astrophysics perspective
 (binary sources are expected to be distributed uniformly in co-moving volume), this
@@ -530,25 +530,18 @@ realization of the noise at the time of the detection.  Because of
 this, we elect to focus only on the statistical errors due to the
 flexibility of the waveforms and the expected sensitivity of the
 advanced era detectors and suppress any effects of detector noise by
-picking $n(t) \equiv 0$.  It can be shown that this ``zero-noise'' injection
+picking $n(t) \equiv 0$.  It can be shown \cite{Nissanke2010} that this ``zero-noise'' injection
 represents the geometric mean of the same experiment over many different
-noise realizations drawn from the same PSD.  See \cite{Nissanke2010}, c.f. equation
-(53), for a proof that the geometric mean of the posteriors over many realizations of the 
-noise is identical to the $n(t) = 0$ selection, given a sufficiently loud gravitational-wave
-event.
+noise realizations drawn from the same PSD. 
 
 Consequently, what we recover with the MCMC could be interpreted as
 the posterior distribution function for each source averaged over all
 possible (Gaussian) noise realizations, assuming we have the correct
 PSD and that the signal is sufficiently powerful for the linearized-signal
-approximation to be valid\footnote{This can also be seen in \cite{Vallisneri}, equation (74).
-  By expanding the posterior variance as a series in $1/\text{SNR}$, it can be seen that the 
-  $n(t) = 0$ posterior variance is identical to the frequentist average 
-  over noise realizations of the posterior variance up to third order in $1/\text{SNR}$. }.
-    By selecting a source population with an artificial distribution in SNR, we ensure that the
-     ``zero-noise'' as average uncertainty approximation is valid.
-
-To check that our reported statistical errors are not in gross
+approximation to be valid.  By selecting a source population with an
+ artificial distribution in SNR, we ensure that the
+     ``zero-noise'' as average uncertainty approximation is valid.  To check that our
+      reported statistical errors are not in gross
 disagreement with those obtained in the presence of noise, we selected
 a particular simulated signal to perform parameter estimation in
 several noise realizations.  The comparison of the noise-dependent and
@@ -830,7 +823,8 @@ there is equal support in the probability density functions near true
 location and near the point reflected through the plane formed by the
 three detectors.  See \cite{Fairhurst2011} for a global analysis of
 time-of-arrival accuracy for various network configurations, including
-those considered here.
+those considered here.  See also \cite{Prospects2013} for a similar analysis,
+applied to each stage of the advanced detector network.
   
   
 In practice, however, additional information from the wave
@@ -875,7 +869,7 @@ into the advanced detector network.  Their study also employed an MCMC sampling 
 to determine the average parameter estimation uncertainties for a realistic distribution
 of sources.  As the current study is interested in the uncertainties
 of optimal sources at $\text{SNR}_{network}=20$, ignoring the effects of less viable 
-detection candidates, it is instructive to compare the $95\%$ credible intervals
+detection candidates, it is useful to compare the $95\%$ credible intervals
 between the two studies.  The cumulative distributions of sky-area uncertainties
 for both network configurations in each study are plotted in Fig. \ref{compSky}.
 
@@ -884,20 +878,22 @@ considered a realistic distribution of sources motivated by a local galaxy catal
  sources where $D\leq 200\text{Mpc}$, and homogeneously distributed in co-moving
  volume for sources where $D > 200\text{Mpc}$.  These were then limited to those signals
  where $\text{SNR}_{network} \geq 8.5$ (the threshold for detection candidates in the
- current LIGO/Virgo software framework) for the MCMC parameter estimation.
+ current LIGO/Virgo matched-filtering framework) for the MCMC parameter estimation.
    The current study considers a source
  population isotropically distributed on the sky, but at distances such that each signal
  represents an optimal case for parameter estimation.   Fig. \ref{compSky} compares
  the sky-area uncertainties that will be available to those considering ``good 
- gravitational-wave events'' (e.g. precision source isolation), and the 
+ gravitational-wave events'' (e.g. precision source localization), and the 
  uncertainties that one can gather by considering all gravitational-wave candidates with 
  $\text{SNR}_{network}\geq 8.5$ (e.g. electromagnetic follow-up).  As expected, both source
  populations show a dramatic decrease in parameter estimation uncertainties with the
  addition of the LIGO India site to the advanced detector network.  This holds true even when
  considering the increased number of nominal sources available to the HLVI network 
- configuration in the Nissanke population, where the extension of the network detection 
- horizon due to the Indian detector increases the number of sources to 130, versus 90 in 
- the HLV configuration.  
+ configuration in the Nissanke population, where the expansion of the network detection 
+ horizon due to LIGO India increases the number of sources to 130, versus 90 in 
+ the HLV configuration.  This trend is similar to that observed in \cite{Veitch2012}, contrasting
+ the originally proposed four-detector configuration (with two co-located Hanford detectors) to 
+ the HLVI configuration.
 
 \begin{figure*}[ht!]
   \centering \includegraphics[angle=0,scale=0.4, trim=5cm 2cm 3cm
@@ -931,9 +927,9 @@ considered a realistic distribution of sources motivated by a local galaxy catal
   
  \caption{The cumulative fraction of sources found within $deg^2$ at the 95\% credible
  interval.  This plot contains results from two separate studies: the current study, in
- which optimal detection candidates are considered ($\rho_{network}=20$), 
+ which optimal detection candidates are considered ($\text{SNR}_{network}=20$), 
 and \cite{Nissanke2013}, which employs a separate MCMC code on a
- realistic source population (where $\rho_{trigger} \geq 8.5$ is employed to determine
+ realistic source population (where $\text{SNR}_{trigger} \geq 8.5$ is employed to determine
  parameter estimation sources).  The optimal detection candidates are constrained
  to substantially smaller solid angles on the sky, as is expected for such ``gold-plated''
  events, while both studies show a substantial decrease in sky-area uncertainties for the HLVI configuration.}
@@ -952,8 +948,9 @@ and \cite{Nissanke2013}, which employs a separate MCMC code on a
    $1M_{\odot}/2.5M_{\odot}$ signal in a different noise curve, picked
    at random from the Gaussian colored noise defined by the Advanced
    LIGO power spectral density, while the gray-shaded curve is the
-   zero-noise PDF.  Notice how each curve is a Gaussian PDF with roughly similar shape,
-   but different mean, to the zero-noise PDF.  This
+   zero-noise PDF.  Notice how each curve is a Gaussian PDF with different mean and slightly
+   different width
+   , to the zero-noise PDF.  This
    only holds true for glitch-free data, which is an unrealistic
    idealization when compared to real data.}
  \label{noisePDFs}
@@ -963,24 +960,23 @@ We have performed the current analysis on zero-noise injections for
 two reasons.  First, the results of a zero-noise analysis are
 similar to those that would be achieved by averaging the results of
 multiple identical injections in different Gaussian noise
-realizations, as was argued in Section \ref{detectorSection}.  The second reason 
-is we are not able
-to predict the characteristics of realistic (often non-Gaussian)
-advanced detector noise.  Attempting to do so would have little chance
-of being accurate while requiring a huge computational burden to
-combine the results of many MCMC runs in many different noise realizations.
-
-In the case of a unique Gaussian realization of the Advanced LIGO
-noise curve, each realization causes the maximum likelihood of the
+realizations.  For a unique Gaussian realization of the Advanced LIGO
+noise curve, the realization causes the maximum likelihood of the
 posterior probability distribution to be translated away from the true
-value.  These displacements tend to cancel 
-    over many runs, ensuring that the mean uncertainties should be nearly identical to 
-   the uncertainty drawn from the zero-noise runs.  Again, this only holds in the case
-  where a signal is sufficiently loud that the posterior is linear in the parameters 
-  $\thpara$.  Meanwhile, the posterior variances, averaged over many noise realizations, 
-  are identical to the $n(t) = 0$ variance, up to third order in $1/\text{SNR}$.
-
-As a demonstration of this, we injected a single
+value. These displacements tend cancel in the frequentist average over noise
+ realizations, ensuring that the mean uncertainties should be nearly identical to 
+   the uncertainty drawn from the zero-noise runs.  This can be seen in 
+   \cite{Vallisneri}, equations (73) and (74).
+  By expanding the posterior mean and the posterior variance as series in $1/\text{SNR}$,
+   it can be seen that the 
+  $n(t) = 0$ posterior mean is identical to the frequentist average 
+  over noise realizations of the posterior mean to first order in $1/\text{SNR}$.  In similar
+  fashion, the $n(t) = 0$ posterior variance is identical to the noise-realization frequentist 
+  average up to third order in $1/\text{SNR}$.  As the current study operates in a high-SNR 
+  regime, the zero-noise averages (particularly the averages of the posterior variances) are
+   assumed to be valid.
+  
+  As a demonstration of this, we injected a single
 $1M_{\odot}/2.5M_{\odot}$ system, detected in HLVI, into 5 separate
 realizations of Gaussian noise colored by the Advanced LIGO PSD, and
 compared the results to the same MCMC recovery in the zero-noise case.
@@ -990,12 +986,18 @@ answer'' that will be recovered is a single PDF with similar width to
 the zero-noise PDF, but with the peak likelihood displaced from the
 true value.
 
-Of course, the largest concern for gravitational-wave parameter
-estimation will not be the specific realization of Gaussian noise, but
-the effects of non-Gaussianities in the data.  Techniques which build
+  Of course, this also relies on the assumption that the detector noise is Gaussian.  
+  This is the second reason for employing the zero-noise approximation: it is not feasible
+to predict the characteristics of realistic (i.e. non-Gaussian)
+advanced detector noise.  Attempting to do so would have little chance
+of being accurate while requiring a huge computational burden to
+combine the results of many MCMC runs in many different noise realizations.
+These non-Gaussian excursions will be one of the largest hurdles for parameter estimation
+in the advanced detector era.
+  Techniques which build
 off of the theoretical progress made
 in~\cite{Allen:2002jw,Rover:2011qd,Littenberg:2010gf} for including
-glitches in our model for the data, and therefore relaxing the
+glitches in the model for the data, and therefore relaxing the
 assumptions about stationary and Gaussian noise, are currently under
 investigation.
 
@@ -1232,7 +1234,9 @@ Meanwhile, the four-detector configuration, consisting of the
 three-detector sites plus a LIGO India detector, was able to localize
 all the sky locations to within 14 $\mathrm{deg}^2$ (45 $\mathrm{deg}^2$) on the sky at the 68\% (95\%)
 credible interval, with an average median 68\% (95\%) credible interval of 
-2 $\mathrm{deg}^2$ $(5.3$ $\mathrm{deg}^2)$.
+2 $\mathrm{deg}^2$ $(5.3$ $\mathrm{deg}^2)$.  These high-SNR results
+were then compared to similar results for a realistic, non-optimal source distribution from
+\cite{Nissanke2013}.
 
 It should be noted that there are two distinct types of systematic
 error, highly relevant to the gravitational-wave parameter estimation
@@ -1269,6 +1273,11 @@ neutron stars from highly-spinning low-mass black holes.  Future work
 will explore this potential mass/spin degeneracy, including the
 effects of orbital precession, with the aim of definitively answering
 this question.
+
+\section{Acknowledgements}
+
+The authors would like to thank Samaya Nissanke, John Veitch, and Neil Cornish for useful discussions.  We would also like to thank Samaya Nissanke for the 95\% credible regions
+quoted in Fig. \ref{compSky}. CR and BF were supported by NSF GRFP Fellowships, award DGE-0824162. 
 
 \bibliographystyle{apj} \bibliography{paper}{}
 
