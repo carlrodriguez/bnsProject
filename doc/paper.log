@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  8 SEP 2013 14:26
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  12 SEP 2013 13:29
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -600,7 +600,7 @@ Underfull \hbox (badness 1127) in paragraph at lines 288--302
 \OT1/cmr/m/n/10 & Vec-chio[] ([]2010[])) and Markov-Chain Monte Carlo
  []
 
-[2] [3] <9dpdf.pdf, id=174, 1300.86pt x 737.15402pt>
+[2] [3] <9dpdf.pdf, id=176, 1300.86pt x 737.15402pt>
 File: 9dpdf.pdf Graphic file (type pdf)
  <use 9dpdf.pdf>
 Package pdftex.def Info: 9dpdf.pdf used on input line 555.
@@ -610,7 +610,7 @@ Overfull \hbox (125.86366pt too wide) in paragraph at lines 555--561
  [][] 
  []
 
-[4] <1414masses2D.pdf, id=198, 466.1415pt x 513.11702pt>
+[4] <1414masses2D.pdf, id=200, 466.1415pt x 513.11702pt>
 File: 1414masses2D.pdf Graphic file (type pdf)
 
 <use 1414masses2D.pdf>
@@ -620,7 +620,7 @@ Package pdftex.def Info: 1414masses2D.pdf used on input line 626.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<125masses2D.pdf, id=200, 466.1415pt x 520.34402pt>
+<125masses2D.pdf, id=202, 466.1415pt x 520.34402pt>
 File: 125masses2D.pdf Graphic file (type pdf)
  <use 125masses2D.pdf>
 Package pdftex.def Info: 125masses2D.pdf used on input line 645.
@@ -629,7 +629,7 @@ Package pdftex.def Info: 125masses2D.pdf used on input line 645.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<newMasses.pdf, id=202, 701.01903pt x 692.88861pt>
+<newMasses.pdf, id=204, 701.01903pt x 692.88861pt>
 File: newMasses.pdf Graphic file (type pdf)
  <use newMasses.pdf>
 Package pdftex.def Info: newMasses.pdf used on input line 656.
@@ -650,7 +650,7 @@ LaTeX Warning: A float is stuck (cannot be placed) on input line 709.
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
-<distIota2D.pdf, id=257, 349.60611pt x 737.15402pt>
+<distIota2D.pdf, id=259, 349.60611pt x 737.15402pt>
 File: distIota2D.pdf Graphic file (type pdf)
  <use distIota2D.pdf>
 Package pdftex.def Info: distIota2D.pdf used on input line 751.
@@ -703,19 +703,19 @@ has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.863 
-       <./distIota2D.pdf>] <HLVsky.pdf, id=501, 1300.86pt x 737.15402pt>
+       <./distIota2D.pdf>] <HLVsky.pdf, id=503, 1300.86pt x 737.15402pt>
 File: HLVsky.pdf Graphic file (type pdf)
 
 <use HLVsky.pdf>
 Package pdftex.def Info: HLVsky.pdf used on input line 900.
 (pdftex.def)             Requested size: 1073.23535pt x 680.24687pt.
- <HLVIsky.pdf, id=502, 1300.86pt x 737.15402pt>
+ <HLVIsky.pdf, id=504, 1300.86pt x 737.15402pt>
 File: HLVIsky.pdf Graphic file (type pdf)
 
 <use HLVIsky.pdf>
 Package pdftex.def Info: HLVIsky.pdf used on input line 914.
 (pdftex.def)             Requested size: 1073.23535pt x 680.24687pt.
- <comparitiveSkyAreas.pdf, id=504, 469.755pt x 686.565pt>
+ <comparitiveSkyAreas.pdf, id=506, 469.755pt x 686.565pt>
 File: comparitiveSkyAreas.pdf Graphic file (type pdf)
 
 <use comparitiveSkyAreas.pdf>
@@ -726,7 +726,7 @@ Overfull \hbox (18.94028pt too wide) in paragraph at lines 926--927
  [][] 
  []
 
-<noisePDF.pdf, id=507, 460.72125pt x 600.74437pt>
+<noisePDF.pdf, id=509, 460.72125pt x 600.74437pt>
 File: noisePDF.pdf Graphic file (type pdf)
  <use noisePDF.pdf>
 Package pdftex.def Info: noisePDF.pdf used on input line 944.
@@ -797,10 +797,10 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1284.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1284.
  ) 
 Here is how much of TeX's memory you used:
- 9321 strings out of 493633
- 131461 string characters out of 3143378
- 293218 words of memory out of 3000000
- 12355 multiletter control sequences out of 15000+200000
+ 9326 strings out of 493633
+ 131552 string characters out of 3143378
+ 293280 words of memory out of 3000000
+ 12359 multiletter control sequences out of 15000+200000
  15765 words of font info for 64 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  34i,14n,29p,1037b,370s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -831,10 +831,10 @@ t/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2011/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2011/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2011/texmf-dist/fon
 ts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on paper.pdf (13 pages, 7682185 bytes).
+Output written on paper.pdf (13 pages, 7682204 bytes).
 PDF statistics:
- 934 PDF objects out of 1000 (max. 8388607)
- 539 compressed objects within 6 object streams
- 98 named destinations out of 1000 (max. 500000)
+ 936 PDF objects out of 1000 (max. 8388607)
+ 541 compressed objects within 6 object streams
+ 99 named destinations out of 1000 (max. 500000)
  64 words of extra memory for PDF output out of 10000 (max. 10000000)
 

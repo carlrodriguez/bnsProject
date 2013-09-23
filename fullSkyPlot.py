@@ -16,7 +16,7 @@ m.drawparallels(np.arange(-90.,90.,45.),labels=[1,0,0,0],labelstyle='+/-')
 # draw parallels
 m.drawmeridians(np.arange(0.,360.,90.),labels=[0,0,0,1],labelstyle='+/-')
 # draw meridians
-plt.title("Sky Location Uncertainty", fontsize=22) # add a title
+plt.title("Sky Location Credible Intervals, HLVI Configuration", fontsize=35) # add a title
 m.drawmapboundary()
 #colorbar.ColorbarBase.set_label(test,'$\log_{10}$($\Omega$)  $(deg)^2$', fontsize=15)
 
@@ -24,6 +24,7 @@ ra = []
 dec= []
 sa = []
 deg= []
+#for prefix in ['2.5_2.5']:
 for prefix in ['1_1','1.4_1.4','1_2.5','2.5_2.5']:
 	for run in range(1,41):
 		filename = prefix + '/' + str(run) + '/post/ranked_sky_pixels.dat'
@@ -45,7 +46,6 @@ for prefix in ['1_1','1.4_1.4','1_2.5','2.5_2.5']:
 		fileSummary.close()
 		gmst = float(fileSummaryData[31].split()[6])
 		gmst = np.mod(gmst/3600.,24.)
-		print gmst
 
 		i = 0
 		cum = float(filedata[1].split()[3]) 
@@ -58,24 +58,26 @@ for prefix in ['1_1','1.4_1.4','1_2.5','2.5_2.5']:
 			i += 1
 		for j in range(i):
 			deg.append(i*(41252.96129655765) / (len(filedata) - 1))
+print max(deg)
 
 ra = np.array(ra)
 dec= np.array(dec)
 sa = np.array(sa)
 
-ra_reverse =  ra*57.296
+ra_reverse =  -ra*57.296
 
 plx,ply=m(
 	  ra_reverse,
 	  (dec)*57.296
 	  )
 
-m.scatter(plx,ply,s=sa,c='gray',edgecolors='none',cmap=plt.cm.gist_rainbow,alpha=0.75)
+m.scatter(plx,ply,s=sa,c='gray',edgecolors='none',cmap=plt.cm.gist_rainbow_r,alpha=0.75)
 
 ra = []
 dec= []
 sa = []
 deg= []
+#for prefix in ['2.5_2.5']:
 for prefix in ['1_1','1.4_1.4','1_2.5','2.5_2.5']:
 	for run in range(1,41):
 		filename = prefix + '/' + str(run) + '/post/ranked_sky_pixels.dat'
@@ -100,7 +102,7 @@ for prefix in ['1_1','1.4_1.4','1_2.5','2.5_2.5']:
 		i = 0
 		cum = float(filedata[1].split()[3]) 
 
-		while cum <= 0.67: #one sigma
+		while cum <= 0.68: #one sigma
 			cum = float(filedata[i+2].split()[3]) 
 			ra.append(( - np.mod(gmst,24.) + float(filedata[i+2].split()[1]))*0.26179938779)
 			dec.append(float(filedata[i+2].split()[0])*0.01745329251)
@@ -114,22 +116,27 @@ for prefix in ['1_1','1.4_1.4','1_2.5','2.5_2.5']:
 #			i += 1
 		for j in range(i):
 			deg.append(i*(41252.96129655765) / (len(filedata) - 1))
+print max(deg)
 
 ra = np.array(ra)
 dec= np.array(dec)
 sa = np.array(sa)
 
-ra_reverse = ra*57.296
+ra_reverse = -ra*57.296
 
 plx,ply=m(
 	  ra_reverse,
 	  dec*57.296
 	  )
 
-m.scatter(plx,ply,s=sa,c=deg,edgecolors='none',cmap=plt.cm.gist_rainbow,alpha=1)
-test2 = m.colorbar(location='bottom')
-colorbar.ColorbarBase.set_label(test2,'$1\sigma$ Solid Angle $(deg)^2$', fontsize=15)
+m.scatter(plx,ply,s=sa,c=deg,vmin=0,vmax=60.,edgecolors='none',cmap=plt.cm.gist_rainbow,alpha=1)
+v = np.linspace(0, 60.0, 6, endpoint=True)
+test2 = m.colorbar(location='bottom',ticks=v)
+colorbar.ColorbarBase.set_label(test2,'Solid Angle $(deg)^2$ Area of $68\%$ Credible Region ($95\%$ in Gray)', fontsize=25)
 
+axes(test2.ax)
+yticks(fontsize=20)
+xticks(fontsize=20)
 
 #m.contourf(plx,ply,data,cmap=mpl_cm.gist_rainbow,alpha=0.8,tri=True)
 #ax = subplot(2,1,1)

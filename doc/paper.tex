@@ -530,9 +530,7 @@ realization of the noise at the time of the detection.  Because of
 this, we elect to focus only on the statistical errors due to the
 flexibility of the waveforms and the expected sensitivity of the
 advanced era detectors and suppress any effects of detector noise by
-picking $n(t) \equiv 0$.  It can be shown \cite{Nissanke2010} that this ``zero-noise'' injection
-represents the geometric mean of the same experiment over many different
-noise realizations drawn from the same PSD. 
+picking $n(t) \equiv 0$.  
 
 Consequently, what we recover with the MCMC could be interpreted as
 the posterior distribution function for each source averaged over all
@@ -540,10 +538,12 @@ possible (Gaussian) noise realizations, assuming we have the correct
 PSD and that the signal is sufficiently powerful for the linearized-signal
 approximation to be valid.  By selecting a source population with an
  artificial distribution in SNR, we ensure that the
-     ``zero-noise'' as average uncertainty approximation is valid.  To check that our
-      reported statistical errors are not in gross
+     ``zero-noise'' as average uncertainty approximation is valid.
+       This approach has been employed in previous studies to similar effect
+        (e.g. \cite{Nissanke2010} and \cite{Sampson2013}).
+ To check that our reported statistical errors are not in gross
 disagreement with those obtained in the presence of noise, we selected
-a particular simulated signal to perform parameter estimation in
+a particular simulated signal to perform parameter estimation upon in
 several noise realizations.  The comparison of the noise-dependent and
 noise-free results can be found in Section \ref{noiseSection}.
 
@@ -881,7 +881,7 @@ considered a realistic distribution of sources motivated by a local galaxy catal
  current LIGO/Virgo matched-filtering framework) for the MCMC parameter estimation.
    The current study considers a source
  population isotropically distributed on the sky, but at distances such that each signal
- represents an optimal case for parameter estimation.   Fig. \ref{compSky} compares
+ represents an optimal case for parameter estimation.   Fig.\ \ref{compSky} compares
  the sky-area uncertainties that will be available to those considering ``good 
  gravitational-wave events'' (e.g. precision source localization), and the 
  uncertainties that one can gather by considering all gravitational-wave candidates with 
@@ -1277,7 +1277,7 @@ this question.
 \section{Acknowledgements}
 
 The authors would like to thank Samaya Nissanke, John Veitch, and Neil Cornish for useful discussions.  We would also like to thank Samaya Nissanke for the 95\% credible regions
-quoted in Fig. \ref{compSky}. CR and BF were supported by NSF GRFP Fellowships, award DGE-0824162. 
+quoted in Fig. \ref{compSky}. CR and BF were supported by NSF GRFP Fellowships, award DGE-0824162.  All authors were also partially or fully supported by NSF Gravitational Physics grant PHY-0969820, PI: VK. Lastly, VK is grateful to the hospitality of the Aspen Center for Physics while she worked on this study. 
 
 \bibliographystyle{apj} \bibliography{paper}{}
 

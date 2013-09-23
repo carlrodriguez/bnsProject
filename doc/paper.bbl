@@ -1,4 +1,4 @@
-\begin{thebibliography}{39}
+\begin{thebibliography}{40}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Abadie {et~al.}(2010)Abadie, Abbott, Abbott, Accadia, Acernese,
@@ -136,6 +136,10 @@ Nakar, E. 2007, Physics Reports, 442, 166Ð236, 166Ð236
 
 \bibitem[{Rover(2011)}]{Rover:2011qd}
 Rover, C. 2011, Phys. Rev. D, 84, 122004, 122004
+
+\bibitem[{{Sampson} {et~al.}(2013){Sampson}, {Cornish}, \&
+  {Yunes}}]{Sampson2013}
+{Sampson}, L., {Cornish}, N., \& {Yunes}, N. 2013, \prd, 87, 102001, 102001
 
 \bibitem[{Shoemaker(2009)}]{ADVLIGONoise}
 Shoemaker, D. 2009, Advanced LIGO anticipated sensitivity curves
