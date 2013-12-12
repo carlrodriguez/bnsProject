@@ -152,7 +152,7 @@ parameter space of BNS systems.
 
 By employing the full parameter-estimation machinery that will
 eventually be used in the Advanced LIGO/Virgo era, our results
- give \sout{realistic} \carl{lower-bound} estimates of the capabilities of
+ give \sout{realistic} \carl{lower-bound average} estimates of the capabilities of
 advanced ground-based detectors to characterize BNS systems.  
 The majority of studies have employed the Fisher-matrix
 formalism which was first adapted for gravitational-wave parameter
@@ -311,132 +311,21 @@ and Markov-Chain Monte Carlo (\texttt{lalinference\_mcmc}).  We elect
 to use the MCMC sampler for this study.  \texttt{lalinference\_mcmc}
 is based upon the previously described code, \texttt{SpinSpiral}
 \citep{spinspiral2009, spinspiral2010}.  The MCMC employs a
-Metropolis-Hastings sampling algorithm, which can be described as
-follows \citep{Gilks99}:
-  
-\begin{enumerate}
-\item Pick an initial point in the parameter space
-  ($\boldsymbol{\theta_{\text{old}}}$), and then propose a random
-  ``jump'' to a new set of waveform parameters,
-  $\boldsymbol{\theta_{\text{new}}}$.  The jump follows the
-  proposal distribution $q\left(
-  \boldsymbol{\theta_{\text{new}}} | \boldsymbol{\theta_{\text{old}}}
-  \right)$.
-\item Calculate the posterior probability,
-  $p(\boldsymbol{\theta_{\text{new}}}|s)$, of the new parameters using
-  \eqref{likelihood} and \eqref{posterior}.
-\item Accept the new parameters with probability
-  \begin{equation}
-    p_\mathrm{accept} = \min \left[ 1,
-      \frac{p(\boldsymbol{\theta_{\text{new}}}|s)
-        q\left(\boldsymbol{\theta_{\text{old}}} |
-        \boldsymbol{\theta_{\text{new}}}
-        \right)}{p(\boldsymbol{\theta_{\text{old}}}|s)
-        q\left(\boldsymbol{\theta_{\text{new}}} |
-        \boldsymbol{\theta_{\text{old}}} \right)} \right].
-  \end{equation}
-  If the new parameters are accepted, record
-  $\boldsymbol{\theta_\text{new}}$ and repeat with
-  $\boldsymbol{\theta_\text{new}} \rightarrow
-  \boldsymbol{\theta_\text{old}}$; otherwise, record
-  $\boldsymbol{\theta_\text{old}}$, and repeat.
-\end{enumerate} 
-  
-The above procedure is designed to record a chain of samples whose
-distribution is $p\left(\thpara|s\right)$.  By drawing a sufficient
-($\sim1000$) number of effectively independent samples from the
-posterior, the chains traces out the functional form of the posterior,
-gathering more samples from regions with high posterior probability
-density.  Depending on the proposal distribution, $q$, the convergence
-(mixing) of the chain may be rapid or slow.  We employ multiple
-optimization techniques, including both specially-crafted jump
-proposals ($q$) and parallel tempering, to ensure adequate mixing of
-the Markov Chains throughout our parameter space.  Both samplers were
-tuned and developed during the last science run of the Initial
-LIGO/Virgo network.  A description of the parameter estimation
-capabilities of these two samplers with respect to real interferometer
-data, as well as a more detailed description of the algorithms and
-checks for convergence, can be found in \cite{S6PE}.
-  
+Metropolis-Hastings sampling algorithm \citep{Gilks99}, which is described in 
+Appendix \ref{appendixMCMC}.
+
  
-\subsection{Waveform Model}
-\label{waveformSection}
+\subsection{Parameter Space}
+\label{parameterSection}
   
-We use a frequency-domain waveform accurate up to $3.5$ post-Newtonian
-(pN) order in phase and 3 pN order in amplitude of the lowest ($l=m=2$) spatial mode.
-  We restrict
-ourselves to quasi-circular, non-spinning waveforms as a simplifying
-assumption.  The standard form of our waveform model, known as the
-\textit{TaylorF2} approximant, is calculated via the stationary-phase
-approximation.  In this setup, the gravitational-wave amplitude is
-given by
-\begin{equation}
-\tilde{h}(f) = a(t_f) e^{i \psi(f)},
-\label{amplitude}
-\end{equation}
-where $a(t_f)$ is the amplitude evaluated at a stationary-phase
-reference point, which to lowest order takes the form $a(t_f) \propto
-f^{-7/6} \chmass^{5/6}\Theta(\text{angle})/D$, where $D$ is the
-luminosity distance of the binary, and $\psi(f)$ is the pN phase.
-$\Theta(\text{angle})$ is a function of the orbital orientation with
-respect to the detector network in terms of the sky position, orbital
-inclination, and the wave polarization.  In addition to the total
-mass, $M_{tot}\equiv M_1+M_2$, it is convenient to work with the mass
-ratio and chirp mass, defined by
-\begin{equation}
-  q\equiv M_2/M_1~~~~\text{and}~~~~\chmass = (M_1 M_2)^{3/5}
-  M_{tot}^{-1/5},
-  \label{eqRatioCM}
-\end{equation}
-respectively.\footnote{Most gravitational-wave literature instead uses
-  the \textit{symmetric mass ratio}, defined as $\eta \equiv M_1 M_2 /
-  M^2$.  We elect to use $q$ as it is more physically intuitive, and
-  because it avoids an integrable singularity that can appear for
-  equal-mass systems when employing a prior on $p(\eta)$.  
-  %\will{This is not true.  I calculate (could be a bug, so
-   % check it)
-   % \begin{equation}
-   %   p(\chmass, q) = \frac{\chmass}{q} \left(\frac{\left(1+q\right)^2}{q}\right)^{\frac{1}{5}}
-   % \end{equation}
-  %  when 
-   % \begin{equation}
-    %  p\left(m_1, m_2\right) \propto \mathrm{const}
-   % \end{equation}
-   % The reasons to use $q$ instead of $\eta$
-   % \begin{itemize}
-     % \item It is more intuitive to astronomers (you mention this
-      %  above).
-     % \item As $m_1 \to m_2$, or $q \to 1$, or $\eta \to 1/4$, the
-      %  prior on $\eta$ for equal mass systems diverges (it is an
-      %  integrable singularity, but still singular), while the prior
-       % on $q$ is well-behaved.  This doesn't matter for sampling
-      %  purposes, since the divergence in integrable, but it is
-      %  disconcerting for near-equal-mass systems to see a large peak
-       % in the histogram for $\eta$ near $\eta = 1/4$.
-    %\end{itemize}}
-    }  By convention, $M_1 \geq M_2$.  The stationary phase then
-becomes an expansion in the Newtonian orbital velocity, $v=(\pi
-M_{tot} f)^{1/3}$,
-\begin{equation}
-\psi(f) = 2 \pi f t_c - \phi_0 + \frac{\pi}{4} +
-\frac{3}{128}\left(\frac{M_{tot}}{\chmass}\right)^{5/3}\sum^{n}_{k=0}\alpha_{k}v^{k-5}
-\label{phase}
-\end{equation}
-
-\noindent where the $\alpha_{k}$ coefficients are taken from the pN
-expansion to order $n/2$.  See \cite{BuonannoWaveform} for a
-description and comparison of different waveform families.  The terms
-$t_c$ and $\phi_0$ in equation (\ref{phase}) are constants of
-integration, referred to as the chirp time and coalescence phase,
-respectively.
-
-We consider the mass parameters ($\chmass,q$) and the phasing
-parameters, ($\phi_0,t_c$), to be the intrinsic parameters of the
-gravitational-wave signal.  There are an additional 5 extrinsic
-parameters, independent of the pN orbital phase, which can modulate
+\carl{The phase of the gravitational-waveform is primarily determined by four intrinsic parameters.
+They are the two masses ($M_1$ and $M_2$) and two intrinsic constants of integration.}
+For convenience, we instead describe the masses in terms of the chirp mass and mass ratio, defined below.
+ In addition, there are 5 extrinsic
+parameters which do not influence the inspiral of the binary, but can modulate
 the amplitude of the signal independently in each
-detector.  Combining these leads to our 9-dimensional parameter space
-for non-spinning systems,
+detector.  Considering these leads to our 9-dimensional parameter space
+for non-spinning systems as employed in our MCMC:
 \begin{equation}
 \thpara = (\chmass, q, \phi_0,t_c,D,\iota,\psi,\alpha,\delta),
 \label{parameterspace}
@@ -444,8 +333,8 @@ for non-spinning systems,
 where
 
 \begin{itemize}
-\item $\chmass$ is the chirp mass,
-\item $q$ is the mass ratio,
+\item $\chmass \equiv (M_1 M_2)^{3/5}  M_{tot}^{-1/5}$ is the chirp mass,
+\item $q\equiv M_2 / M_1$ is the mass ratio,
 \item $\phi_0$ and $t_c$ are the chirp phase and chirp time, arbitrary
   phasing parameters,
 \item $D$ is the luminosity distance to the binary,
@@ -552,12 +441,7 @@ PSD and that the signal is sufficiently powerful for the linearized-signal
 approximation to be valid.  By selecting a source population with an
  artificial distribution in SNR, we ensure that the
      ``zero-noise'' as average uncertainty approximation is valid.
-     
-     Previous studies have both employed and studied in detail the consequences of this approach.
-   \carl{  In particular, \cite{Nissanke2010} demonstrated that the $n(t)=0$ posterior is equal to the geometric mean over 
-     specific noise realizations of the posterior, while \cite{Sampson2013} performed a numerical experiment to 
-     demonstrate the validity of the assumption.  We perform a similar numerical experiment in Section \ref{noiseSection}, in which we demonstrate that the uncertainties from a $n(t)=0$ posterior are equivalent to the frequentist
-     average over uncertainties from multiple noise realizations. } 
+       We discuss the reasons for this selection in Appendix \ref{noiseSection}.
 
 \section{Results}
 \label{resultsSection} 
@@ -573,7 +457,7 @@ approximation to be valid.  By selecting a source population with an
 \caption{\label{9dPDF} Marginalized 1D  posterior probability densities
   of a typical $1.4M_{\odot}/1.4M_{\odot}$ BNS
   system.  We have plotted each of the 9 parameters for our
-  non-spinning BNS problem as stated in section \ref{waveformSection}.
+  non-spinning BNS problem as stated in section \ref{parameterSection}.
     Note how, even for parameters with excellent recovery, the peak of
   the 1D Gaussian is displaced from the injected value (in dashed
   red).  This is not due to a systematic bias, but is caused by the
@@ -690,7 +574,7 @@ initially seem disconcerting, it is to be expected for the analysis presented he
 of the BNS signals were injected with a network SNR of 20 into a
 zero-noise detector realization.  Furthermore, note that the mass
 parameters are the only two which directly affect the phase of the
-TaylorF2 waveform \eqref{phase}.  Therefore, as long as the injected
+\sout{TaylorF2} waveform \eqref{phase}.  Therefore, as long as the injected
 mass parameters are identical within each mass system, and as long as
 the injected SNR is identical, the amount of recoverable information
 in each mass parameter should be almost identical, and for a
@@ -879,7 +763,7 @@ sky-location uncertainties obtained by the inclusion of the LIGO India site
 into the advanced detector network.  Their study also employed an MCMC sampling technique 
  (a modified version of CosmoMC),
 to determine the average parameter estimation uncertainties for a realistic distribution
-of sources.  As the current study is interested in the uncertainties
+of sources.  As the current study is interested in the \carl{average} uncertainties
 of optimal sources at $\text{SNR}_{network}=20$, ignoring the effects of less viable 
 detection candidates, it is useful to compare the $95\%$ credible intervals
 between the two studies.  The cumulative distributions of sky-area uncertainties
@@ -948,107 +832,6 @@ and \cite{Nissanke2013}, which employs a separate MCMC code on a
  \label{compSky}
 \end{figure}
 
-\subsection{Varied Noise Realizations}
-\label{noiseSection}
-
-\begin{figure}[ht!]
-  \centering \includegraphics[trim=0cm 0cm 0cm 0cm,
-    clip=true,scale=0.52]{noisePDF.pdf}
- \caption{The effects of a non-zero noise realization on the recovered
-   PDF for five different Gaussian realizations of the Advanced LIGO
-   noise curve.  Each blue-dashed PDF represents the recovery of the same
-   $1M_{\odot}/2.5M_{\odot}$ signal in a different noise curve, picked
-   at random from the Gaussian colored noise defined by the Advanced
-   LIGO power spectral density, while the gray-shaded curve is the
-   zero-noise PDF.  \carl{Notice how each curve is a Gaussian PDF with different mean but similar 
-   width from the zero-noise PDF.  This is to be expected, as the zero-noise mean is identical to the 
-   average to first order in $1/\text{SNR}$, while the zero-noise standard deviation is identical to the average 
-   standard-deviation
-    up to $1/\text{SNR}^3$.  }
-   This only holds true for glitch-free data, which is an unrealistic
-   idealization when compared to real data.}
- \label{noisePDFs}
-\end{figure}
-  
-We have performed the current analysis on zero-noise injections for
-two reasons.  First, the results of a zero-noise analysis are
-similar to those that would be achieved by averaging the results of
-multiple identical injections in different Gaussian noise
-realizations.  For a unique Gaussian realization of the Advanced LIGO
-noise curve, the realization causes the maximum likelihood of the
-posterior probability distribution to be translated away from the true
-value. These displacements tend cancel in the frequentist average over noise
- realizations, ensuring that the mean uncertainties should be nearly identical to 
-   the uncertainty drawn from the zero-noise runs.  This can be seen in 
-   \cite{Vallisneri}, equations (73) and (74).
-  By expanding the posterior mean and the posterior variance as series in $1/\text{SNR}$,
-   it can be seen that the 
-  $n(t) = 0$ posterior mean is identical to the frequentist average 
-  over noise realizations of the posterior mean to first order in $1/\text{SNR}$.  In similar
-  fashion, the $n(t) = 0$ posterior variance is identical to the noise-realization frequentist 
-  average up to third order in $1/\text{SNR}$.  As the current study operates in a high-SNR 
-  regime, the zero-noise averages (particularly the averages of the posterior variances) are
-   assumed to be valid.
-  
-  As a demonstration of this, we injected a single
-$1M_{\odot}/2.5M_{\odot}$ system, detected in HLVI, into 5 separate
-realizations of Gaussian noise colored by the Advanced LIGO PSD, and
-compared the results to the same MCMC recovery in the zero-noise case.
-This example can be seen for one-dimensional marginalizations of
-$\chmass$ and $q$ in Fig. \ref{noisePDFs}.  In effect, the ``real
-answer'' that will be recovered is a single PDF with similar width to
-the zero-noise PDF, but with the peak likelihood displaced from the
-true value.
-
-  Of course, this also relies on the assumption that the detector noise is Gaussian.  
-  This is the second reason for employing the zero-noise approximation: it is not feasible
-to predict the characteristics of realistic (i.e. non-Gaussian)
-advanced detector noise.  
-Attempting to do so would have little chance
-\sout{of being accurate while requiring a huge computational burden to
-combine the results of many MCMC runs in many different noise realizations.
-These non-Gaussian excursions will be one of the largest hurdles for parameter estimation
-in the advanced detector era} \carl{However, as the current study is focused on the lower-bound average uncertainties,
- and not the systematics of a single event (for which we must await a true detection), this assumption does not impact 
- the validity of our results}
-Techniques which build
-off of the theoretical progress made
-in~\cite{Allen:2002jw,Rover:2011qd,Littenberg:2010gf} for including
-glitches in the model for the data, and therefore relaxing the
-assumptions about stationary and Gaussian noise, are currently under
-investigation.
-
-\begin{comment}
-\subsection{Timescale for Parameter Estimation}
-\label{PEtimesSection}
-
-\begin{figure*}[h!]
-  \centering \includegraphics[trim=0cm 0cm 0cm 0cm,
-    clip=true,scale=0.65]{HLVRuntimes.pdf}
- \label{HLVRuntimes}
- \caption{Typical Runtimes for the HLV Network Configuration.  Each
-   run was done on the local Northwestern supercomputer}
-\end{figure*}
-
-\begin{figure*}[h!]
-  \centering \includegraphics[trim=0cm 0cm 0cm 0cm,
-    clip=true,scale=0.65]{HLVIRuntimes.pdf}
- \label{HLVIRuntimes}
- \caption{\carl{this is superfluous; combine this into one figure with
-     two colors.} }
-\end{figure*}
-
-The parameter estimation techniques described here will be performed
-as a follow-up analysis to the detections returned by various on-line
-analyses in the Advanced LIGO/Virgo era.  While there exist specific
-PE analyses that will be performed in real-time for time sensitive
-signals (i.e. extrinsic parameters for signals with a potential
-optimal counterpart \carl{[CITE PROTO-BEN OR LEO SINGER]}), most PE
-will require several days to weeks to complete the analysis upon a
-single event.  We display the distribution of runtimes for the two
-network configuration in Figures~\ref{HLVRuntimes} and
-~\ref{HLVIRuntimes}
-\end{comment}
 
 \section{Credible Intervals}
 \label{ciSection}
@@ -1291,7 +1074,7 @@ excursions which are highly non-Gaussian.  Unfortunately, there is no
 reliable way to predict the sort of non-Gaussian detector glitches and
 instrumentation effects that will arise in any advanced
 gravitational-wave detector.  The realization of noise will be a
-major factor in the deflection of signal PDFs from the idealized, \carl{lower-bound} cases
+major factor in the deflection of signal PDFs from the idealized cases
 presented here.
 
 In this study, we have also neglected the effects of spin in the
@@ -1313,5 +1096,190 @@ The authors would like to thank Samaya Nissanke, John Veitch, and Neil Cornish f
 quoted in Fig. \ref{compSky}. CR and BF were supported by NSF GRFP Fellowships, award DGE-0824162.  All authors were also partially or fully supported by NSF Gravitational Physics grant PHY-0969820, PI: VK. Lastly, VK is grateful to the hospitality of the Aspen Center for Physics while she worked on this study. 
 
 \bibliographystyle{apj} \bibliography{paper}{}
+
+\appendix
+
+\section{Markov Chain Monte-Carlo}
+\label{appendixMCMC}
+  
+  The MCMC sampler included in \texttt{LALInference} employs a Metropolis-Hastings sampling algorithm , which is
+   algorithmically described as follows:
+  
+\begin{enumerate}
+\item Pick an initial point in the parameter space
+  ($\boldsymbol{\theta_{\text{old}}}$), and then propose a random
+  ``jump'' to a new set of waveform parameters,
+  $\boldsymbol{\theta_{\text{new}}}$.  The jump follows the
+  proposal distribution $q\left(
+  \boldsymbol{\theta_{\text{new}}} | \boldsymbol{\theta_{\text{old}}}
+  \right)$.
+\item Calculate the posterior probability,
+  $p(\boldsymbol{\theta_{\text{new}}}|s)$, of the new parameters using
+  \eqref{likelihood} and \eqref{posterior}.
+\item Accept the new parameters with probability
+  \begin{equation}
+    p_\mathrm{accept} = \min \left[ 1,
+      \frac{p(\boldsymbol{\theta_{\text{new}}}|s)
+        q\left(\boldsymbol{\theta_{\text{old}}} |
+        \boldsymbol{\theta_{\text{new}}}
+        \right)}{p(\boldsymbol{\theta_{\text{old}}}|s)
+        q\left(\boldsymbol{\theta_{\text{new}}} |
+        \boldsymbol{\theta_{\text{old}}} \right)} \right].
+  \end{equation}
+  If the new parameters are accepted, record
+  $\boldsymbol{\theta_\text{new}}$ and repeat with
+  $\boldsymbol{\theta_\text{new}} \rightarrow
+  \boldsymbol{\theta_\text{old}}$; otherwise, record
+  $\boldsymbol{\theta_\text{old}}$, and repeat.
+\end{enumerate} 
+  
+The above procedure is designed to record a chain of samples whose
+distribution is $p\left(\thpara|s\right)$.  By drawing a sufficient
+($\sim1000$) number of effectively independent samples from the
+posterior, the chains traces out the functional form of the posterior,
+gathering more samples from regions with high posterior probability
+density.  Depending on the proposal distribution, $q$, the convergence
+(mixing) of the chain may be rapid or slow.  We employ multiple
+optimization techniques, including both specially-crafted jump
+proposals ($q$) and parallel tempering, to ensure adequate mixing of
+the Markov Chains throughout our parameter space.  Both samplers were
+tuned and developed during the last science run of the Initial
+LIGO/Virgo network.  A description of the parameter estimation
+capabilities of these two samplers with respect to real interferometer
+data, as well as a more detailed description of the algorithms and
+checks for convergence, can be found in \cite{S6PE}.
+  
+\section{Gravitational-Waveform Model}
+\label{appendixWaveform}
+
+We use a frequency-domain waveform accurate up to $3.5$ post-Newtonian
+(pN) order in phase and 3 pN order in amplitude of the lowest ($l=m=2$) spatial mode.
+  We restrict
+ourselves to quasi-circular, non-spinning waveforms as a simplifying
+assumption.  The standard form of our waveform model, known as the
+\textit{TaylorF2} approximant, is calculated via the stationary-phase
+approximation.  In this setup, the gravitational-wave amplitude is
+given by
+\begin{equation}
+\tilde{h}(f) = a(t_f) e^{i \psi(f)},
+\label{amplitude}
+\end{equation}
+where $a(t_f)$ is the amplitude evaluated at a stationary-phase
+reference point, which to lowest order takes the form $a(t_f) \propto
+f^{-7/6} \chmass^{5/6}\Theta(\text{angle})/D$, where $D$ is the
+luminosity distance of the binary, and $\psi(f)$ is the pN phase.
+$\Theta(\text{angle})$ is a function of the orbital orientation with
+respect to the detector network in terms of the sky position, orbital
+inclination, and the wave polarization.  In addition to the total
+mass, $M_{tot}\equiv M_1+M_2$, it is convenient to work with the mass
+ratio and chirp mass, defined by
+\begin{equation}
+  q\equiv M_2/M_1~~~~\text{and}~~~~\chmass = (M_1 M_2)^{3/5}
+  M_{tot}^{-1/5},
+  \label{eqRatioCM}
+\end{equation}
+respectively.  Note that most gravitational-wave literature instead uses
+  the \textit{symmetric mass ratio}, defined as $\eta \equiv M_1 M_2 /
+  M^2$.  We elect to use $q$ as it is more physically intuitive, and
+  because it avoids an integrable singularity that can appear for
+  equal-mass systems when employing a prior on $p(\eta)$.  
+     By convention, $M_1 \geq M_2$.  The stationary phase then
+becomes an expansion in the Newtonian orbital velocity, $v=(\pi
+M_{tot} f)^{1/3}$,
+\begin{equation}
+\psi(f) = 2 \pi f t_c - \phi_0 + \frac{\pi}{4} +
+\frac{3}{128}\left(\frac{M_{tot}}{\chmass}\right)^{5/3}\sum^{n}_{k=0}\alpha_{k}v^{k-5}
+\label{phase}
+\end{equation}
+
+\noindent where the $\alpha_{k}$ coefficients are taken from the pN
+expansion to order $n/2$.  See \cite{BuonannoWaveform} for a
+description and comparison of different waveform families.  The terms
+$t_c$ and $\phi_0$ in equation (\ref{phase}) are constants of
+integration, referred to as the chirp time and coalescence phase,
+respectively.
+
+
+
+\section{Zero-Noise verses Varied Noise Realizations}
+\label{noiseSection}
+
+
+
+\begin{figure}[b!]
+  \centering \includegraphics[trim=2cm 0cm 0cm 0cm,
+    clip=true,scale=0.52]{noisePDFflat.pdf}
+ \caption{The effects of a non-zero noise realization on the recovered
+   PDF for five different Gaussian realizations of the Advanced LIGO
+   noise curve.  Each blue-dashed PDF represents the recovery of the same
+   $1M_{\odot}/2.5M_{\odot}$ signal in a different noise curve, picked
+   at random from the Gaussian colored noise defined by the Advanced
+   LIGO power spectral density, while the gray-shaded curve is the
+   zero-noise PDF.  \carl{Notice how each curve is a Gaussian PDF with different mean but similar 
+   width from the zero-noise PDF.  This is to be expected, as the zero-noise mean is identical to the 
+   average to first order in $1/\text{SNR}$, while the zero-noise standard deviation is identical to the average 
+   standard-deviation
+    up to $1/\text{SNR}^3$.  }
+   This only holds true for glitch-free data, which is an unrealistic
+   idealization when compared to real data.}
+ \label{noisePDFs}
+\end{figure}
+     
+     We have performed the current analysis on zero-noise injections for
+two reasons.  First, the results of a zero-noise analysis are
+similar to those that would be achieved by averaging the results of
+multiple identical injections in different Gaussian noise
+realizations.  For a unique Gaussian realization of the Advanced LIGO
+noise curve, the realization causes the maximum likelihood of the
+posterior probability distribution to be translated away from the true
+value. These displacements tend cancel in the frequentist average over noise
+ realizations, ensuring that the mean uncertainties should be nearly identical to 
+   the uncertainty drawn from the zero-noise runs.  This can be seen in 
+   \cite{Vallisneri}, equations (73) and (74).
+  By expanding the posterior mean and the posterior variance as series in $1/\text{SNR}$,
+   it can be seen that the 
+  $n(t) = 0$ posterior mean is identical to the frequentist average 
+  over noise realizations of the posterior mean to first order in $1/\text{SNR}$.  In similar
+  fashion, the $n(t) = 0$ posterior variance is identical to the noise-realization frequentist 
+  average up to third order in $1/\text{SNR}$.  As the current study operates in a high-SNR 
+  regime, the zero-noise averages (particularly the averages of the posterior variances) are
+   assumed to be valid.
+
+     
+     Previous studies have both employed and studied in detail the consequences of this approach.
+   \carl{  In particular, \cite{Nissanke2010} demonstrated that the $n(t)=0$ posterior is equal to the geometric mean over 
+     specific noise realizations of the posterior, while \cite{Sampson2013} performed a numerical experiment to 
+     demonstrate the validity of the assumption.  We perform a similar numerical experiment here in which we demonstrate that the uncertainties from a $n(t)=0$ posterior are equivalent to the frequentist
+     average over uncertainties from multiple noise realizations. }  We injected a single
+$1M_{\odot}/2.5M_{\odot}$ system, detected in HLVI, into 5 separate
+realizations of Gaussian noise colored by the Advanced LIGO PSD, and
+compared the results to the same MCMC recovery in the zero-noise case.
+This example can be seen for one-dimensional marginalizations of
+$\chmass$ and $q$ in Fig. \ref{noisePDFs}.  In effect, the ``real
+answer'' that will be recovered is a single PDF with similar width to
+the zero-noise PDF, but with the peak likelihood displaced from the
+true value.
+ 
+
+  
+  
+
+  Of course, this also relies on the assumption that the detector noise is Gaussian.  
+  This is the second reason for employing the zero-noise approximation: it is not feasible
+to predict the characteristics of realistic (i.e. non-Gaussian)
+advanced detector noise.  
+Attempting to do so would have little chance
+\sout{of being accurate while requiring a huge computational burden to
+combine the results of many MCMC runs in many different noise realizations.
+These non-Gaussian excursions will be one of the largest hurdles for parameter estimation
+in the advanced detector era} \carl{However, as the current study is focused on the lower-bound average uncertainties,
+ and not the systematics of a single event (for which we must await a true detection), this assumption does not impact 
+ the validity of our results}
+Techniques which build
+off of the theoretical progress made
+in~\cite{Allen:2002jw,Rover:2011qd,Littenberg:2010gf} for including
+glitches in the model for the data, and therefore relaxing the
+assumptions about stationary and Gaussian noise, are currently under
+investigation.
 
 \end{document}

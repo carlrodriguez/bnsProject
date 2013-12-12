@@ -21,26 +21,18 @@ The reviewer brings up two points where our paper can be improved: the length of
 
 
 
-Length of the zero-noise sections:
-
-We feel that the length of the description of our MCMC technique is justified for two reasons: 
-
-	1.the code employed is distinct from that of Nissanke et al.  While it is certainly true that the two codes use the same technique (an MCMC is an MCMC, after all), the LALInference_MCMC code was specifically developed for the analysis of raw data from the LIGO instrument, and is the only MCMC code to have been tested against real data, and
-	
-	2. The description of our Bayesian technique is necessary, due to the difference in priors between our study and Nissanke. In particular, we employ a flat prior in the component masses (versus Nissanke’s flat prior in the chirp mass), which can lead to substantially different recovered posteriors
+Length of the zero-noise and introductory sections:
+	We completely agree with the reviewer that these sections can be substantially paired down.  We have made extensive modifications to sections 2.1 and 2.2, relegating the majority of the technical details in those sections to Appendecies.  We find this improves  the flow of Section two.  Additionally, we have moved the majority of the discussion regarding the zero-noise choice (the end of section 2.3 and all of section 3.4) to a third Appendix.  
 
 
+Distinction between the current study and Nissanke et al. 2013:
 
-Delta Knowledge between our work and Nissanke et al:
+The second issue is, of course, what additional information is provided by our paper that was not provided by Nissanke at al. 2013; however, we believe that our study is significantly different from Nissanke2013.  The numbers in Tables 1 and 2, which provide a “rule-of-thumb” estimate for the community, were in many ways the main goal of this paper. As Nissanke2013 primarily reports on EM follow-up capabilities, we feel that the current study is significantly different.   
 
-The second issue is, of course, what additional information is provided by our paper that was not provided by Nissanke at al. 2011 or 2013.  There are two primary areas in which our study differentiates itself from the two of Nissanke, in addition to the figures demonstrating the uncertainties as a function of sky-location:
+The current study is the first to examine the intrinsic properties of neutron star binaries, in particular the masses.  Our current study focuses heavily on the recovery of the mass parameters for multiple neutron star masses.  This is reported in our section 3.1, and the tables in section 4.  Nissanke2013 does not consider the recovery of the BNS mass parameters, and only simulates neutron stars of 1.4 solar masses, as their study is primarily interested in extrinsic parameters relevant to electromagnetic followup. 
 
-	1. Our choice of signal population: we consider multiple masses for neutron stars, including one system with an asymmetric mass ratio, and employ a physically uninformative mass prior (that is, flat in component masses).  As Nissanke et al. is primarily interested in recovery of the binary distance, inclination, and sky locations, their work (and all previous MCMC results in the literature) only consider neutron stars of 1.4 solar masses, and employs an unphysical flat prior on the chirp mass (which yields a non-flat prior in component masses).
+We also feel that our section 3.3, which concerns the sky-localization, is distinct from Nissanke2013.  As the reviewer points out, our figures 6 and 7 demonstrate the uncertainties over a large number of sky-locations for each detector network, while Nissanke2013 only demonstrates a handful of injections.  In fact, the realistic population plotted in Figure 8 is taken directly from Nissanke2013.
 
-We have made this distinction clear in the text (see the new paragraph at the end of section 1, and the second paragraph in the conclusion, and the end of section 2.0).
-
-	2. Our choice of signal strength: The high-SNR selection ensures that our reported credible regions are accurate, as it is only in the high-SNR regime that the zero-noise as average posterior assumption becomes valid.  This serves the goal of the study to provide quotable lower-limit estimates on the average parameter recoveries.  This was stated in the last paragraph of section 2.3, and we have modified the text (first paragraph of the conclusion and the new, 5th paragraph of the introduction) to make this goal sufficiently explicit.
-	
 	
 
 

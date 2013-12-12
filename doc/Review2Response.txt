@@ -27,7 +27,7 @@ Choice of SNR:
 
 The referee is completely correct: phrasing our results in terms of a typical detection scenario is not supported by our selection of SNR=20.  The goal of our study was to provide a quotable estimate for the community when discussing the parameter estimation capabilities of Advanced LIGO, in effect to update the results of previous Fisher matrix studies while correcting for the limitations of the Fisher Matrix when dealing with a non-trivial posterior.
 
-We have made extensive revisions to the text to correct this point. As such, we have modified the text, particularly in the abstract, introduction, and conclusion to make the intent clear.  See new paragraphs 5 and 7 in the introduction, the new sentence in the abstract, and the modified paragraphs 1 and 2 in the conclusion.  Additionally, we have culled any references to “realistic estimates” from the abstract and introduction.  By describing the results as “averaged lower-bounds”, we believe the information is still physically interesting, while not misleading the reader.
+We have made extensive revisions to the text to correct this point. As such, we have modified the text, particularly in the abstract, introduction, and conclusion to make the intent clear.  See new paragraphs 5 and 7 in the introduction, the new sentence in the abstract, and the modified paragraphs 1 and 2 in the conclusion.  Additionally, we have culled any references to “realistic estimates” from the abstract and introduction.  By describing the results as “lower-bound average uncertainties”, we believe the information is still physically interesting, while not misleading the reader.
 
 
 
@@ -38,9 +38,9 @@ There are two distinct reasons for preferring a noise-less averaged MCMC over a 
 
 Additionally, it can be shown (Vallisneri, 2011) that the variance of the zero-noise Bayesian posterior is identical to the averaged variances of multiple noisy runs to O(1/SNR^3), compared to O(1/SNR) for the Fisher Matrix.  This is discussed in the first paragraph of section 3.4 
 
-We agree with the reviewer that our choice of n=0 does not account for any non-Gaussian excursions that can occur in any single event.  Unfortunately, it is not possible to model or predict the nature of such glitch events before the instrument has been 
+We agree with the reviewer that our choice of n=0 does not account for any non-Gaussian excursions that can occur in any single event.  Unfortunately, it is not possible to model or predict the nature of such glitch events before the instrument has been constructed and characterized.  While we can simulate a simple non-Gaussian excursion, we have no means to construct a well-motived population of such excursions, which we would require for a statistically reasonable statement.  We feel that the averages in the current study most adequately satisfies requests from the community for quotable “rule-of-thumb” estimates, while ignoring the systematic effects that will effect a single detection.
 
-We agree with the reviewer that our choice is sub-optimal, but we maintain that it is the most scientifically responsible, given our current limitations.
+The reviewer is completely correct that our choice is sub-optimal, but we maintain that it is the most scientifically responsible one available to us at the moment.  We have added a discussion of this in the last paragraph of the introduction.
 
 
 
