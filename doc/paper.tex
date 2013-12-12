@@ -1,4 +1,4 @@
-%\IfFileExists{revtex4-1.cls}{\documentclass[prd, twocolumn, lengthcheck, superscriptaddress, showpacs, letterpaper, footinbib]{revtex4-1}}{ 
+ %\IfFileExists{revtex4-1.cls}{\documentclass[prd, twocolumn, lengthcheck, superscriptaddress, showpacs, letterpaper, footinbib]{revtex4-1}}{ 
 %\IfFileExists{revtex4.cls}{\documentclass[prd, twocolumn, lengthcheck, superscriptaddress, showpacs, letterpaper]{revtex4}}{}}
 \documentclass[11pt,a4paper]{emulateapj} \bibliographystyle{apj}
 
@@ -82,11 +82,12 @@ detection and characterization of gravitational waves from compact
 binary coalescence, e.g. the coalescence of binary neutron stars.
 While several previous studies have investigated the accuracy of parameter
 estimation with advanced detectors, the majority have relied
-on approximation techniques such as the Fisher Matrix.  Here we report the
+on approximation techniques such as the Fisher Matrix\carl{, while ignoring the rich, non-Gaussian
+nature of the gravitational-wave parameter space}.  Here we report the
 statistical uncertainties that will be achievable for optimal detection candidates
  ($\text{SNR}=20$) using
 the full parameter estimation machinery developed by the LIGO/Virgo
-Collaboration via Markov-Chain Monte Carlo methods. 
+Collaboration via Markov-Chain Monte Carlo methods\carl{, with the goal of supplanting the previously quoted Fisher Matrix bounds}. 
  We find the recovery of the individual masses to be
 fractionally within 9\% (15\%) at the 68\% (95\%) credible intervals for equal-mass
 systems, and within 1.9\% (3.7\%) for unequal-mass systems.  We also find that the Advanced
@@ -95,10 +96,6 @@ LIGO/Virgo network will constrain the locations of binary neutron star mergers t
 average uncertainties on the luminosity distances and
 orbital inclinations of ideal detection candidates that can be
 achieved by different network configurations.
-% \will{I'm not sure that
-  %we want to say this exactly this way---the sources in this study are
- % not randomly distributed in SNR, but rather cluster at rather loud
-  %signals.}
 \end{abstract}
 
 \maketitle
@@ -155,22 +152,28 @@ parameter space of BNS systems.
 
 By employing the full parameter-estimation machinery that will
 eventually be used in the Advanced LIGO/Virgo era, our results
- give realistic estimates of the capabilities of
-advanced ground-based detectors to characterize BNS systems.  Until
-recently, the majority of studies have employed the Fisher-matrix
+ give \sout{realistic} \carl{lower-bound} estimates of the capabilities of
+advanced ground-based detectors to characterize BNS systems.  
+The majority of studies have employed the Fisher-matrix
 formalism which was first adapted for gravitational-wave parameter
 estimation by \citet{FinnDetection}.  While each of these studies
 \citep{PoissonWill,CutlerFlanagan,ArunPE} have pointed out the
 limitations and flaws of the Fisher Information Matrix, there has been
 relatively few studies which investigate the BNS parameter estimation capabilities
 of Advanced LIGO/Virgo using the techniques that will eventually be
-employed.  The recent work of \cite{Vallisneri} and our own work
-\citep{Inadequacies} has demonstrated that the Fisher matrix cannot
+employed.  \sout{The recent work of} \cite{Vallisneri} \sout{and our own work}
+\citep{Inadequacies} \sout{ has demonstrated that the Fisher matrix cannot
 even be treated as a lower bound on the standard deviations of certain
 parameters (particularly the masses) measurable in gravitational-wave
-detectors.  While previous studies have employed MCMC techniques for specific
-parameters,  \citep{Nissanke2011,Nissanke2013,Veitch2012}, none have considered 
-the full range of parameters measurable for an optimal detection candidates.
+detectors.}
+
+\carl{The Fisher-matrix estimates which the current study seeks to supplant ignore 
+the complicated structure of the gravitational-wave parameter space.  The recovered
+parameter distributions are often highly non-Gaussian, with multiple peaks and correlations, details
+which violate the explicit assumptions of the Fisher-matrix formalism.   By relaxing those constraints, this study
+provides a full exploration of the parameter space in the context of optimal detection candidates.  This picture is
+necessary to understand the } 
+
 
 In this paper, we perform a systematic study of the statistical
 uncertainties with which the Advanced LIGO/Virgo network will be able
@@ -184,18 +187,28 @@ probability density functions for BNS systems with different masses
 and extrinsic parameters.  We select three equal-mass and one unequal-mass
  binary systems as prototypical examples of BNS systems.  Each system is analyzed 40 
  times with isotropically selected sky locations and orbital orientations, and with a distance
- such that each signal was injected with a network signal-to-noise ratio of 20.
+ such that each signal was injected with a network signal-to-noise ratio of 20, \carl{a loudness selected to
+ ensure the averages }
   The results are divided into three subsections of interest: the recovery of the mass
 parameters (Section \ref{massSection}), the recovery of the orbital
 inclination and luminosity distance (Section \ref{idSection}), and the
 localization of sources on the sky (Section \ref{skySection}).
 Finally we provide quantitative 1-dimensional credible intervals on
-each parameter in Section \ref{ciSection}.  These results, contained
+each parameter in Section \ref{ciSection}.  \sout{These results, contained
 in Tables \ref{ciTableIntrinsic} and \ref{ciTableExtrinsic}, are
 intended as a reference for the optimal BNS parameter estimation
-capabilities of Advanced LIGO/Virgo.  We assume that $G=c=1$
-throughout.
+capabilities of Advanced LIGO/Virgo.}
 
+
+\carl{The goal of the current study is to provide an lower-limit ``rule-of-thumb'' for parameter estimation uncertainties 
+in Advanced LIGO/Virgo which acknowledges the complexity of the parameter space, and separates this from
+ the difficulties introduced by the detector noise for a single event.  These results are collected and summarized in 
+ Tables \ref{ciTableIntrinsic} and \ref{ciTableExtrinsic}.  While previous studies have employed 
+ MCMC techniques for specific parameters,  \citep{Nissanke2011,Nissanke2013,Veitch2012}, none have considered 
+the full range of parameters measurable for an optimal detection candidates, nor have they considered neutron stars
+ of masses other than $1.4M_{\odot}$.  We explore
+ the recovery of mass parameters for BNS systems with multiple neutron star masses and mass ratios.  
+ We assume that $G=c=1$.}  
 
 \section{Parameter Estimation}
 \label{PEsection}
@@ -266,7 +279,7 @@ We employ priors which are
 \begin{itemize}
 \item uniform in component masses from $0.8M_{\odot} \leq M_{1,2} \leq
   30M_{\odot}$, with a minimum chirp mass (see Eq.~\eqref{eqRatioCM})
-  of 0.6 $M_{\odot}$,
+  of 0.6 $M_{\odot}$ 
 \item uniform in volume, which implies a luminosity distance prior of
   $p(D)dD \propto D^2 dD$,
 \item uniform in coalescence time over the segment of data being
@@ -278,7 +291,8 @@ The mass priors listed here are the generic priors used in follow-up
 analysis, not specifically for BNS systems.  While we could have used
 a prior with a lower component mass cutoff for the present study, in
 practice the higher prior boundary does not affect our current
-analysis.
+analysis.  \carl{Note that the choice of a flat prior in component masses is distinct from \cite{Nissanke2013},
+ which employed a prior flat in chirp mass and reduced mass-ratio.}
 
 
   
@@ -464,7 +478,8 @@ operating at the Advanced LIGO sensitivity.
 
 
 For a multi-detector network, the noise-weighted inner products
-\eqref{innerProduct} combine linearly, allowing us to use the above
+\eqref{innerProduct} combine linearly \carl{so long as the noise is
+uncorrelated between detectors}, allowing us to use the above
 formalism with minimal modification.  We integrate the inner product
 from a lower-frequency cutoff of $20\text{Hz}$ to the
 innermost-stable-circular orbit of the systems, which for
@@ -530,22 +545,19 @@ realization of the noise at the time of the detection.  Because of
 this, we elect to focus only on the statistical errors due to the
 flexibility of the waveforms and the expected sensitivity of the
 advanced era detectors and suppress any effects of detector noise by
-picking $n(t) \equiv 0$.  
-
-Consequently, what we recover with the MCMC could be interpreted as
+picking $n(t) \equiv 0$.  Consequently, what we recover with the MCMC could be interpreted as
 the posterior distribution function for each source averaged over all
 possible (Gaussian) noise realizations, assuming we have the correct
 PSD and that the signal is sufficiently powerful for the linearized-signal
 approximation to be valid.  By selecting a source population with an
  artificial distribution in SNR, we ensure that the
      ``zero-noise'' as average uncertainty approximation is valid.
-       This approach has been employed in previous studies to similar effect
-        (e.g. \cite{Nissanke2010} and \cite{Sampson2013}).
- To check that our reported statistical errors are not in gross
-disagreement with those obtained in the presence of noise, we selected
-a particular simulated signal to perform parameter estimation upon in
-several noise realizations.  The comparison of the noise-dependent and
-noise-free results can be found in Section \ref{noiseSection}.
+     
+     Previous studies have both employed and studied in detail the consequences of this approach.
+   \carl{  In particular, \cite{Nissanke2010} demonstrated that the $n(t)=0$ posterior is equal to the geometric mean over 
+     specific noise realizations of the posterior, while \cite{Sampson2013} performed a numerical experiment to 
+     demonstrate the validity of the assumption.  We perform a similar numerical experiment in Section \ref{noiseSection}, in which we demonstrate that the uncertainties from a $n(t)=0$ posterior are equivalent to the frequentist
+     average over uncertainties from multiple noise realizations. } 
 
 \section{Results}
 \label{resultsSection} 
@@ -877,7 +889,7 @@ The difference in uncertainties between the two studies is illustrative.  \cite{
 considered a realistic distribution of sources motivated by a local galaxy catalogue for
  sources where $D\leq 200\text{Mpc}$, and homogeneously distributed in co-moving
  volume for sources where $D > 200\text{Mpc}$.  These were then limited to those signals
- where $\text{SNR}_{network} \geq 8.5$ (the threshold for detection candidates in the
+ where $\text{SNR}_{network} \geq 8.5$ (the \carl{rule-of-thumb} threshold for detection candidates in the
  current LIGO/Virgo matched-filtering framework) for the MCMC parameter estimation.
    The current study considers a source
  population isotropically distributed on the sky, but at distances such that each signal
@@ -948,10 +960,12 @@ and \cite{Nissanke2013}, which employs a separate MCMC code on a
    $1M_{\odot}/2.5M_{\odot}$ signal in a different noise curve, picked
    at random from the Gaussian colored noise defined by the Advanced
    LIGO power spectral density, while the gray-shaded curve is the
-   zero-noise PDF.  Notice how each curve is a Gaussian PDF with different mean and slightly
-   different width
-   , to the zero-noise PDF.  This
-   only holds true for glitch-free data, which is an unrealistic
+   zero-noise PDF.  \carl{Notice how each curve is a Gaussian PDF with different mean but similar 
+   width from the zero-noise PDF.  This is to be expected, as the zero-noise mean is identical to the 
+   average to first order in $1/\text{SNR}$, while the zero-noise standard deviation is identical to the average 
+   standard-deviation
+    up to $1/\text{SNR}^3$.  }
+   This only holds true for glitch-free data, which is an unrealistic
    idealization when compared to real data.}
  \label{noisePDFs}
 \end{figure}
@@ -989,12 +1003,15 @@ true value.
   Of course, this also relies on the assumption that the detector noise is Gaussian.  
   This is the second reason for employing the zero-noise approximation: it is not feasible
 to predict the characteristics of realistic (i.e. non-Gaussian)
-advanced detector noise.  Attempting to do so would have little chance
-of being accurate while requiring a huge computational burden to
+advanced detector noise.  
+Attempting to do so would have little chance
+\sout{of being accurate while requiring a huge computational burden to
 combine the results of many MCMC runs in many different noise realizations.
 These non-Gaussian excursions will be one of the largest hurdles for parameter estimation
-in the advanced detector era.
-  Techniques which build
+in the advanced detector era} \carl{However, as the current study is focused on the lower-bound average uncertainties,
+ and not the systematics of a single event (for which we must await a true detection), this assumption does not impact 
+ the validity of our results}
+Techniques which build
 off of the theoretical progress made
 in~\cite{Allen:2002jw,Rover:2011qd,Littenberg:2010gf} for including
 glitches in the model for the data, and therefore relaxing the
@@ -1066,21 +1083,21 @@ Given the previous reliance of parameter estimation studies on the Fisher
 Information Matrix, it is informative to compare the credible intervals quoted here 
 to previously reported values in the literature.  We recompute the credible intervals 
 of the chirp mass and the symmetric mass ratio ($\eta \equiv m_1 m_2 / M_{tot}^2$)
-at the 68\% level (1-$\sigma$) for the $1.4M_{\odot}/1.4M_{\odot}$ system presented 
+at the 68\% level \carl{NO, FIX ME}(1-$\sigma$) for the $1.4M_{\odot}/1.4M_{\odot}$ system presented 
 here.  We then compare the findings of the MCMC to the Fisher matrix predictions using
 an identical network configuration (HLV), noise curve, and waveform model.  
 We compute the Fisher matrix uncertainties 
 using a code previously described in \cite{Inadequacies}.  We find that the MCMC credible
- intervals vary significantly from
+ intervals \carl{can} vary significantly from
 the estimates of the Fisher matrix, with the Fisher matrix underestimating the 
-fractional uncertainties by as much as a factor of three.  See Table~\ref{FIMvsMCMC}.  This 
+fractional uncertainties by as much as a factor of \sout{three} \carl{two}.  See Table~\ref{FIMvsMCMC}.  This 
 result agrees with the conventional wisdom surrounding the Fisher Matrix accuracy,
 as well as results where the Fisher Matrix is computed to higher order \citep{Vitale2010}
    This disagreement, while 
    unsurprising, emphasizes the importance of employing the full parameter estimation
     machinery of an MCMC when making physically relevant claims.
 
-\begin{table*}[t!]
+\begin{table*}[h!]
 \centering
 \caption{Median 68\% and 95\% credible intervals for intrinsic parameters for
   each of the four systems considered.  We report the credible
@@ -1125,7 +1142,7 @@ $1M_{\odot}-1M_{\odot}$ & \vline &$0.00497\%$ & \vline &$0.0106\%$ & \vline & $7
 \end{table*}
 
  
-\begin{table*}[t!]
+\begin{table*}[h!]
 \centering
 \caption{Median 68\% and 95\% credible intervals of extrinsic parameters for
   each of the four systems considered.  As expected, there exists a
@@ -1167,9 +1184,9 @@ $1M_{\odot}-1M_{\odot}$ & \vline &$42.7$ & \vline &$76.2$ & \vline & $0.267$ & \
 \end{table*}
 
 
-\begin{table}[b!]
+\begin{table}[h!]
 \centering
-\caption{68\% Credible intervals versus 1-$\sigma$ Fisher matrix uncertainties for mass parameters in each system in the HLV configuration.}
+\caption{68\% Credible intervals versus \sout{1-$\sigma$} \carl{$2\sigma$} Fisher matrix uncertainties for mass parameters in each system in the HLV configuration.}
   \tabcolsep=0.11cm
     {\renewcommand{\arraystretch}{1.3} 
 \begin{tabular}{lcccccccc}
@@ -1178,10 +1195,10 @@ $1M_{\odot}-1M_{\odot}$ & \vline &$42.7$ & \vline &$76.2$ & \vline & $0.267$ & \
 
 Estimate & \vline & MCMC & \vline & FIM & \vline & MCMC & \vline & FIM \\ \hline
 
-$1M_{\odot}-1M_{\odot}$ & \vline &  0.00497\% & \vline & 0.00205\% & \vline & 0.645\% & \vline & 0.321\% \\
-$1.4M_{\odot}-1.4M_{\odot}$ & \vline &  0.00890\% & \vline & 0.00384\% & \vline & 0.745\% & \vline & 0.380\% \\
-$1M_{\odot}-2.5M_{\odot}$& \vline &  0.0176\% & \vline & 0.00457\% & \vline & 1.475\% & \vline & 0.400\% \\
-$2.5M_{\odot}-2.5M_{\odot}$& \vline &  0.0245\% & \vline & 0.0114\% & \vline & 1.000\% & \vline & 0.612\% \\
+$1M_{\odot}-1M_{\odot}$ & \vline &  0.00497\% & \vline & 0.00396\% & \vline & 0.645\% & \vline & 0.704\% \\
+$1.4M_{\odot}-1.4M_{\odot}$ & \vline &  0.00890\% & \vline & 0.00743\% & \vline & 0.745\% & \vline & 0.866\% \\
+$1M_{\odot}-2.5M_{\odot}$& \vline &  0.0176\% & \vline & 0.00880\% & \vline & 1.475\% & \vline & 0.862\% \\
+$2.5M_{\odot}-2.5M_{\odot}$& \vline &  0.0245\% & \vline & 0.0221\% & \vline & 1.000\% & \vline & 1.299\% \\
 
 \hline\hline
 
@@ -1197,14 +1214,28 @@ the recoverability of basic information about binary neutron stars,
 using two projected versions of the Advanced LIGO/Virgo network.  We
 focused on the recovery of the two masses, the luminosity distance,
 orbital inclination, and the sky location, as these are the six basic
-parameters of physical interest to the problem.  We found that,
-neglecting the effects of spin, the component masses can be
+parameters of physical interest to the problem.  It should be remembered that these signals were injected at high, 
+but not unrealistic, SNRs \carl{in order to create a reference similar to those found in previous
+Fisher Matrix studies, and to validate the ``$n(t) = 0$ as average'' assumption.  
+
+ Unlike the Fisher-matrix studies, an MCMC allows us to relax the flawed assumptions of a Gaussian and uni-modal 
+ distribtion, and to
+fully explore the relevant parameter space.  Given the highly non-Gaussian nature of the explored 
+parameter space (see Figures \ref{9dPDF}, \ref{1414masses}, \ref{metaMassPDFs}-\ref{2525SkyLocHLVI} ), this exploration is critical to a complete 
+understanding of the gravitational-wave BNS parameter estimation problem}.  
+The results quoted can be thought of as the
+average \carl{lower-bound} uncertainties for an \carl{optimal} \sout{``good''} Advanced LIGO/Virgo detection.
+
+\carl{For the mass parameters,} we found that, neglecting the effects of spin, the component masses can be
 constrained to within 9\% (15\%) of their true value to a credible level of
-68\% (95\%).  This value drops below 1.9\% (3.7\%) for systems with an asymmetric mass
-ratio.  These results were summarized in Table \ref{ciTableIntrinsic}.
-It should be remembered that these signals were injected at high, 
-but not unrealistic, SNRs.  Thus, the results quoted can be thought of as the
-average uncertainties for a ``good'' Advanced LIGO/Virgo detection.
+68\% (95\%) \carl{for systems with equal-mass neutron stars.
+}  This value drops below 1.9\% (3.7\%) for systems with an asymmetric masses.
+  \carl{It was also found that the fractional uncertainties for equal-mass binary systems are similar at equal SNR.
+Only when the masses are unequal are the fractional errors effected.}
+These results were summarized in Table \ref{ciTableIntrinsic}.  \carl{The current study is the first 
+to quantify neutron star mass measurements in Advanced LIGO/VIRGO  via an MCMC for neutron star masses
+other than $1.4M_{\odot}$.}
+
 
  
 We also reported on the ability of the two network configurations to
@@ -1223,7 +1254,7 @@ not provide astrophysically relevant constrains.
 
 
 Finally, we reported the ability of advanced networks to constrain the
-sky location of BNS signals.  It was found that the three-detector
+sky location of \carl{optimal} BNS signals.  It was found that the three-detector
 configuration, consisting of the Washington and Louisiana LIGO sites
 plus the Italian Virgo site, was able to constrain all signals within
 64 $\mathrm{deg}^2$ (136 $\mathrm{deg}^2$) on the sky at the 68\% (95\%) 
@@ -1260,7 +1291,7 @@ excursions which are highly non-Gaussian.  Unfortunately, there is no
 reliable way to predict the sort of non-Gaussian detector glitches and
 instrumentation effects that will arise in any advanced
 gravitational-wave detector.  The realization of noise will be a
-major factor in the deflection of signal PDFs from the idealized cases
+major factor in the deflection of signal PDFs from the idealized, \carl{lower-bound} cases
 presented here.
 
 In this study, we have also neglected the effects of spin in the
@@ -1273,6 +1304,8 @@ neutron stars from highly-spinning low-mass black holes.  Future work
 will explore this potential mass/spin degeneracy, including the
 effects of orbital precession, with the aim of definitively answering
 this question.
+
+\pagebreak
 
 \section{Acknowledgements}
 

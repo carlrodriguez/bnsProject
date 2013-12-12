@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  12 SEP 2013 13:29
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  11 DEC 2013 12:10
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -543,17 +543,17 @@ LaTeX Info: Redefining \nameref on input line 50.
 Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 50.
 \openout3 = `paperNotes.bib'.
 
-LaTeX Font Info:    Try loading font information for U+lasy on input line 87.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 88.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 87.
+LaTeX Font Info:    Try loading font information for U+msa on input line 88.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 87.
+LaTeX Font Info:    Try loading font information for U+msb on input line 88.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -562,174 +562,162 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 Class revtex4-1 Warning: Assuming \noaffiliation for authors.
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 156--174
+Underfull \hbox (badness 1360) in paragraph at lines 153--169
 \OT1/cmr/m/n/10 ery that will even-tu-ally be used in the Ad-vanced
  []
 
 [1{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 216.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 229.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 216.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 267.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 229.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 280.
 
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 267.
-
-Underfull \hbox (badness 1168) in paragraph at lines 288--302
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 280.
+ [2]
+Underfull \hbox (badness 1168) in paragraph at lines 302--316
 \OT1/cmr/m/n/10 gravitational-wave pa-ram-e-ter es-ti-ma-tion. By us-ing
  []
 
 
-Underfull \hbox (badness 1371) in paragraph at lines 288--302
+Underfull \hbox (badness 1371) in paragraph at lines 302--316
 \OT1/cmr/m/n/10 sam-plers of the pa-ram-e-ter space, in-clud-ing Nested
  []
 
 
-Underfull \hbox (badness 2310) in paragraph at lines 288--302
+Underfull \hbox (badness 2310) in paragraph at lines 302--316
 \OT1/cmr/m/n/10 Sam-pling (\OT1/cmtt/m/n/10 lalinference[]nest\OT1/cmr/m/n/10 ,
  de-scribed in []Veitch
  []
 
 
-Underfull \hbox (badness 1127) in paragraph at lines 288--302
+Underfull \hbox (badness 1127) in paragraph at lines 302--316
 \OT1/cmr/m/n/10 & Vec-chio[] ([]2010[])) and Markov-Chain Monte Carlo
  []
 
-[2] [3] <9dpdf.pdf, id=176, 1300.86pt x 737.15402pt>
+[3] <9dpdf.pdf, id=175, 1300.86pt x 737.15402pt>
 File: 9dpdf.pdf Graphic file (type pdf)
  <use 9dpdf.pdf>
-Package pdftex.def Info: 9dpdf.pdf used on input line 555.
+Package pdftex.def Info: 9dpdf.pdf used on input line 567.
 (pdftex.def)             Requested size: 638.9811pt x 427.54964pt.
 
-Overfull \hbox (125.86366pt too wide) in paragraph at lines 555--561
+Overfull \hbox (125.86366pt too wide) in paragraph at lines 567--573
  [][] 
  []
 
-[4] <1414masses2D.pdf, id=200, 466.1415pt x 513.11702pt>
+[4] <1414masses2D.pdf, id=195, 466.1415pt x 513.11702pt>
 File: 1414masses2D.pdf Graphic file (type pdf)
 
 <use 1414masses2D.pdf>
-Package pdftex.def Info: 1414masses2D.pdf used on input line 626.
+Package pdftex.def Info: 1414masses2D.pdf used on input line 638.
 (pdftex.def)             Requested size: 239.89471pt x 323.26543pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<125masses2D.pdf, id=202, 466.1415pt x 520.34402pt>
+<125masses2D.pdf, id=197, 466.1415pt x 520.34402pt>
 File: 125masses2D.pdf Graphic file (type pdf)
  <use 125masses2D.pdf>
-Package pdftex.def Info: 125masses2D.pdf used on input line 645.
+Package pdftex.def Info: 125masses2D.pdf used on input line 657.
 (pdftex.def)             Requested size: 239.89471pt x 327.81847pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<newMasses.pdf, id=204, 701.01903pt x 692.88861pt>
+<newMasses.pdf, id=199, 701.01903pt x 692.88861pt>
 File: newMasses.pdf Graphic file (type pdf)
  <use newMasses.pdf>
-Package pdftex.def Info: newMasses.pdf used on input line 656.
+Package pdftex.def Info: newMasses.pdf used on input line 668.
 (pdftex.def)             Requested size: 419.06543pt x 519.66518pt.
  [5pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.709 
+l.685 
        <./9dpdf.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 709.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 685.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 709.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 685.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
-
-<distIota2D.pdf, id=259, 349.60611pt x 737.15402pt>
-File: distIota2D.pdf Graphic file (type pdf)
- <use distIota2D.pdf>
-Package pdftex.def Info: distIota2D.pdf used on input line 751.
-(pdftex.def)             Requested size: 262.20392pt x 552.86417pt.
-
-Overfull \hbox (16.9374pt too wide) in paragraph at lines 751--752
- [][] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 1005) in paragraph at lines 762--771
-[]\OT1/cmr/m/n/10 Binary neu-tron star sys-tems (along with neu-tron
- []
 
 [6pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.771 
+l.747 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.771 
+l.747 
        <./1414masses2D.pdf> <./125masses2D.pdf>] [7pdfTeX warning (ext4): desti
 nation with the same identifier (name{figure.4}) has been already used, duplica
 te ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.799 
-       <./newMasses.pdf>]
+l.755 
+       <./newMasses.pdf>] <distIota2D.pdf, id=412, 349.60611pt x 737.15402pt>
+File: distIota2D.pdf Graphic file (type pdf)
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 799.
+<use distIota2D.pdf>
+Package pdftex.def Info: distIota2D.pdf used on input line 763.
+(pdftex.def)             Requested size: 262.20392pt x 552.86417pt.
+
+Overfull \hbox (16.9374pt too wide) in paragraph at lines 763--764
+ [][] 
+ []
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 799.
-
-
-Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
+Underfull \hbox (badness 1005) in paragraph at lines 774--783
+[]\OT1/cmr/m/n/10 Binary neu-tron star sys-tems (along with neu-tron
+ []
 
 [8pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.863 
-       <./distIota2D.pdf>] <HLVsky.pdf, id=503, 1300.86pt x 737.15402pt>
+l.840 
+       <./distIota2D.pdf>] <HLVsky.pdf, id=499, 1300.86pt x 737.15402pt>
 File: HLVsky.pdf Graphic file (type pdf)
 
 <use HLVsky.pdf>
-Package pdftex.def Info: HLVsky.pdf used on input line 900.
+Package pdftex.def Info: HLVsky.pdf used on input line 912.
 (pdftex.def)             Requested size: 1073.23535pt x 680.24687pt.
- <HLVIsky.pdf, id=504, 1300.86pt x 737.15402pt>
+ <HLVIsky.pdf, id=500, 1300.86pt x 737.15402pt>
 File: HLVIsky.pdf Graphic file (type pdf)
 
 <use HLVIsky.pdf>
-Package pdftex.def Info: HLVIsky.pdf used on input line 914.
+Package pdftex.def Info: HLVIsky.pdf used on input line 926.
 (pdftex.def)             Requested size: 1073.23535pt x 680.24687pt.
- <comparitiveSkyAreas.pdf, id=506, 469.755pt x 686.565pt>
+ <comparitiveSkyAreas.pdf, id=502, 469.755pt x 686.565pt>
 File: comparitiveSkyAreas.pdf Graphic file (type pdf)
 
 <use comparitiveSkyAreas.pdf>
-Package pdftex.def Info: comparitiveSkyAreas.pdf used on input line 926.
+Package pdftex.def Info: comparitiveSkyAreas.pdf used on input line 938.
 (pdftex.def)             Requested size: 455.52754pt x 658.11066pt.
 
-Overfull \hbox (18.94028pt too wide) in paragraph at lines 926--927
+Overfull \hbox (18.94028pt too wide) in paragraph at lines 938--939
  [][] 
  []
 
-<noisePDF.pdf, id=509, 460.72125pt x 600.74437pt>
+<noisePDF.pdf, id=505, 460.72125pt x 600.74437pt>
 File: noisePDF.pdf Graphic file (type pdf)
  <use noisePDF.pdf>
-Package pdftex.def Info: noisePDF.pdf used on input line 944.
+Package pdftex.def Info: noisePDF.pdf used on input line 956.
 (pdftex.def)             Requested size: 239.57643pt x 312.38887pt.
  [9]
 [10pdfTeX warning (ext4): destination with the same identifier (name{figure.6})
@@ -737,19 +725,19 @@ Package pdftex.def Info: noisePDF.pdf used on input line 944.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1082 
+l.1020 
        pdfTeX warning (ext4): destination with the same identifier (name{figure
 .7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1082 
+l.1020 
         <./HLVsky.pdf> <./HLVIsky.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 1082.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 1020.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 1082.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 1020.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
@@ -759,51 +747,71 @@ Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1223 
+l.1099 
        pdfTeX warning (ext4): destination with the same identifier (name{figure
 .9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1223 
-        <./noisePDF.pdf> <./comparitiveSkyAreas.pdf>] [12pdfTeX warning (ext4):
- destination with the same identifier (name{table.1}) has been already used, du
-plicate ignored
+l.1099 
+        <./noisePDF.pdf> <./comparitiveSkyAreas.pdf>]
+
+Class revtex4-1 Warning: Float cannot be placed.
+
+
+Class revtex4-1 Warning: Float cannot be placed.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 1309.
+
+[13pdfTeX warning (ext4): destination with the same identifier (name{table.1}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1240 
+l.1309 
        pdfTeX warning (ext4): destination with the same identifier (name{table.
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1240 
-       pdfTeX warning (ext4): destination with the same identifier (name{table.
-3}) has been already used, duplicate ignored
+l.1309 
+       ]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 1309.
+
+
+Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
+
+(./paper.bbl
+Missing character: There is no Ð in font cmr8!
+Missing character: There is no Ð in font cmr8!
+Missing character: There is no Ð in font cmr8!
+Missing character: There is no Ð in font cmr8!
+) [14pdfTeX warning (ext4): destination with the same identifier (name{table.3}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1240 
-       ] (./paper.bbl
-Missing character: There is no Ð in font cmr8!
-Missing character: There is no Ð in font cmr8!
-Missing character: There is no Ð in font cmr8!
-Missing character: There is no Ð in font cmr8!
-) [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1284.
+l.1317 \end{document}
+                     ]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1317.
  (./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1284.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1284.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1317.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1317.
  ) 
 Here is how much of TeX's memory you used:
  9326 strings out of 493633
- 131552 string characters out of 3143378
- 293280 words of memory out of 3000000
- 12359 multiletter control sequences out of 15000+200000
+ 131547 string characters out of 3143378
+ 291661 words of memory out of 3000000
+ 12358 multiletter control sequences out of 15000+200000
  15765 words of font info for 64 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 34i,14n,29p,1037b,370s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,14n,29p,1037b,428s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pf
 b></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
@@ -831,10 +839,10 @@ t/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2011/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2011/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2011/texmf-dist/fon
 ts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on paper.pdf (13 pages, 7682204 bytes).
+Output written on paper.pdf (14 pages, 7687910 bytes).
 PDF statistics:
- 936 PDF objects out of 1000 (max. 8388607)
- 541 compressed objects within 6 object streams
- 99 named destinations out of 1000 (max. 500000)
+ 943 PDF objects out of 1000 (max. 8388607)
+ 547 compressed objects within 6 object streams
+ 100 named destinations out of 1000 (max. 500000)
  64 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,47 @@
+1st referee
+
+The paper presents a numerical calculation on the measurement of BNS physical parameters, from GW signals to be obtained with the advanced detector array.
+The paper is clearly written and the calculation look sound and free of basic errors.
+The analysis reported here is a sort of reduced version, at higher SNR, of the analysis reported in Nissanke et al, 2013, Astrophys. J., 767, 124, 124.
+Both analyses use the zero-noise, MCMC technique, and their results are consistent.
+I am not convinced that the paper, at this stage of the work, provides substantial new information over that of Nissanke. The only piece of information that I find new is to be found in figure 7 and 8, wherein the positional accuracy is reported as a function of the sky location of the source.
+As most of methods and procedures are not new, I think the authors, after having substantially shortened the introductory parts and minimized the description of the zero-noise MCMC method, may want to highlight the delta knowledge contributed by this paper relative to the recent literature.
+
+I have also one comment on section 3.4 and the related figure 9.
+
+At face value figure 9 would indicate that by averaging overn many non zero-noise MCMC calculation, the distribution of all parameters would be substantially smeared out . The authors state instead that the figure demonstrates that the distribution stays the same as in the zero-noise case. I think this is confusing and should be clarified.
+
+I think the authors have to respond to these objections before the paper may be considered for publication. 
+
+———————————————————————————————————
+
+
+
+The reviewer brings up two points where our paper can be improved: the length of the description of our MCMC zero-noise choice, and the difference between our work and the work of Nissanke et al.  We discuss these points below:
+
+
+
+Length of the zero-noise sections:
+
+We feel that the length of the description of our MCMC technique is justified for two reasons: 
+
+	1.the code employed is distinct from that of Nissanke et al.  While it is certainly true that the two codes use the same technique (an MCMC is an MCMC, after all), the LALInference_MCMC code was specifically developed for the analysis of raw data from the LIGO instrument, and is the only MCMC code to have been tested against real data, and
+	
+	2. The description of our Bayesian technique is necessary, due to the difference in priors between our study and Nissanke. In particular, we employ a flat prior in the component masses (versus Nissanke’s flat prior in the chirp mass), which can lead to substantially different recovered posteriors
+
+
+
+Delta Knowledge between our work and Nissanke et al:
+
+The second issue is, of course, what additional information is provided by our paper that was not provided by Nissanke at al. 2011 or 2013.  There are two primary areas in which our study differentiates itself from the two of Nissanke, in addition to the figures demonstrating the uncertainties as a function of sky-location:
+
+	1. Our choice of signal population: we consider multiple masses for neutron stars, including one system with an asymmetric mass ratio, and employ a physically uninformative mass prior (that is, flat in component masses).  As Nissanke et al. is primarily interested in recovery of the binary distance, inclination, and sky locations, their work (and all previous MCMC results in the literature) only consider neutron stars of 1.4 solar masses, and employs an unphysical flat prior on the chirp mass (which yields a non-flat prior in component masses).
+
+We have made this distinction clear in the text (see the new paragraph at the end of section 1, and the second paragraph in the conclusion, and the end of section 2.0).
+
+	2. Our choice of signal strength: The high-SNR selection ensures that our reported credible regions are accurate, as it is only in the high-SNR regime that the zero-noise as average posterior assumption becomes valid.  This serves the goal of the study to provide quotable lower-limit estimates on the average parameter recoveries.  This was stated in the last paragraph of section 2.3, and we have modified the text (first paragraph of the conclusion and the new, 5th paragraph of the introduction) to make this goal sufficiently explicit.
+	
+	
+
+
+Finally, the reviewer points out that the caption for Figure 9 is confusing.  We agree, and have clarified the text (specifically mentioning that the variance and mean of multiple zero-noise results are accurate to different orders in 1/SNR)

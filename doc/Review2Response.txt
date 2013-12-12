@@ -1,0 +1,75 @@
+This paper reports on a competent exercise in the analysis of simulated data for the upcoming "advanced" phase of ground-based gravitational-wave detectors. However, there is a disconnect between what the paper purports to do, and what it actually does. As a consequence, I believe that publishing the paper in its current form would be misleading for the research community. I will give my reasons below why I think this is the case. Once my concerns are adequately addressed by the authors, the resulting paper would be interesting technically, but much less so physically, and may be appropriate for publication in the ApJ supplement series, but probably not in ApJ.
+
+The paper claims to report (I quote) the "statistical uncertainties that will be achievable for optimal detection candidates", to "give realistic estimates of the capabilities of advanced ground-based detectors to characterize BNS systems", to produce PDFs that are "representative of the type of results that will be produced by parameter estimation studies in the advanced detector era", and to provide a "quantitative a quotable source for studies seeking to determine how well a physical question about BNS systems can be answered within the Advanced LIGO/Virgo network." Yet, the paper analyzes detections with network SNR = 20, corresponding to one out of fifteen observations (under the assumption of isotropic source distribution and threshold at 8.5), which it characterizes as "high, but not unrealistic" SNR. By focusing on a non-typical case, the paper overstates the very capabilities that it seeks to represent. Furthermore, the paper notes that it reports on a study performed
+under "idealized detector-noise conditions", and that "in practice the realization of noise will be a major factor in the deflection of signal PDFs from the idealized cases presented here." Indeed, most of the parameter-estimation runs discussed in the paper are performed by setting the noise to zero! I have more to say about that, but I believe I have made my case that the paper is misleading in its current form.
+
+Regarding setting the noise to zero: The paper claims it has the virtue of "focusing on statistical errors due to the flexibility of the waveforms"; but that is only one piece of the puzzle in actual parameter estimations. It is true that the zero-noise posterior is equal to the PDF averaged over noise realization when the linearized-signal approximation is valid (i.e., in the high-SNR limit), but that is also the very limit in which the Fisher matrix results are accurate; yet one of the main selling points of the paper is to do a full Bayesian treatment, and later the MCMC and Fisher results are indeed found to be very different.
+
+The justifications for setting the noise to zero given in Sec. 3.4 are not tenable in my opinion. The first is that the O(1/SNR) statistical estimators are correctly reproduced by setting n = 0; but then why do MCMC and not just Fisher, which yields those very O(1/SNR) results? The second is that it is not feasible to predict the characteristic of realistic (non-Gaussian) detector noise. This is a non sequitur (set to zero everything that you can't predict?) Furthermore, if the noise cannot be characterized then the very likelihood [Eq. (4)] that underlies all the MCMC results of this paper would be undermined. (There are reasons to use Gaussian noise statistics even when the noise is not Gaussian, but they need to be argued and implemented very carefully, which is not done here.)
+
+A few minor points:
+
+- The intro seems to imply that the full exploration of parameter space is not "matched filtering". But of course it is, since it uses Eq. (4).
+- The priors given at the bottom of p. 2 are not astrophysical, but rather conventional. Astrophysical processes would not result into a uniform distribution for masses, and the distribution of systems out to the horizon distance for LIGO is not homogeneous. The zero-spin assumption also needs justification (it is later called a "simplifying assumption", but is it realistic?)
+- In 2.3, noise inner products combine linearly only if noise is uncorrelated among detectors.
+- In the caption to Fig. 1, the bit about "reflecting the highest 10% of samples" seems dangerous. What is it about?
+- On p. 9, the 8.5 network threshold is a conventional number; the reality is much more complicated (vetos, cuts, etc.) 
+- Question: Figs. 6 and 7 show events at the sky position. But is the network SNR set to 20 for both? In that case the HLVI gain is understated, because the sky location would improve even more with the additional SNR that would be available for an SNR = 20 HLV event.
+
+——————————————————————————————————————————
+
+
+The reviewer brings two large objections to our paper: first, that our choice of source population (SNR = 20) is unrealistic (and correspondingly, that our results do not represent “realistic estimates of parameter estimation”), and secondly, that our choice of setting the noise equal to zero is not sufficiently justified (nor why we would prefer an MCMC over a Fisher matrix analysis for such a case).  We discuss both objections in turn, as well as the minor points the reviewer discusses:
+
+
+
+Choice of SNR:
+
+The referee is completely correct: phrasing our results in terms of a typical detection scenario is not supported by our selection of SNR=20.  The goal of our study was to provide a quotable estimate for the community when discussing the parameter estimation capabilities of Advanced LIGO, in effect to update the results of previous Fisher matrix studies while correcting for the limitations of the Fisher Matrix when dealing with a non-trivial posterior.
+
+We have made extensive revisions to the text to correct this point. As such, we have modified the text, particularly in the abstract, introduction, and conclusion to make the intent clear.  See new paragraphs 5 and 7 in the introduction, the new sentence in the abstract, and the modified paragraphs 1 and 2 in the conclusion.  Additionally, we have culled any references to “realistic estimates” from the abstract and introduction.  By describing the results as “averaged lower-bounds”, we believe the information is still physically interesting, while not misleading the reader.
+
+
+
+Zero Noise:
+
+There are two distinct reasons for preferring a noise-less averaged MCMC over a Fisher Matrix analysis
+	1. The Fisher matrix assumes that each posterior is Gaussian at sufficiently high-SNR.  Several of our posteriors are bounded (e.g. mass ratio), our priors non-Gaussian (e.g. distance), and our likelihoods multimodal (e.g. inclination), nuances that cannot be sufficiently modeled with a Fisher Matrix approach.  The virtue of our approach is that it allows us to update the Fisher-matrix rule—of-thumb estimates in the literature with credible intervals that respect the highly non-Gaussian structure of our posteriors.  We have added this discussion to the text in the paragraphs 5 of the introduction and paragraph 2 of the conclusion.
+
+Additionally, it can be shown (Vallisneri, 2011) that the variance of the zero-noise Bayesian posterior is identical to the averaged variances of multiple noisy runs to O(1/SNR^3), compared to O(1/SNR) for the Fisher Matrix.  This is discussed in the first paragraph of section 3.4 
+
+We agree with the reviewer that our choice of n=0 does not account for any non-Gaussian excursions that can occur in any single event.  Unfortunately, it is not possible to model or predict the nature of such glitch events before the instrument has been 
+
+We agree with the reviewer that our choice is sub-optimal, but we maintain that it is the most scientifically responsible, given our current limitations.
+
+
+
+In response to the few minor points at the end: 
+
+1. The intro seems to imply that the full exploration of parameter space is not "matched filtering". But of course it is, since it uses Eq. (4)
+
+Our goal was to contrast our parameter estimation with a template bank detection approach.  We have corrected the text to better reflect this.
+
+2. The priors given at the bottom of p. 2 are not astrophysical, but rather conventional. Astrophysical processes would not result into a uniform distribution for masses, and the distribution of systems out to the horizon distance for LIGO is not homogeneous. The zero-spin assumption also needs justification (it is later called a "simplifying assumption", but is it realistic?) 
+
+Of course, the true prior should be the true mass distribution for binary neutron stars, combined with a distance/sky-location prior based on the distribution of baryonic matter in the local universe.  In practice, the observed distribution of neutron star masses from pulsar measurements isn’t sufficiently strong to noticeably influence our recovered posteriors. [DE-SARCASTIC THIS]
+
+The zero-spin assumption is NOT physical, though in practice the maximum possible spin of a neutron star (assuming a reasonable equation of state) is insufficient to induce a large effect in the waveform.
+
+
+3. In 2.3, noise inner products combine linearly only if noise is uncorrelated among detectors
+
+We have added this to the text .
+
+4. In the caption to Fig. 1, the bit about "reflecting the highest 10% of samples" seems dangerous. What is it about?
+
+At a wall in the parameter space (e.g. q=1), the KDE drops artificially, since the value at q=1 is missing support from points where q>1.  To fix this, it is customary to reflect some of the points across the boundary, so that the KDE resembles the histogram.  As long as dp(x)/dx = 0 at the boundary, this estimator is unbiased.  We elected to use 10% of the points, as it was the minimum number required to get the smooth KDE to match the binned histograms. [SHORTEN THIS AND INSERT IN THE TEXT]
+
+5. On p. 9, the 8.5 network threshold is a conventional number; the reality is much more complicated
+
+We have added a mention that this is a simplification in the text. [ADD IT]
+
+6. Figs. 6 and 7 show events at the sky position. But is the network SNR set to 20 for both?
+
+Correct; we are ignoring the extra contribution from the additional SNR provided by a fourth detector site.  However, the purpose of the figure is to illustrate the increased precision of the parameter estimation regardless of the signal SNR (specifically the shape on the sky, which is vastly improved by a four-detector network).
+
