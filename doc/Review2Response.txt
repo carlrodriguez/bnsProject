@@ -27,7 +27,7 @@ Choice of SNR:
 
 The referee is completely correct: phrasing our results in terms of a typical detection scenario is not supported by our selection of SNR=20.  The goal of our study was to provide a quotable estimate for the community when discussing the parameter estimation capabilities of Advanced LIGO, in effect to update the results of previous Fisher matrix studies while correcting for the limitations of the Fisher Matrix when dealing with a non-trivial posterior.
 
-We have made extensive revisions to the text to correct this point. As such, we have modified the text, particularly in the abstract, introduction, and conclusion to make the intent clear.  See new paragraphs 5 and 7 in the introduction, the new sentence in the abstract, and the modified paragraphs 1 and 2 in the conclusion.  Additionally, we have culled any references to “realistic estimates” from the abstract and introduction.  By describing the results as “lower-bound average uncertainties”, we believe the information is still physically interesting, while not misleading the reader.
+We have made extensive revisions to the text to correct this point. As such, we have modified the text, particularly in the abstract, introduction, and conclusion to make the intent clear.  See new paragraphs 5 and 7 in the introduction, the new sentence in the abstract, and the modified paragraphs 1 and 2 in the conclusion.  Additionally, we have culled any references to “realistic estimates” from the abstract and introduction.  By describing the results as “averaged lower-bound uncertainties”, we believe the information is still physically interesting, while not misleading to the reader.
 
 
 
@@ -52,10 +52,9 @@ Our goal was to contrast our parameter estimation with a template bank detection
 
 2. The priors given at the bottom of p. 2 are not astrophysical, but rather conventional. Astrophysical processes would not result into a uniform distribution for masses, and the distribution of systems out to the horizon distance for LIGO is not homogeneous. The zero-spin assumption also needs justification (it is later called a "simplifying assumption", but is it realistic?) 
 
-Of course, the true prior should be the true mass distribution for binary neutron stars, combined with a distance/sky-location prior based on the distribution of baryonic matter in the local universe.  In practice, the observed distribution of neutron star masses from pulsar measurements isn’t sufficiently strong to noticeably influence our recovered posteriors. [DE-SARCASTIC THIS]
+The reviewer is correct that our priors are not astrophysical in nature.  In practice, the observed distribution of neutron star masses from pulsar measurements isn’t sufficiently strong to noticeably influence our recovered posteriors.  As such, we elected to employ an agnostic prior on our neutron star masses.
 
-The zero-spin assumption is NOT physical, though in practice the maximum possible spin of a neutron star (assuming a reasonable equation of state) is insufficient to induce a large effect in the waveform.
-
+The zero-spin assumption is not physical, though in practice the maximum possible spin of a neutron star (assuming a reasonable equation of state) is insufficient to induce a large effect in our parameter estimation,
 
 3. In 2.3, noise inner products combine linearly only if noise is uncorrelated among detectors
 
@@ -63,11 +62,11 @@ We have added this to the text .
 
 4. In the caption to Fig. 1, the bit about "reflecting the highest 10% of samples" seems dangerous. What is it about?
 
-At a wall in the parameter space (e.g. q=1), the KDE drops artificially, since the value at q=1 is missing support from points where q>1.  To fix this, it is customary to reflect some of the points across the boundary, so that the KDE resembles the histogram.  As long as dp(x)/dx = 0 at the boundary, this estimator is unbiased.  We elected to use 10% of the points, as it was the minimum number required to get the smooth KDE to match the binned histograms. [SHORTEN THIS AND INSERT IN THE TEXT]
+At a wall in the parameter space (e.g. q=1), the KDE (which is only employed when generating the plots in Figure 1) needs to be artificially increased so that the smoothing near q=1 does not artificially drop due to the lack of points where q>1.  This was done purely so the smoothed plots would agree with the binned histograms of the same data.  We have clarified the text describing the figure.
 
 5. On p. 9, the 8.5 network threshold is a conventional number; the reality is much more complicated
 
-We have added a mention that this is a simplification in the text. [ADD IT]
+We have modified the text to describe this as a simplification
 
 6. Figs. 6 and 7 show events at the sky position. But is the network SNR set to 20 for both?
 

@@ -278,7 +278,7 @@ or from our \textit{a priori} knowledge of astrophysical systems.
 We employ priors which are
 \begin{itemize}
 \item uniform in component masses from $0.8M_{\odot} \leq M_{1,2} \leq
-  30M_{\odot}$, with a minimum chirp mass (see Eq.~\eqref{eqRatioCM})
+  30M_{\odot}$, with a minimum chirp mass (see Eq.~\eqref{parameterspace})
   of 0.6 $M_{\odot}$ 
 \item uniform in volume, which implies a luminosity distance prior of
   $p(D)dD \propto D^2 dD$,
@@ -465,10 +465,11 @@ approximation to be valid.  By selecting a source population with an
   space.  To better see this effect, compare the 1D PDF for
   $\mathcal{M}_{c}$ and $q$ with the 2D marginalized PDF in
   Figure~\ref{1414masses}.  The plots here represent the Gaussian kernel density
-  estimator of each PDF.  The estimate for $q$ was 
-  computed by reflecting the highest $10\%$ of samples across the $q=1$ boundary.  
-  This was done to avoid a false decrease in estimated probability density near
-  the boundary.}
+  estimator of each PDF.  The \sout{estimate} \carl{plot} for $q$ was 
+  computed by reflecting the highest $10\%$ of samples across the $q=1$ boundary, \carl{in order
+  for the smoothed plot to agree with the binned histograms.}
+  \sout{This was done to avoid a false decrease in estimated probability density near
+  the boundary.}}
 \end{figure*}
 
 Of the nine parameters in the domain of the waveform, only six are
@@ -866,7 +867,7 @@ Given the previous reliance of parameter estimation studies on the Fisher
 Information Matrix, it is informative to compare the credible intervals quoted here 
 to previously reported values in the literature.  We recompute the credible intervals 
 of the chirp mass and the symmetric mass ratio ($\eta \equiv m_1 m_2 / M_{tot}^2$)
-at the 68\% level \carl{NO, FIX ME}(1-$\sigma$) for the $1.4M_{\odot}/1.4M_{\odot}$ system presented 
+at the 68\% level ($2\times\sigma$) for the $1.4M_{\odot}/1.4M_{\odot}$ system presented 
 here.  We then compare the findings of the MCMC to the Fisher matrix predictions using
 an identical network configuration (HLV), noise curve, and waveform model.  
 We compute the Fisher matrix uncertainties 
@@ -969,7 +970,7 @@ $1M_{\odot}-1M_{\odot}$ & \vline &$42.7$ & \vline &$76.2$ & \vline & $0.267$ & \
 
 \begin{table}[h!]
 \centering
-\caption{68\% Credible intervals versus \sout{1-$\sigma$} \carl{$2\sigma$} Fisher matrix uncertainties for mass parameters in each system in the HLV configuration.}
+\caption{68\% Credible intervals versus \carl{$2\times\sigma$} Fisher matrix uncertainties for mass parameters in each system in the HLV configuration.}
   \tabcolsep=0.11cm
     {\renewcommand{\arraystretch}{1.3} 
 \begin{tabular}{lcccccccc}
@@ -1172,13 +1173,8 @@ $\Theta(\text{angle})$ is a function of the orbital orientation with
 respect to the detector network in terms of the sky position, orbital
 inclination, and the wave polarization.  In addition to the total
 mass, $M_{tot}\equiv M_1+M_2$, it is convenient to work with the mass
-ratio and chirp mass, defined by
-\begin{equation}
-  q\equiv M_2/M_1~~~~\text{and}~~~~\chmass = (M_1 M_2)^{3/5}
-  M_{tot}^{-1/5},
-  \label{eqRatioCM}
-\end{equation}
-respectively.  Note that most gravitational-wave literature instead uses
+ratio and chirp mass, defined in \ref{parameterspace}.
+  Note that most gravitational-wave literature instead uses
   the \textit{symmetric mass ratio}, defined as $\eta \equiv M_1 M_2 /
   M^2$.  We elect to use $q$ as it is more physically intuitive, and
   because it avoids an integrable singularity that can appear for
